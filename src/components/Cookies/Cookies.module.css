@@ -1,0 +1,36 @@
+@import url('../../vars.modules.css');
+
+.cookies {
+  inset-inline-end: 0;
+  inset-block-end: 0;
+  inline-size: 100%;
+  border-radius: var(--border-radius-m) var(--border-radius-m) 0 0;
+  transform: unset;
+  padding: var(--space-xl);
+  inset-block-start: unset;
+  inset-inline-start: unset;
+  border: none;
+}
+
+.zIndex1200 {
+  z-index: 1200;
+}
+
+.button {
+  inline-size: 100%;
+}
+
+@media (--breakpoint-s) {
+  .button {
+    inline-size: unset;
+  }
+}
+
+@media (--breakpoint-m) {
+  .cookies {
+    margin: var(--space-xl);
+    max-inline-size: 480px;
+    inline-size: calc(100% - 2 * var(--space-xl));
+    border-radius: var(--border-radius-m);
+  }
+}

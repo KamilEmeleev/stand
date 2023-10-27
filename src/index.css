@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  min-block-size: 100%;
+}
+
+html {
+  block-size: 100%;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: all var(--transition-slow);
+}
+
+.fade-exit {
+  opacity: 0;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: all var(--transition-slow);
+}

@@ -1,0 +1,11 @@
+.AppBarBody {
+  border-radius: var(--border-radius-s);
+  overflow-y: scroll;
+  scrollbar-width: none;
+  flex-grow: 0;
+  block-size: 100%;
+}
+
+.AppBarBody::-webkit-scrollbar {
+  display: none;
+}

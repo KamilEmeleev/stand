@@ -1,0 +1,19 @@
+.conversation {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  block-size: 100%;
+}
+
+.conversationHeader,
+.conversationBody,
+.conversationFooter {
+  box-sizing: border-box;
+  padding: var(--spacing-s);
+}
+
+.conversationBody {
+  flex-grow: 1;
+  block-size: 0;
+  overflow: auto;
+}

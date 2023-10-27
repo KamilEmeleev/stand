@@ -1,0 +1,23 @@
+.list {
+  --list-gutter: 0;
+  --list-gap: 0;
+  --list-item-border-radius: 0;
+  --list-item-padding: var(--space-l);
+}
+
+.avatarIcon {
+  inline-size: 48px;
+  border-radius: 50%;
+  block-size: 48px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-additional-f2);
+  color: var(--color-content-action-on);
+  justify-content: center;
+}
+
+@media screen and (width <= 480px) {
+  .drawer {
+    --drawer-border-radius: 0;
+  }
+}

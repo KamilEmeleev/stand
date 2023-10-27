@@ -1,0 +1,11 @@
+@import url('../../vars.modules.css');
+
+.img {
+  display: none;
+}
+
+@media (--breakpoint-m) {
+  .img {
+    display: block;
+  }
+}

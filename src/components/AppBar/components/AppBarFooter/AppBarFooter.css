@@ -1,0 +1,4 @@
+.AppBarFooter {
+  border-radius: var(--border-radius-m);
+  block-size: 40px;
+}

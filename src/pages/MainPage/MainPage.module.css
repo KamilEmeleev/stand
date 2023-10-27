@@ -1,0 +1,14 @@
+.iconContainer {
+  background-color: var(--color-background-primary);
+  border-radius: 50%;
+  inline-size: 56px;
+  block-size: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card {
+  display: flex;
+}

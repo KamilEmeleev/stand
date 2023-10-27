@@ -1,0 +1,48 @@
+@import url('../../../../vars.modules.css');
+
+.chatList {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+}
+
+.list {
+  --list-gutter: 0;
+}
+
+.selected {
+  background-color: transparent;
+}
+
+.chatListHeader,
+.chatListBody,
+.chatListFooter {
+  padding: var(--spacing-s);
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.chatListBody {
+  flex-grow: 1;
+  block-size: 0;
+  overflow: auto;
+}
+
+.chatListFooter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  :global(.Stack) {
+    min-inline-size: 0;
+  }
+}
+
+@media (--breakpoint-m) {
+  .selected {
+    background-color: var(--list-item-bg-color-hover);
+  }
+}

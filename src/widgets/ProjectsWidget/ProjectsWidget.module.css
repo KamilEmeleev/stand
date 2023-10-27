@@ -1,0 +1,10 @@
+.link {
+  inset: 0;
+  position: absolute;
+  border-radius: inherit;
+}
+
+.icon {
+  color: var(--color-content-tertiary);
+  margin-inline-start: auto;
+}

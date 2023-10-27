@@ -1,0 +1,29 @@
+@import url('../../vars.modules.css');
+
+.searchInput {
+  border: none;
+  outline: none;
+  inline-size: 100%;
+  block-size: 68px;
+  padding-inline-start: 68px;
+  box-sizing: border-box;
+  background-color: var(--color-background-main);
+  color: var(--color-content-primary);
+  font: var(--typography-text-l-font);
+}
+
+.searchIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  block-size: 68px;
+  position: absolute;
+  inset-inline-start: 28px;
+  color: var(--color-content-action);
+}
+
+.searchBackdrop {
+  background-color: rgb(111 126 140 / 20%);
+  backdrop-filter: blur(4px);
+}

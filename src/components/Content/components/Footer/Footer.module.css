@@ -1,0 +1,11 @@
+@import url('../../../../vars.modules.css');
+
+.footer {
+  text-align: center;
+}
+
+@media (--breakpoint-m) {
+  .footer {
+    text-align: start;
+  }
+}

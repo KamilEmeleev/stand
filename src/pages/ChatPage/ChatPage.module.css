@@ -1,0 +1,53 @@
+@import url('../../vars.modules.css');
+
+.chat {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-m);
+}
+
+.chatContainer {
+  --chat-translate-x: 0;
+  --chat-translate-timeout: 300;
+  block-size: 100%;
+  display: flex;
+  transition: transform var(--chat-translate-timeout) ease-in-out;
+  transform: translate(var(--chat-translate-x));
+  scroll-behavior: smooth;
+}
+
+.chatListBlock,
+.conversationBlock {
+  flex: 0 0 100%;
+  inline-size: 100%;
+  overflow: auto;
+  backface-visibility: hidden;
+
+  :global(.Card) {
+    border-radius: 0;
+  }
+}
+
+@media (--breakpoint-m) {
+  .chatContainer {
+    transition: none;
+    transform: translate(0%);
+    gap: var(--spacing-m);
+  }
+
+  .chatListBlock {
+    flex: 4;
+  }
+
+  .conversationBlock {
+    flex: 8;
+  }
+
+  .chatListBlock,
+  .conversationBlock {
+    :global(.Card) {
+      border-radius: var(--border-radius-m);
+    }
+  }
+}

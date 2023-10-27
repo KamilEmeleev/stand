@@ -1,0 +1,32 @@
+.messageContainer {
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+.message {
+  max-inline-size: 400px;
+  border: 1px solid var(--color-border-secondary);
+}
+
+.incoming {
+  .message {
+    margin-inline-end: auto;
+  }
+}
+
+.outgoing {
+  flex-direction: row-reverse;
+
+  .message {
+    margin-inline-start: auto;
+    background-color: var(--color-background-success-light);
+  }
+}
+
+.img {
+  border-radius: var(--border-radius-s);
+}
+
+.text {
+  white-space: pre-wrap;
+}

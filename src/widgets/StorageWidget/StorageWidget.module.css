@@ -1,0 +1,11 @@
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--color-content-success);
+  background-color: var(--color-background-primary);
+  border-radius: 50%;
+  inline-size: 56px;
+  block-size: 56px;
+}

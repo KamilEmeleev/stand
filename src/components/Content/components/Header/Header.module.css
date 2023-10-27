@@ -1,0 +1,11 @@
+.header {
+  inset-block-start: 0;
+  position: sticky;
+  z-index: var(--z-index-header);
+  background-color: inherit;
+  border-block-end: var(--border-width-s) solid var(--color-border-secondary);
+}
+
+.headerContent {
+  block-size: 64px;
+}

@@ -1,0 +1,18 @@
+@import url('../../vars.modules.css');
+
+.content {
+  flex-grow: 1;
+  border-radius: 0;
+  background-color: var(--color-background-main-hover);
+  block-size: 100vb;
+  overflow-y: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (--breakpoint-m) {
+  .content {
+    border-radius: var(--paper-border-radius) 0 0 var(--paper-border-radius);
+  }
+}
