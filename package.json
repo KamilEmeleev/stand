@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
+    "type-check": "tsc --noEmit --pretty",
     "lint:css": "stylelint --fix src/**/*.css",
     "lint:js": "eslint --ext .ts,.tsx src --fix",
     "lint": "pnpm lint:js && pnpm lint:css",

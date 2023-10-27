@@ -34,5 +34,6 @@ export const apps = [
     link: '/sandbox',
     icon: TemplatesIcon,
     component: SandboxPage,
+    count: null,
   },
 ] as const;
