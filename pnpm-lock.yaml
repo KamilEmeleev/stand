@@ -12,8 +12,8 @@ dependencies:
     specifier: ^0.23.2
     version: 0.23.2(react@18.2.0)
   '@ozen-ui/kit':
-    specifier: ^0.23.2
-    version: 0.23.2(@ozen-ui/fonts@0.23.2)(@ozen-ui/icons@0.23.2)(react-dom@18.2.0)(react@18.2.0)
+    specifier: file:ozen-ui-kit-0.24.0-alpha.tgz
+    version: file:ozen-ui-kit-0.24.0-alpha.tgz(@ozen-ui/fonts@0.23.2)(@ozen-ui/icons@0.23.2)(react-dom@18.2.0)(react@18.2.0)
   '@types/react-transition-group':
     specifier: ^4.4.7
     version: 4.4.7
@@ -676,28 +676,6 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@ozen-ui/kit@0.23.2(@ozen-ui/fonts@0.23.2)(@ozen-ui/icons@0.23.2)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-/YduFJxo4C/l7VuMJuJFPWglYZ1rvtHGao8IRCZRglX+6nnwDcVprNQYBiHu25YWqPqHtgZynIixY90miI7k0Q==}
-    peerDependencies:
-      '@ozen-ui/fonts': latest
-      '@ozen-ui/icons': latest
-      react: '>=17.0.2 <19.0.0'
-      react-dom: '>=17.0.2 <19.0.0'
-    dependencies:
-      '@bem-react/classname': 1.6.0
-      '@bem-react/classnames': 1.3.10
-      '@ozen-ui/fonts': 0.23.2
-      '@ozen-ui/icons': 0.23.2(react@18.2.0)
-      '@popperjs/core': 2.11.8
-      decimal.js: 10.4.3
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-is: 18.2.0
-      react-popper: 2.3.0(@popperjs/core@2.11.8)(react-dom@18.2.0)(react@18.2.0)
-      react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
-      tslib: 2.6.2
-    dev: false
-
   /@pkgr/utils@2.4.2:
     resolution: {integrity: sha512-POgTXhjrTfbTV63DiFXav4lBHiICLKKwDeaKn9Nphwj7WH6m0hMMCaJkMyRWjgtPFyRKRVoMXXjczsTQRDEhYw==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
@@ -712,6 +690,15 @@ packages:
 
   /@popperjs/core@2.11.8:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+    dev: false
+
+  /@rehookify/datepicker@6.2.0(react@18.2.0):
+    resolution: {integrity: sha512-rwcBkzHcmbivu1Un+8uqbdgP72eVJyrNZxnVAoYZDHHMrEM1ZpzKOiMi4M6YYTpsjlwCvUwf+aA9YnmjGmh+CQ==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@types/json-schema@7.0.14:
@@ -1073,8 +1060,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001554
-      electron-to-chromium: 1.4.568
+      caniuse-lite: 1.0.30001559
+      electron-to-chromium: 1.4.571
       node-releases: 2.0.13
       update-browserslist-db: 1.0.13(browserslist@4.22.1)
     dev: true
@@ -1113,8 +1100,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /caniuse-lite@1.0.30001554:
-    resolution: {integrity: sha512-A2E3U//MBwbJVzebddm1YfNp7Nud5Ip+IPn4BozBmn4KqVX7AvluoIDFWjsv5OkGnKUXQVmMSoMKLa3ScCblcQ==}
+  /caniuse-lite@1.0.30001559:
+    resolution: {integrity: sha512-cPiMKZgqgkg5LY3/ntGeLFUpi6tzddBNS58A4tnTgQw1zON7u2sZMU7SzOeVH4tj20++9ggL+V6FDOFMTaFFYA==}
     dev: true
 
   /chalk@2.4.2:
@@ -1330,8 +1317,8 @@ packages:
       csstype: 3.1.2
     dev: false
 
-  /electron-to-chromium@1.4.568:
-    resolution: {integrity: sha512-3TCOv8+BY6Ltpt1/CmGBMups2IdKOyfEmz4J8yIS4xLSeMm0Rf+psSaxLuswG9qMKt+XbNbmADybtXGpTFlbDg==}
+  /electron-to-chromium@1.4.571:
+    resolution: {integrity: sha512-Sc+VtKwKCDj3f/kLBjdyjMpNzoZsU6WuL/wFb6EH8USmHEcebxRXcRrVpOpayxd52tuey4RUDpUsw5OS5LhJqg==}
     dev: true
 
   /emoji-regex@8.0.0:
@@ -2748,8 +2735,8 @@ packages:
       react-is: 16.13.1
     dev: false
 
-  /punycode@2.3.0:
-    resolution: {integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==}
+  /punycode@2.3.1:
+    resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
   /queue-microtask@1.2.3:
@@ -3374,7 +3361,7 @@ packages:
   /uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
-      punycode: 2.3.0
+      punycode: 2.3.1
 
   /use-sync-external-store@1.2.0(react@18.2.0):
     resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
@@ -3507,3 +3494,29 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+  file:ozen-ui-kit-0.24.0-alpha.tgz(@ozen-ui/fonts@0.23.2)(@ozen-ui/icons@0.23.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-frULRF1gPvTablDJnOw1hyMHOTi2Q6QcGjjzrt956fo7txy2mgViGS+++fh/oU2HHA+0VI6CJM4aRu0v9dcSSg==, tarball: file:ozen-ui-kit-0.24.0-alpha.tgz}
+    id: file:ozen-ui-kit-0.24.0-alpha.tgz
+    name: '@ozen-ui/kit'
+    version: 0.24.0-alpha
+    peerDependencies:
+      '@ozen-ui/fonts': latest
+      '@ozen-ui/icons': latest
+      react: '>=17.0.2 <19.0.0'
+      react-dom: '>=17.0.2 <19.0.0'
+    dependencies:
+      '@bem-react/classname': 1.6.0
+      '@bem-react/classnames': 1.3.10
+      '@ozen-ui/fonts': 0.23.2
+      '@ozen-ui/icons': 0.23.2(react@18.2.0)
+      '@popperjs/core': 2.11.8
+      '@rehookify/datepicker': 6.2.0(react@18.2.0)
+      decimal.js: 10.4.3
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-is: 18.2.0
+      react-popper: 2.3.0(@popperjs/core@2.11.8)(react-dom@18.2.0)(react@18.2.0)
+      react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
+      tslib: 2.6.2
+    dev: false

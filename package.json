@@ -16,7 +16,7 @@
   "dependencies": {
     "@ozen-ui/fonts": "^0.23.2",
     "@ozen-ui/icons": "^0.23.2",
-    "@ozen-ui/kit": "^0.23.2",
+    "@ozen-ui/kit": "file:ozen-ui-kit-0.24.0-alpha.tgz",
     "@types/react-transition-group": "^4.4.7",
     "clsx": "^2.0.0",
     "eslint-config-prettier": "^9.0.0",
