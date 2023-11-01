@@ -14,35 +14,35 @@
     "update:deps": "pnpm update --interactive --latest -r"
   },
   "dependencies": {
-    "@ozen-ui/fonts": "^0.23.2",
-    "@ozen-ui/icons": "^0.23.2",
-    "@ozen-ui/kit": "file:ozen-ui-kit-0.24.0-alpha.tgz",
-    "@types/react-transition-group": "^4.4.7",
+    "@ozen-ui/fonts": "^0.24.0",
+    "@ozen-ui/icons": "^0.24.0",
+    "@ozen-ui/kit": "^0.24.0",
+    "@types/react-transition-group": "^4.4.8",
     "clsx": "^2.0.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "lightningcss": "^1.22.0",
     "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-transition-group": "^4.4.5",
-    "stylelint": "^15.10.3",
+    "stylelint": "^15.11.0",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-order": "^6.0.3",
     "stylelint-plugin-logical-css": "^0.13.2",
-    "wouter": "^2.11.0"
+    "wouter": "^2.12.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "@vitejs/plugin-react": "^4.0.3",
-    "eslint": "^8.45.0",
-    "eslint-plugin-import": "^2.28.1",
+    "@types/react": "^18.2.33",
+    "@types/react-dom": "^18.2.14",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "@vitejs/plugin-react": "^4.1.0",
+    "eslint": "^8.52.0",
+    "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
   }
 }

@@ -1,7 +1,5 @@
 import { BanIcon } from '@ozen-ui/icons';
 import { Button } from '@ozen-ui/kit/Button';
-import { Calendar } from '@ozen-ui/kit/Calendar';
-import { Paper } from '@ozen-ui/kit/Paper';
 import { Stack } from '@ozen-ui/kit/Stack';
 import {
   extendTheme,
@@ -22,7 +20,6 @@ export const SandboxPage = () => {
       >
         Btn
       </Button>
-      <Calendar background="main" as={Paper} radius="s" shadow="m" />
       <ThemeProvider
         theme={extendTheme(themeOzenDefault, {
           defaultProps: { Button: { size: 's', variant: 'outlined' } },
