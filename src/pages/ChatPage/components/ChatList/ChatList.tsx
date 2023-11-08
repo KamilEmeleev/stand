@@ -16,6 +16,7 @@ import { Typography } from '@ozen-ui/kit/Typography';
 import clsx from 'clsx';
 
 import { Chat, chats } from '../../../../helpers';
+import { formatDate } from '../../utils';
 
 import s from './ChatList.module.css';
 
@@ -68,7 +69,7 @@ export const ChatList: FC<ChatListProps> = ({
                 />
                 <ListItemIcon>
                   <Typography variant="text-xs" color="secondary">
-                    {lastMessage?.date}
+                    {formatDate(lastMessage?.date)}
                   </Typography>
                 </ListItemIcon>
               </ListItemButton>

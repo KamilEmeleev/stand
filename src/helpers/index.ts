@@ -1,2 +1,2 @@
 export * from './user';
-export * from './chats.tsx';
+export * from './chats';

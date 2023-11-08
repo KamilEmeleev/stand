@@ -10,6 +10,7 @@ import { Typography } from '@ozen-ui/kit/Typography';
 import clsx from 'clsx';
 
 import { ChatMessage, User } from '../../../../helpers';
+import { formatDate } from '../../utils';
 
 import s from './Message.module.css';
 
@@ -99,7 +100,7 @@ export const Message = forwardRef<HTMLDivElement, ChatMessage & { user: User }>(
             color="tertiary"
             className={spacing({ px: 'm' })}
           >
-            {date}
+            {formatDate(date)}
           </Typography>
         </Stack>
       </Stack>
