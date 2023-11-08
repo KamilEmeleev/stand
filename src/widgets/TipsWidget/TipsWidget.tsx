@@ -4,7 +4,7 @@ import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';
 
-const TipsWidget = () => {
+export const TipsWidget = () => {
   return (
     <Stack direction="column" gap="l" align="start">
       <Typography variant="text-xs" color="tertiary">
@@ -28,5 +28,3 @@ const TipsWidget = () => {
     </Stack>
   );
 };
-
-export default TipsWidget;

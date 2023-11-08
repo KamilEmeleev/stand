@@ -15,9 +15,9 @@ import {
   CreatedIssuesWidget,
   FinancialTransactionsWidget,
   ResolvedIncidentsWidget,
+  TipsWidget,
+  FindJobWidget,
 } from '../../widgets';
-import { FindJobWidget } from '../../widgets/FindJobWidget';
-import TipsWidget from '../../widgets/TipsWidget/TipsWidget.tsx';
 
 import s from './MainPage.module.css';
 

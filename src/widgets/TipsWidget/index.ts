@@ -1,1 +1,1 @@
-export * from './TipsWidget.tsx';
+export * from './TipsWidget';
