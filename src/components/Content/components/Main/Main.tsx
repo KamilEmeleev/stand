@@ -35,9 +35,9 @@ export const Main = () => {
       <Typography variant={isMobile ? 'heading-xl' : 'heading-2xl'} as="h1">
         {currentApp?.title}
       </Typography>
-      {apps.map(({ link, component: Page }) => (
-        <Route path={link} key={link}>
-          <Page />
+      {apps.map(({ link, component: Page, title }) => (
+        <Route path={link} key={title}>
+          {Page ? <Page /> : null}
         </Route>
       ))}
     </Container>

@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { AlertOnIcon, DarkIcon, ExitIcon, LightIcon } from '@ozen-ui/icons';
+import { AlertOnIcon, DarkIcon, LightIcon } from '@ozen-ui/icons';
 import { Badge } from '@ozen-ui/kit/Badge';
 import { Container } from '@ozen-ui/kit/Container';
 import { IconButton } from '@ozen-ui/kit/IconButton';
@@ -19,7 +19,7 @@ import s from './Header.module.css';
 export const Header = () => {
   const notificationRef = useRef<HTMLButtonElement | null>(null);
   const [open, { toggle, off }] = useBoolean(false);
-  const { theme, setTheme, logout } = useApp();
+  const { theme, setTheme } = useApp();
 
   const changeTheme = () => {
     setTheme?.(theme === 'default' ? 'dark' : 'default');
@@ -58,12 +58,6 @@ export const Header = () => {
             }
             ref={notificationRef}
             onClick={toggle}
-            compressed
-          />
-          <IconButton
-            variant="ghost"
-            icon={ExitIcon}
-            onClick={logout}
             compressed
           />
         </Stack>
