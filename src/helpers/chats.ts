@@ -168,7 +168,7 @@ export const chats: Chat[] = [
       name: 'Bereke Bank',
       online: true,
       avatar: {
-        icon: <BerekeLogo />,
+        icon: BerekeLogo,
       },
     },
     messages: [

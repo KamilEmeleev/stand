@@ -15,7 +15,7 @@ export const HelpCenterWidget = () => {
     >
       <Stack direction="column">
         <Typography
-          color="info"
+          color="infoDark"
           as={Stack}
           gap="m"
           className={spacing({ mb: 'xl' })}

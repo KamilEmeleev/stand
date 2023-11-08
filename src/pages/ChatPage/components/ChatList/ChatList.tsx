@@ -39,6 +39,7 @@ export const ChatList: FC<ChatListProps> = ({
         <List className={s.list}>
           {chats.map(({ id, user, messages }) => {
             const lastMessage = messages?.[messages.length - 1];
+            const AvatarIcon = user.avatar?.icon;
 
             return (
               <ListItemButton
@@ -51,7 +52,7 @@ export const ChatList: FC<ChatListProps> = ({
               >
                 <ListItemIcon>
                   <Avatar name={user.name} src={user.avatar?.url}>
-                    {user.avatar?.icon}
+                    {AvatarIcon && <AvatarIcon />}
                   </Avatar>
                 </ListItemIcon>
                 <ListItemText

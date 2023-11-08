@@ -45,6 +45,7 @@ export const Conversation: FC<ConversationProps> = ({
   const { m } = useBreakpoints();
   const isMobile = !m;
   const chat = chats.find(({ id }) => id === idProp);
+  const AvatarIcon = chat?.user?.avatar?.icon;
 
   useEffect(() => {
     scrollContainerToElement({
@@ -85,7 +86,7 @@ export const Conversation: FC<ConversationProps> = ({
             src={chat?.user.avatar?.url}
             online={chat?.user.online}
           >
-            {chat?.user.avatar?.icon}
+            {AvatarIcon && <AvatarIcon />}
           </Avatar>
           <Stack direction="column" style={{ minWidth: 0 }}>
             <Typography variant="text-m_1" noWrap>

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { FC } from 'react';
 
 import ava from '../assets/avatar-user.png';
 
@@ -7,7 +7,7 @@ export interface User {
   online?: boolean;
   role?: string;
   avatar?: {
-    icon?: ReactNode;
+    icon?: FC;
     url?: string;
   };
 }

@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import { ArrowRightIcon, CalendarIcon } from '@ozen-ui/icons';
 import { Button } from '@ozen-ui/kit/Button';
 import { Divider } from '@ozen-ui/kit/Divider';
@@ -7,7 +9,10 @@ import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';
 import clsx from 'clsx';
 
+import { calendar } from '../../helpers';
+
 import s from './CalendarWidget.module.css';
+import { formatDate, formatTime } from './utils';
 
 export const CalendarWidget = () => {
   return (
@@ -17,85 +22,34 @@ export const CalendarWidget = () => {
         События получены на основе календаря банка
       </Typography>
       <List className={s.list}>
-        <ListItem>
-          <ListItemIcon>
-            <div className={clsx(s.date, s.dateActive)}>
-              <Typography align="center" variant="text-xl_1">
-                6
-              </Typography>
-              <Typography align="center" variant="text-s">
-                окт
-              </Typography>
-            </div>
-          </ListItemIcon>
-          <ListItemText
-            primary="Встреча с заказчиком"
-            secondary="c 17:00 до 18:00"
-          />
-          <ListItemIcon>
-            <IconButton icon={CalendarIcon} rounded compressed />
-          </ListItemIcon>
-        </ListItem>
-        <Divider color="secondary" />
-        <ListItem>
-          <ListItemIcon>
-            <div className={s.date}>
-              <Typography align="center" variant="text-xl_1">
-                7
-              </Typography>
-              <Typography align="center" variant="text-s">
-                окт
-              </Typography>
-            </div>
-          </ListItemIcon>
-          <ListItemText
-            primary="Ежедневный митинг"
-            secondary="c 10:00 до 10:30"
-          />
-          <ListItemIcon>
-            <IconButton icon={CalendarIcon} rounded compressed />
-          </ListItemIcon>
-        </ListItem>
-        <Divider color="secondary" />
-        <ListItem>
-          <ListItemIcon>
-            <div className={s.date}>
-              <Typography align="center" variant="text-xl_1">
-                8
-              </Typography>
-              <Typography align="center" variant="text-s">
-                окт
-              </Typography>
-            </div>
-          </ListItemIcon>
-          <ListItemText
-            primary="Ежедневный митинг"
-            secondary="c 10:00 до 10:30"
-          />
-          <ListItemIcon>
-            <IconButton icon={CalendarIcon} rounded compressed />
-          </ListItemIcon>
-        </ListItem>
-        <Divider color="secondary" />
-        <ListItem>
-          <ListItemIcon>
-            <div className={s.date}>
-              <Typography align="center" variant="text-xl_1">
-                9
-              </Typography>
-              <Typography align="center" variant="text-s">
-                окт
-              </Typography>
-            </div>
-          </ListItemIcon>
-          <ListItemText
-            primary="Ежедневный митинг"
-            secondary="c 10:00 до 10:30"
-          />
-          <ListItemIcon>
-            <IconButton icon={CalendarIcon} rounded compressed />
-          </ListItemIcon>
-        </ListItem>
+        {calendar.map(({ title, id, date }, index) => {
+          const [day, month] = formatDate(date.from);
+
+          return (
+            <Fragment key={id}>
+              {index > 0 && <Divider color="secondary" />}
+              <ListItem>
+                <ListItemIcon>
+                  <div className={clsx(s.date, [index === 0 && s.dateActive])}>
+                    <Typography align="center" variant="text-xl_1">
+                      {day}
+                    </Typography>
+                    <Typography align="center" variant="text-s">
+                      {month}
+                    </Typography>
+                  </div>
+                </ListItemIcon>
+                <ListItemText
+                  primary={title}
+                  secondary={formatTime(date.from, date.to)}
+                />
+                <ListItemIcon>
+                  <IconButton icon={CalendarIcon} rounded compressed />
+                </ListItemIcon>
+              </ListItem>
+            </Fragment>
+          );
+        })}
       </List>
       <Button variant="function" iconRight={<ArrowRightIcon size="s" />}>
         Все события календаря

@@ -17,6 +17,7 @@ import s from './Message.module.css';
 export const Message = forwardRef<HTMLDivElement, ChatMessage & { user: User }>(
   ({ user, text, type, assets, date, emoji }, ref) => {
     const [imgState, setImgState] = useState<{ [key in string]: boolean }>({});
+    const AvatarIcon = user?.avatar?.icon;
 
     return (
       <Stack
@@ -27,7 +28,7 @@ export const Message = forwardRef<HTMLDivElement, ChatMessage & { user: User }>(
         fullWidth
       >
         <Avatar name={user?.name} size="s" src={user?.avatar?.url}>
-          {user.avatar?.icon}
+          {AvatarIcon && <AvatarIcon />}
         </Avatar>
         <Stack
           gap="xs"
