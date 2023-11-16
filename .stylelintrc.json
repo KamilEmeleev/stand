@@ -29,7 +29,6 @@
     "plugin/use-logical-properties-and-values": [
       true,
       { "severity": "warning", "ignore": ["overflow-y", "overflow-x", "float", "resize"] }
-    ],
-    "plugin/use-logical-units": [true, { "severity": "warning" }]
+    ]
   }
 }

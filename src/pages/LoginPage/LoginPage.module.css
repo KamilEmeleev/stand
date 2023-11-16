@@ -5,8 +5,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  block-size: 100vb;
-  inline-size: 100vi;
+  inline-size: 100vw;
+  block-size: 100vh;
   background: var(--color-background-main);
 }
 
