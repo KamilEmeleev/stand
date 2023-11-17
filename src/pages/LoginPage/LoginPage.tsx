@@ -120,7 +120,7 @@ export const LoginPage = () => {
           </Stack>
 
           <SectionMessage>
-            Для входа в приложение воспользуйтесь гостевым логин и паролем:{' '}
+            Для входа в приложение воспользуйтесь гостевым логином и паролем:{' '}
             <Typography variant="text-m_1" as="span">
               guest
             </Typography>{' '}
