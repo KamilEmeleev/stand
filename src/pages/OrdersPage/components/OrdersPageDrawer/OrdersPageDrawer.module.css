@@ -1,15 +1,15 @@
 @import url('../../../../vars.modules.css');
 
 :global(.Drawer) .window {
-  min-width: 100%;
+  min-inline-size: 100%;
   border: none;
   border-radius: 0;
 }
 
 @media (--breakpoint-s) {
   :global(.Drawer) .window {
-    min-width: var(--drawer-width);
-    border-left: 1px solid var(--color-border-secondary);
+    min-inline-size: var(--drawer-width);
+    border-inline-start: 1px solid var(--color-border-secondary);
   }
 }
 

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
 import { AlertOnIcon, DarkIcon, LightIcon } from '@ozen-ui/icons';
 import { Badge } from '@ozen-ui/kit/Badge';
@@ -22,8 +22,15 @@ export const Header = () => {
   const { theme, setTheme } = useApp();
 
   const changeTheme = () => {
+    document.body.classList.add('disable-animation');
     setTheme?.(theme === 'default' ? 'dark' : 'default');
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      document.body.classList.remove('disable-animation');
+    }, 0);
+  }, [theme]);
 
   return (
     <Container

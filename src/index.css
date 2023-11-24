@@ -3,6 +3,12 @@ body {
   min-block-size: 100%;
 }
 
+body.disable-animation *,
+body.disable-animation *::after,
+body.disable-animation *::before {
+  transition: none !important;
+}
+
 html {
   block-size: 100%;
 }

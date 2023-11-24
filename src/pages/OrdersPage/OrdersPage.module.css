@@ -8,7 +8,7 @@
 .container {
   flex-grow: 1;
   block-size: 0;
-  transition: all var(--transition-slow);
+  transition: margin-inline-end var(--transition-slow);
 }
 
 :global(.Table_divider_row .TableCell) {

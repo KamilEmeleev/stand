@@ -6,5 +6,5 @@
 
 .divider {
   position: relative;
-  top: -1px;
+  inset-block-start: -1px;
 }
