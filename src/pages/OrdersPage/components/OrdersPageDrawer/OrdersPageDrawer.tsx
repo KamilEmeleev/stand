@@ -52,6 +52,7 @@ export const OrdersPageDrawer: FC<OrdersPageDrawerProps> = ({
       disablePortal
       hideBackdrop
       disableClickOutside
+      disableScrollLock
     >
       <DrawerHeader>
         <DrawerTitle>
