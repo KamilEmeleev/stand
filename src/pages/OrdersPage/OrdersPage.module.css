@@ -1,0 +1,20 @@
+.ordersPage {
+  padding: 0;
+  flex-grow: 1;
+  transform: scale(1);
+  overflow: hidden;
+}
+
+.container {
+  flex-grow: 1;
+  block-size: 0;
+  transition: all var(--transition-slow);
+}
+
+:global(.Table_divider_row .TableCell) {
+  border-block-end: var(--border-width-s) solid var(--color-border-secondary);
+}
+
+:global(.Table_divider_all .TableCell) {
+  border-block-end: var(--border-width-s) solid var(--color-border-secondary);
+}

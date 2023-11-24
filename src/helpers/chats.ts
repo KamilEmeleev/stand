@@ -189,7 +189,7 @@ export const chats: Chat[] = [
   {
     id: generateUniqKey(),
     user: {
-      name: 'Ибрагимов Вагиз',
+      name: 'Вагиз Ибрагимов',
     },
     messages: [
       {

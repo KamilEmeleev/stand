@@ -15,7 +15,7 @@ import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
 import { Link, useRoute } from 'wouter';
 
 import { useApp } from '../../AppContext.tsx';
-import { apps, App } from '../../apps.ts';
+import { apps, App } from '../../helpers';
 import { AccentList } from '../AccentList';
 import { useAppBar } from '../AppBar';
 

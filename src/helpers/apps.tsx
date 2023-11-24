@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactElement } from 'react';
 
 import {
   ChatMenuIcon,
@@ -6,9 +6,16 @@ import {
   GridIcon,
   TemplatesIcon,
   UserIcon,
+  ShopIcon,
 } from '@ozen-ui/icons';
 
-import { MainPage, ProfilePage, ChatPage, SandboxPage } from './pages';
+import {
+  MainPage,
+  ProfilePage,
+  ChatPage,
+  SandboxPage,
+  OrdersPage,
+} from '../pages';
 
 export interface App {
   title: string;
@@ -16,7 +23,7 @@ export interface App {
   count?: number;
   list?: App[];
   icon?: FC;
-  component?: FC;
+  component?: () => ReactElement;
 }
 
 export type Apps = App[];
@@ -26,19 +33,19 @@ export const apps: Apps = [
     title: 'Главная',
     link: '/',
     icon: DashboardIcon,
-    component: MainPage,
+    component: () => <MainPage />,
   },
   {
     title: 'Профиль',
     link: '/profile',
     icon: UserIcon,
-    component: ProfilePage,
+    component: () => <ProfilePage />,
   },
   {
     title: 'Онлайн чат',
     link: '/chat',
     icon: ChatMenuIcon,
-    component: ChatPage,
+    component: () => <ChatPage />,
     count: 3,
   },
   {
@@ -54,9 +61,15 @@ export const apps: Apps = [
     ],
   },
   {
+    title: 'Заказы',
+    link: '/orders',
+    icon: ShopIcon,
+    component: () => <OrdersPage />,
+  },
+  {
     title: 'Песочница',
     link: '/sandbox',
     icon: TemplatesIcon,
-    component: SandboxPage,
+    component: () => <SandboxPage />,
   },
 ];

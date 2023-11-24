@@ -7,12 +7,12 @@ import { IconButton } from '@ozen-ui/kit/IconButton';
 import { List, ListItem, ListItemIcon, ListItemText } from '@ozen-ui/kit/List';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';
-import clsx from 'clsx';
 
+import { DateIcon } from '../../components';
 import { calendar } from '../../helpers';
 
 import s from './CalendarWidget.module.css';
-import { formatDate, formatTime } from './utils';
+import { formatTime } from './utils';
 
 export const CalendarWidget = () => {
   return (
@@ -23,21 +23,12 @@ export const CalendarWidget = () => {
       </Typography>
       <List className={s.list}>
         {calendar.map(({ title, id, date }, index) => {
-          const [day, month] = formatDate(date.from);
-
           return (
             <Fragment key={id}>
               {index > 0 && <Divider color="secondary" />}
               <ListItem>
                 <ListItemIcon>
-                  <div className={clsx(s.date, [index === 0 && s.dateActive])}>
-                    <Typography align="center" variant="text-xl_1">
-                      {day}
-                    </Typography>
-                    <Typography align="center" variant="text-s">
-                      {month}
-                    </Typography>
-                  </div>
+                  <DateIcon date={date.from} active={index === 0} />
                 </ListItemIcon>
                 <ListItemText
                   primary={title}
