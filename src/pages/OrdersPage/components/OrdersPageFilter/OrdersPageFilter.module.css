@@ -1,0 +1,10 @@
+@import url('../../../../vars.modules.css');
+
+.tabs, .input, .select {
+  box-sizing: border-box;
+}
+
+.divider {
+  position: relative;
+  top: -1px;
+}

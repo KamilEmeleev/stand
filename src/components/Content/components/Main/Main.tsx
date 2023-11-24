@@ -6,7 +6,7 @@ import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
 import clsx from 'clsx';
 import { Route, useLocation } from 'wouter';
 
-import { apps } from '../../../../apps.ts';
+import { apps } from '../../../../helpers';
 
 import s from './Main.module.css';
 
