@@ -96,8 +96,8 @@ export const OrdersPageFilter: FC<OrdersPageFilterProps> = ({
             renderLeft={SortDefaultIcon}
             fullWidth
           >
-            <Option value="newest" label="Сначало новые" />
-            <Option value="oldest" label="Сначало старые" />
+            <Option value="newest" label="Сначала новые" />
+            <Option value="oldest" label="Сначала старые" />
           </Select>
         </GridItem>
       </Grid>
