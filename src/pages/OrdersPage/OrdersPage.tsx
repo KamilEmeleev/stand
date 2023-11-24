@@ -81,7 +81,6 @@ export const OrdersPage = () => {
 
   const handleClose = () => {
     off();
-    setOrder(undefined);
   };
 
   return (
@@ -103,6 +102,9 @@ export const OrdersPage = () => {
           order={order}
           open={open}
           onClose={handleClose}
+          onExited={() => {
+            setOrder(undefined);
+          }}
           loading={loading}
         />
         <OrdersPageFilter filter={filter} setFilter={setFilter} />
