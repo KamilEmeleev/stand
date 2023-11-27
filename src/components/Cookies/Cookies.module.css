@@ -6,7 +6,7 @@
   inline-size: 100%;
   border-radius: var(--border-radius-m) var(--border-radius-m) 0 0;
   transform: unset;
-  padding: var(--space-xl);
+  padding: var(--spacing-m);
   inset-block-start: unset;
   inset-inline-start: unset;
   border: none;
@@ -28,9 +28,9 @@
 
 @media (--breakpoint-m) {
   .cookies {
-    margin: var(--space-xl);
+    margin: var(--spacing-m);
     max-inline-size: 480px;
-    inline-size: calc(100% - 2 * var(--space-xl));
+    inline-size: calc(100% - 2 * var(--spacing-m));
     border-radius: var(--border-radius-m);
   }
 }

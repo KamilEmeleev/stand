@@ -2,7 +2,7 @@
   --list-gutter: 0;
   --list-gap: 0;
   --list-item-border-radius: 0;
-  --list-item-padding: var(--space-l);
+  --list-item-padding: var(--spacing-s);
 }
 
 .avatarIcon {

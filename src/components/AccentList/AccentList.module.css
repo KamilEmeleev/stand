@@ -1,12 +1,12 @@
 .accentList {
   --list-gutter: 0;
   --list-item-color: var(--color-content-accent-primary);
-  --list-item-padding: var(--space-s);
+  --list-item-padding: var(--spacing-2xs);
   --list-item-min-height: 40px;
   --list-item-border-radius: var(--border-radius-m);
   --list-item-bg-color-hover: var(--color-accent-primary);
   --list-item-bg-color-active: var(--color-accent-primary-hover);
-  --list-gap: var(--space-s);
+  --list-gap: var(--spacing-2xs);
   --list-pipka-bg-color: var(--color-accent-main-inverse);
   --list-pipka-border-radius: 0 var(--border-radius-2xs)
     var(--border-radius-2xs) 0;

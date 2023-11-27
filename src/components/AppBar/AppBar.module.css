@@ -26,7 +26,7 @@
   block-size: 100%;
   box-sizing: border-box;
   transition: inline-size 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
-  padding: var(--space-m) var(--space-m) var(--space-xl) var(--space-m);
+  padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-m) var(--spacing-xs);
   color: var(--color-accent-main-inverse);
   inline-size: var(--appbar-width);
 
