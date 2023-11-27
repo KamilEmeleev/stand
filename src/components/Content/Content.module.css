@@ -9,6 +9,13 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  &:after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+    background-color: var(--color-accent-main);
+  }
 }
 
 @media (--breakpoint-m) {
