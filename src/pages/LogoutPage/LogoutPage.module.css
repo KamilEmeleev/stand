@@ -1,0 +1,22 @@
+@import url('../../vars.modules.css');
+
+.logout {
+  block-size: 100vh;
+  inline-size: 100vw;
+  background-color: var(--color-background-main-hover);
+}
+
+.logoutForm {
+  max-inline-size: 420px;
+  margin: var(--spacing-s) auto;
+}
+
+.list {
+  --list-gutter: 0;
+}
+
+@media (--breakpoint-s) {
+  .logoutForm {
+    margin: var(--spacing-l) auto;
+  }
+}

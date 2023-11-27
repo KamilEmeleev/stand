@@ -7,6 +7,7 @@ import {
   TemplatesIcon,
   UserIcon,
   ShopIcon,
+  PowerOutlineIcon,
 } from '@ozen-ui/icons';
 
 import {
@@ -71,5 +72,10 @@ export const apps: Apps = [
     link: '/sandbox',
     icon: TemplatesIcon,
     component: () => <SandboxPage />,
+  },
+  {
+    title: ' Завершить сеанс',
+    link: '/logout',
+    icon: PowerOutlineIcon,
   },
 ];

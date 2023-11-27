@@ -4,7 +4,6 @@ import {
   ArrowDownFilledIcon,
   ArrowUpFilledIcon,
   DotIcon,
-  PowerOutlineIcon,
 } from '@ozen-ui/icons';
 import { Badge } from '@ozen-ui/kit/Badge';
 import { Collapse } from '@ozen-ui/kit/Collapse';
@@ -14,7 +13,6 @@ import { useBoolean } from '@ozen-ui/kit/useBoolean';
 import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
 import { Link, useRoute } from 'wouter';
 
-import { useApp } from '../../AppContext.tsx';
 import { apps, App } from '../../helpers';
 import { AccentList } from '../AccentList';
 import { useAppBar } from '../AppBar';
@@ -118,18 +116,11 @@ const NavigationItem: FC<App & { onClick?: () => void }> = ({
 };
 
 export const Navigation = () => {
-  const { logout } = useApp();
-
   return (
     <AccentList as="nav">
       {apps.map((app) => {
         return <NavigationItem {...app} key={app.title} />;
       })}
-      <NavigationItem
-        title="Завершить сеанс"
-        icon={PowerOutlineIcon}
-        onClick={logout}
-      />
     </AccentList>
   );
 };

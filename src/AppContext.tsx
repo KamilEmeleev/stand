@@ -9,7 +9,6 @@ import {
   useLayoutEffect,
 } from 'react';
 
-import { Paper } from '@ozen-ui/kit/Paper';
 import { SnackbarProvider } from '@ozen-ui/kit/Snackbar';
 import {
   type Theme,
@@ -17,9 +16,10 @@ import {
   themeOzenDefault,
   ThemeProvider,
 } from '@ozen-ui/kit/ThemeProvider';
+import { useLocation } from 'wouter';
 
 import s from './App.module.css';
-import { LoginPage } from './pages';
+import { LoginPage, LogoutPage } from './pages';
 
 export type App = {
   theme?: Themes;
@@ -38,6 +38,7 @@ export const useApp = () => {
 
 export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isLogin, setIsLogin] = useState(false);
+  const [location] = useLocation();
 
   const themes: { [key in Themes]: Theme } = {
     default: themeOzenDefault,
@@ -62,15 +63,22 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
     setIsLogin(false);
   };
 
+  const renderContent = () => {
+    if (!isLogin) {
+      return <LoginPage />;
+    }
+
+    if (location === '/logout') {
+      return <LogoutPage />;
+    }
+
+    return children;
+  };
+
   const [theme, setTheme] = useState<Themes>('default');
 
   return (
-    <ThemeProvider
-      background="accent"
-      theme={themes[theme]}
-      className={s.app}
-      as={Paper}
-    >
+    <ThemeProvider theme={themes[theme]} className={s.app}>
       <SnackbarProvider
         lifetime={10000}
         anchorOrigin={{
@@ -79,7 +87,7 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
         }}
       >
         <AppContext.Provider value={{ theme, setTheme, login, logout }}>
-          {isLogin ? children : <LoginPage />}
+          {renderContent()}
         </AppContext.Provider>
       </SnackbarProvider>
     </ThemeProvider>
