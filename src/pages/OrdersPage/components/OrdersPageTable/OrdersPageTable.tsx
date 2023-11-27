@@ -44,7 +44,6 @@ export const OrdersPageTable: FC<OrdersPageTableProps> = ({
               selected={id === orderId}
               key={id}
               onClick={() => handleClickOnRow?.(id)}
-              tabIndex={0}
               hover
             >
               <TableCell verticalAlign="middle">
