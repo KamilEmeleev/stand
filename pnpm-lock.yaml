@@ -6,14 +6,14 @@ settings:
 
 dependencies:
   '@ozen-ui/fonts':
-    specifier: ^0.32.1
-    version: 0.32.1
+    specifier: ^0.34.0
+    version: 0.34.0
   '@ozen-ui/icons':
-    specifier: ^0.32.1
-    version: 0.32.1(react@18.2.0)
+    specifier: ^0.34.0
+    version: 0.34.0(react@18.2.0)
   '@ozen-ui/kit':
-    specifier: ^0.32.1
-    version: 0.32.1(@ozen-ui/fonts@0.32.1)(@ozen-ui/icons@0.32.1)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^0.34.0
+    version: 0.34.0(@ozen-ui/fonts@0.34.0)(@ozen-ui/icons@0.34.0)(react-dom@18.2.0)(react@18.2.0)
   '@types/react-transition-group':
     specifier: ^4.4.8
     version: 4.4.8
@@ -667,20 +667,20 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
-  /@ozen-ui/fonts@0.32.1:
-    resolution: {integrity: sha512-zgxWWUUaZDLzLkeqzMpT17JUVDPtM6GDC9A+mCU0tM7E40CVIykEa3scJzFnACK3CBazQ01jvjhP4+af91oAqQ==}
+  /@ozen-ui/fonts@0.34.0:
+    resolution: {integrity: sha512-5qrqhSYWgIS/e3T1ed8YhdntkDatkHHSx5ovGWR0HW+7xNDfKrcQiAI3YpAlok/bTgQ2Qv7L9MsCq/PcanKhFg==}
     dev: false
 
-  /@ozen-ui/icons@0.32.1(react@18.2.0):
-    resolution: {integrity: sha512-lMNXWeOzYE7n4YfxYKODA59QXTm3jeqCtmL4lTySBzgjsVseAdb8ZvKpYa36dly1NHyJdFFRREO5BRJ8cKxPaQ==}
+  /@ozen-ui/icons@0.34.0(react@18.2.0):
+    resolution: {integrity: sha512-ovJYyJlEinXaDSrPVNmcIEusD+lzdwosjYDQyfnSIRkz33Kmmwq78ojdmQQubPp1CdybxpJqT/d2TumWA4+uCg==}
     peerDependencies:
       react: '>=17.0.2 <19.0.0'
     dependencies:
       react: 18.2.0
     dev: false
 
-  /@ozen-ui/kit@0.32.1(@ozen-ui/fonts@0.32.1)(@ozen-ui/icons@0.32.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-0yHHYstKqqrKToPfkuqJHcVLOXJz8qLxwzMibTZX92gcnXIQUPSIAiuW085JEsD7TriGD2n03EYV1VauxPbhWQ==}
+  /@ozen-ui/kit@0.34.0(@ozen-ui/fonts@0.34.0)(@ozen-ui/icons@0.34.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-HlO8nEP1iyqBvtTyvr5zN8Eo2WyLTzSOX0syxRQfA4JNbjHW9/HjpWuWcBo9WXUgrqhY/RsMOORdv0kcPFUvWQ==}
     peerDependencies:
       '@ozen-ui/fonts': latest
       '@ozen-ui/icons': latest
@@ -689,8 +689,8 @@ packages:
     dependencies:
       '@bem-react/classname': 1.6.0
       '@bem-react/classnames': 1.3.10
-      '@ozen-ui/fonts': 0.32.1
-      '@ozen-ui/icons': 0.32.1(react@18.2.0)
+      '@ozen-ui/fonts': 0.34.0
+      '@ozen-ui/icons': 0.34.0(react@18.2.0)
       '@popperjs/core': 2.11.8
       decimal.js: 10.4.3
       react: 18.2.0
