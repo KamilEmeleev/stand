@@ -8,6 +8,7 @@ import {
   UserIcon,
   ShopIcon,
   PowerOutlineIcon,
+  ChatInfoIcon,
 } from '@ozen-ui/icons';
 
 import {
@@ -16,14 +17,16 @@ import {
   ChatPage,
   SandboxPage,
   OrdersPage,
+  HelpCenterPage,
 } from '../pages';
 
 export interface App {
+  icon?: FC;
+  list?: Omit<App, 'list'>[];
   title: string;
   link?: string;
   count?: number;
-  list?: App[];
-  icon?: FC;
+  disableHeader?: boolean;
   component?: () => ReactElement;
 }
 
@@ -72,6 +75,20 @@ export const apps: Apps = [
     link: '/sandbox',
     icon: TemplatesIcon,
     component: () => <SandboxPage />,
+  },
+  {
+    title: 'Центр помощи',
+    link: '/help-center',
+    icon: ChatInfoIcon,
+    disableHeader: true,
+    component: () => <HelpCenterPage />,
+    list: [
+      {
+        title: 'Детали',
+        link: '/help-center/details',
+        component: () => <div>details</div>,
+      },
+    ],
   },
   {
     title: ' Завершить сеанс',

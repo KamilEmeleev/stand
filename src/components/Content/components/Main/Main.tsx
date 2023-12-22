@@ -32,13 +32,22 @@ export const Main = () => {
           </BreadcrumbItem>
         </Breadcrumbs>
       )}
-      <Typography variant={isMobile ? 'heading-xl' : 'heading-2xl'} as="h1">
-        {currentApp?.title}
-      </Typography>
-      {apps.map(({ link, component: Page, title }) => (
-        <Route path={link} key={title}>
-          {Page ? <Page /> : null}
-        </Route>
+      {!currentApp?.disableHeader && (
+        <Typography variant={isMobile ? 'heading-xl' : 'heading-2xl'} as="h1">
+          {currentApp?.title}
+        </Typography>
+      )}
+      {apps.map(({ link, component: Page, title, list }) => (
+        <>
+          <Route path={link} key={title}>
+            {Page ? <Page /> : null}
+          </Route>
+          {list?.map(({ link, title, component: Page }) => (
+            <Route path={link} key={title}>
+              {Page ? <Page /> : null}
+            </Route>
+          ))}
+        </>
       ))}
     </Container>
   );
