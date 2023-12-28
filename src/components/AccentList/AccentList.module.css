@@ -10,6 +10,7 @@
   --list-pipka-bg-color: var(--color-accent-main-inverse);
   --list-pipka-border-radius: 0 var(--border-radius-2xs)
     var(--border-radius-2xs) 0;
+  --list-item-children-margin-right: var(--spacing-s);
   --list-pipka-height: 16px;
   --list-pipka-width: 2px;
   position: unset;
