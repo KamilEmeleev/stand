@@ -14,3 +14,7 @@
   --list-pipka-width: 2px;
   position: unset;
 }
+
+.selectedItem {
+  background-color: var(--color-accent-primary);
+}
