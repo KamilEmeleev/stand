@@ -3,7 +3,7 @@
 .content {
   flex-grow: 1;
   border-radius: 0;
-  background-color: var(--color-background-main-hover);
+  background-color: var(--color-background-primary);
   block-size: 100vh;
   overflow-y: auto;
   box-sizing: border-box;
