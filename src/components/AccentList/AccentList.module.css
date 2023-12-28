@@ -1,5 +1,4 @@
 .accentList {
-  --list-gutter: 0;
   --list-item-color: var(--color-content-accent-primary);
   --list-item-padding: var(--spacing-2xs);
   --list-item-min-height: 40px;

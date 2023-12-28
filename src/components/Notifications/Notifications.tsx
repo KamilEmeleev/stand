@@ -31,7 +31,7 @@ export const Notifications: FC<DrawerProps> = ({ open, onClose }) => {
         <Typography variant="text-xl_1">Уведомления</Typography>
       </DrawerHeader>
       <DrawerBody className={spacing({ p: 0 })}>
-        <List className={s.list}>
+        <List className={s.list} disablePadding>
           <Divider role="separator" color="secondary" />
           <ListItemButton>
             <Stack gap="l" fullWidth align="start">

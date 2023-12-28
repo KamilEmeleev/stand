@@ -11,10 +11,6 @@
   margin: var(--spacing-s) auto;
 }
 
-.list {
-  --list-gutter: 0;
-}
-
 @media (--breakpoint-s) {
   .logoutForm {
     margin: var(--spacing-l) auto;

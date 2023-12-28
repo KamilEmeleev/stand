@@ -1,5 +1,4 @@
 .list {
-  --list-gutter: 0;
   --list-item-padding: var(--spacing-2xs) 0;
   inline-size: 100%;
 }

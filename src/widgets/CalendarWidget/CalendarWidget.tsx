@@ -21,7 +21,7 @@ export const CalendarWidget = () => {
       <Typography color="tertiary">
         События получены на основе календаря банка
       </Typography>
-      <List className={s.list}>
+      <List className={s.list} disablePadding>
         {calendar.map(({ title, id, date }, index) => {
           return (
             <Fragment key={id}>
