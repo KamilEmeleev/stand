@@ -1,0 +1,12 @@
+.search {
+  --textfield-background-color: var(--color-background-main);
+  --textfield-border-color: transparent;
+
+  &:hover {
+    --textfield-border-color: transparent;
+  }
+
+ &:global(.FieldControl_focused) {
+    --textfield-border-color: var(--color-border-action);
+  }
+}

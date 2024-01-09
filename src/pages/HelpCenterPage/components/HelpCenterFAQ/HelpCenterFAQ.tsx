@@ -1,60 +1,41 @@
-import {
-  BankIcon,
-  GiftIcon,
-  RobotIcon,
-  ShopIcon,
-  UploadCloudIcon,
-  WidgetIcon,
-} from '@ozen-ui/icons';
 import { Card } from '@ozen-ui/kit/Card';
 import { Grid, GridItem } from '@ozen-ui/kit/Grid';
-import { spacing } from '@ozen-ui/kit/MixSpacing';
+import { Link } from '@ozen-ui/kit/Link';
 import { Stack } from '@ozen-ui/kit/Stack';
-import { cnTypography, Typography } from '@ozen-ui/kit/Typography';
+import { Typography } from '@ozen-ui/kit/Typography';
+
+import { faq } from '../../../../helpers/help-center.ts';
 
 export const HelpCenterFAQ = () => {
   return (
-    <Stack direction="column" gap="3xl" className={spacing({ p: '2xl' })}>
+    <Stack direction="column" gap="xl">
       <Typography variant="text-xl_1" as="h2" align="center">
         Популярные разделы
       </Typography>
       <Grid cols={{ xs: 1, s: 3 }} gap="xl">
-        <GridItem as={Card}>
-          <Stack direction="column" gap="l" fullWidth>
-            <Typography color="tertiary">Платформа</Typography>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </Stack>
-        </GridItem>
-        <GridItem as={Card}>
-          <Stack direction="column" gap="l" fullWidth>
-            <Typography color="tertiary">Банк</Typography>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </Stack>
-        </GridItem>
-        <GridItem as={Card}>
-          <Stack direction="column" gap="l" fullWidth>
-            <Typography color="tertiary">Маркет</Typography>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </Stack>
-        </GridItem>
-        <GridItem as={Card}>
-          <Stack direction="column" gap="l" fullWidth>
-            <Typography color="tertiary">B-Cloud</Typography>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </Stack>
-        </GridItem>
-        <GridItem as={Card}>
-          <Stack direction="column" gap="l" fullWidth>
-            <Typography color="tertiary">Искусственный интеллект</Typography>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </Stack>
-        </GridItem>
-        <GridItem as={Card}>
-          <Stack direction="column" gap="l" fullWidth>
-            <Typography color="tertiary">Награды</Typography>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </Stack>
-        </GridItem>
+        {faq.map(({ id, title, description }) => (
+          <GridItem
+            as={Card}
+            key={id}
+            tabIndex={-1}
+            borderWidth="none"
+            interactive
+          >
+            <Link
+              href="/"
+              target="_blank"
+              style={{
+                inset: 0,
+                position: 'absolute',
+                borderRadius: 'inherit',
+              }}
+            />
+            <Stack key={id} direction="column" gap="l" fullWidth>
+              <Typography color="tertiary">{title}</Typography>
+              <Typography>{description}</Typography>
+            </Stack>
+          </GridItem>
+        ))}
       </Grid>
     </Stack>
   );

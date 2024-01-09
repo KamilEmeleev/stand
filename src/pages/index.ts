@@ -6,3 +6,4 @@ export * from './LogoutPage';
 export * from './SandboxPage';
 export * from './OrdersPage';
 export * from './HelpCenterPage';
+export * from './HelpCenterDetailsPage';

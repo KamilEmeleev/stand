@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, MouseEvent } from 'react';
 
 import { SearchIcon } from '@ozen-ui/icons';
 import {
@@ -7,13 +7,23 @@ import {
 } from '@ozen-ui/kit/Autocomplete';
 import { DataListOption } from '@ozen-ui/kit/DataList';
 import { ListItemText } from '@ozen-ui/kit/List';
-import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Tag } from '@ozen-ui/kit/Tag';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
 import { useLocation } from 'wouter';
 
 import { hints } from '../../../../helpers/help-center.ts';
+
+import s from './HelpCenterSearchPanel.module.css';
+
+const TAGS = [
+  'Платформа',
+  'Дисковое пространство',
+  'Получить справку или выписку',
+  'Аккаунт',
+  'Награды',
+  'Дизайн-система',
+];
 
 export const HelpCenterSearchPanel = () => {
   const [, setLocation] = useLocation();
@@ -45,10 +55,7 @@ export const HelpCenterSearchPanel = () => {
     option
   ) => {
     setValue(option);
-    // if (option?.id)
-    //   setTimeout(() => {
-    //     setLocation('/help-center/details');
-    //   }, 11500);
+    if (option?.id) setLocation(`/help-center/${option.id}`);
   };
 
   const renderOption: AutocompleteProps<(typeof hints)[0]>['renderOption'] = ({
@@ -63,8 +70,13 @@ export const HelpCenterSearchPanel = () => {
     (typeof hints)[0]
   >['searchFunction'] = (options) => options;
 
+  const handleClickOnTag = (e: MouseEvent<HTMLButtonElement>) => {
+    setOpen.on();
+    setInputValue(e.currentTarget.value);
+  };
+
   return (
-    <Stack direction="column" className={spacing({ p: '2xl' })} gap="xl">
+    <Stack direction="column" gap="2xl">
       <Autocomplete
         open={open}
         value={value}
@@ -76,76 +88,27 @@ export const HelpCenterSearchPanel = () => {
         onChange={handleChange}
         inputValue={inputValue}
         renderOption={renderOption}
-        onInputChange={handleOnInputChange}
         searchFunction={searchFunction}
-        placeholder="Найти ответ на вопрос…"
-        dataListProps={{ style: { maxHeight: 340 } }}
+        onInputChange={handleOnInputChange}
+        className={s.search}
+        placeholder="Задайте свой вопрос"
+        dataListProps={{ style: { maxHeight: 308 } }}
         fullWidth
         allowCustomValue
         disableShowChevron
         disableShowEmptyOptionsList
       />
       <Stack gap="m" align="center" justify="center" wrap fullWidth>
-        <Tag
-          label="Аккаунт"
-          value="Аккаунт"
-          variant="info"
-          as="button"
-          onClick={(e) => {
-            setOpen.on();
-            setInputValue(e.currentTarget.value);
-          }}
-        />
-        <Tag
-          label="Награды"
-          value="Награды"
-          variant="info"
-          as="button"
-          onClick={(e) => {
-            setOpen.on();
-            setInputValue(e.currentTarget.value);
-          }}
-        />
-        <Tag
-          label="Дизайн-система"
-          value="Дизайн-система"
-          variant="info"
-          as="button"
-          onClick={(e) => {
-            setOpen.on();
-            setInputValue(e.currentTarget.value);
-          }}
-        />
-        <Tag
-          label="Получить справку или выписку"
-          value="Получить справку или выписку"
-          variant="info"
-          as="button"
-          onClick={(e) => {
-            setOpen.on();
-            setInputValue(e.currentTarget.value);
-          }}
-        />
-        <Tag
-          label="Платформа"
-          value="Платформа"
-          variant="info"
-          as="button"
-          onClick={(e) => {
-            setOpen.on();
-            setInputValue(e.currentTarget.value);
-          }}
-        />
-        <Tag
-          label="Дисковое пространство"
-          value="Дисковое пространство"
-          variant="info"
-          as="button"
-          onClick={(e) => {
-            setOpen.on();
-            setInputValue(e.currentTarget.value);
-          }}
-        />
+        {TAGS.map((tag) => (
+          <Tag
+            key={tag}
+            as="button"
+            label={tag}
+            value={tag}
+            variant="info"
+            onClick={handleClickOnTag}
+          />
+        ))}
       </Stack>
     </Stack>
   );

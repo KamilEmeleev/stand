@@ -80,3 +80,42 @@ export const hints = [
     category: 'Платформа • Общая информация',
   },
 ];
+
+export const faq = [
+  {
+    id: 1,
+    title: 'Платформа',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dignissimos dolorem inventore maiores neque obcaecati perspiciatis unde voluptatum. Ad, quis?',
+  },
+  {
+    id: 2,
+    title: 'Банк',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dignissimos dolorem inventore maiores neque obcaecati perspiciatis unde voluptatum. Ad, quis?',
+  },
+  {
+    id: 3,
+    title: 'Маркет',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dignissimos dolorem inventore maiores neque obcaecati perspiciatis unde voluptatum. Ad, quis?',
+  },
+  {
+    id: 4,
+    title: 'B-Cloud',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dignissimos dolorem inventore maiores neque obcaecati perspiciatis unde voluptatum. Ad, quis?',
+  },
+  {
+    id: 5,
+    title: 'Искусственный интеллект',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dignissimos dolorem inventore maiores neque obcaecati perspiciatis unde voluptatum. Ad, quis?',
+  },
+  {
+    id: 6,
+    title: 'Награды',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dignissimos dolorem inventore maiores neque obcaecati perspiciatis unde voluptatum. Ad, quis?',
+  },
+];

@@ -38,7 +38,7 @@ export const Cookies: FC<Partial<ModalProps & { disabled: boolean }>> = ({
     >
       <Stack direction="column" gap="l" align="end">
         <Typography color="accentPrimary" align="left">
-          Мы используем файлы cookie, чтобы улучшать работу наших сервисов.
+          Мы используем файлы cookie, чтобы улучшить работу наших сервисов.
           Подробнее об этом читайте в Политике конфиденциальности.
         </Typography>
         <Button color="secondary" size="s" onClick={off} className={s.button}>
