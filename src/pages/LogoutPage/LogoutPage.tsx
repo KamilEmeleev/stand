@@ -31,7 +31,7 @@ export const LogoutPage = () => {
             <Typography variant="heading-2xl">
               Хотите покинуть платформу?
             </Typography>
-            <List className={s.list}>
+            <List disablePadding>
               <ListItem disableGutters>
                 <ListItemIcon>
                   <Avatar name={user.name} src={user.avatar.url} />

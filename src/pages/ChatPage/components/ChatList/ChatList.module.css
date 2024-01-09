@@ -7,10 +7,6 @@
   block-size: 100%;
 }
 
-.list {
-  --list-gutter: 0;
-}
-
 .selected {
   background-color: transparent;
 }

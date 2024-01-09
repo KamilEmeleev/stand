@@ -11,10 +11,12 @@ import { ListItemButton, ListItemIcon, ListItemText } from '@ozen-ui/kit/List';
 import { Tooltip } from '@ozen-ui/kit/Tooltip';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
 import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
+import clsx from 'clsx';
 import { Link, useRoute } from 'wouter';
 
 import { apps, App } from '../../helpers';
 import { AccentList } from '../AccentList';
+import s from '../AccentList/AccentList.module.css';
 import { useAppBar } from '../AppBar';
 
 const NavigationItem: FC<App & { onClick?: () => void }> = ({
@@ -42,6 +44,8 @@ const NavigationItem: FC<App & { onClick?: () => void }> = ({
     }
   };
 
+  const selected = !!link && isActive;
+
   return (
     <>
       <Tooltip
@@ -53,8 +57,9 @@ const NavigationItem: FC<App & { onClick?: () => void }> = ({
         <ListItemButton
           as={Link}
           to={link}
-          selected={!!link && isActive}
+          selected={selected}
           onClick={onClick || handeClick}
+          className={clsx([selected && s.selectedItem])}
         >
           {Icon && (
             <ListItemIcon>

@@ -36,7 +36,7 @@ export const ChatList: FC<ChatListProps> = ({
       </div>
       <Divider color="secondary" />
       <div className={s.chatListBody}>
-        <List className={s.list}>
+        <List disablePadding>
           {chats.map(({ id, user, messages }) => {
             const lastMessage = messages?.[messages.length - 1];
             const AvatarIcon = user.avatar?.icon;

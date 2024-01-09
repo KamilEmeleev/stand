@@ -9,7 +9,7 @@ export const AccentList: FC<
   ListBaseProps & { as?: ElementType; className?: string }
 > = ({ children, className, ...other }) => {
   return (
-    <List className={clsx(s.accentList, className)} {...other}>
+    <List className={clsx(s.accentList, className)} disablePadding {...other}>
       {children}
     </List>
   );

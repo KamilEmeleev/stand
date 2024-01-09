@@ -10,11 +10,3 @@
   block-size: 0;
   transition: margin-inline-end var(--transition-slow);
 }
-
-:global(.Table_divider_row .TableCell) {
-  border-block-end: var(--border-width-s) solid var(--color-border-secondary);
-}
-
-:global(.Table_divider_all .TableCell) {
-  border-block-end: var(--border-width-s) solid var(--color-border-secondary);
-}

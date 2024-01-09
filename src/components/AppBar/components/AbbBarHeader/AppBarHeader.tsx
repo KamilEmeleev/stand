@@ -8,7 +8,7 @@ export type AppBarHeaderProps = {
 
 export const AppBarHeader: FC<AppBarHeaderProps> = ({ children, ...other }) => {
   return (
-    <Stack className="AppBarHeader" gap="m" align="center" {...other}>
+    <Stack className="AppBarHeader" gap="s" align="center" {...other}>
       {children}
     </Stack>
   );
