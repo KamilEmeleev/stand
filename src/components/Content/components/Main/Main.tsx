@@ -4,9 +4,10 @@ import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { Typography } from '@ozen-ui/kit/Typography';
 import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
 import clsx from 'clsx';
-import { Route, useLocation } from 'wouter';
+import { parse } from 'regexparam';
+import { Link, Route, useLocation } from 'wouter';
 
-import { apps } from '../../../../helpers';
+import { App, navigation } from '../../../../helpers';
 
 import s from './Main.module.css';
 
@@ -15,7 +16,20 @@ export const Main = () => {
   const { m } = useBreakpoints();
   const isMobile = !m;
 
-  const currentApp = apps.find(({ link }) => link === location);
+  const locations = location
+    .split('/')
+    .filter((item) => item)
+    .reduce((acc: string[], item) => {
+      return [...acc, `${acc.join('')}/${item}`];
+    }, []);
+
+  const breadcrumbs = locations.reduce((acc: App[] | [], location) => {
+    const route = Object.values(navigation.routes).find(
+      ({ link }) => link && parse(link).pattern.test(location)
+    );
+
+    return route ? [...acc, route] : acc;
+  }, []);
 
   return (
     <Container
@@ -24,22 +38,32 @@ export const Main = () => {
       className={clsx(s.main, spacing({ pb: isMobile ? 'm' : 'xl' }))}
       gutters={{ xs: 'm', m: '2xl' }}
     >
-      {!isMobile && currentApp?.link !== '/' && (
+      {!isMobile && breadcrumbs.length > 1 && (
         <Breadcrumbs>
-          <BreadcrumbItem>Страницы</BreadcrumbItem>
-          <BreadcrumbItem aria-current="page">
-            {currentApp?.title}
-          </BreadcrumbItem>
+          {breadcrumbs.map(({ title, link }, index) => (
+            <Link to={link || ''} key={link}>
+              <BreadcrumbItem
+                key={link}
+                disabled={breadcrumbs.length - 1 === index}
+              >
+                {title}
+              </BreadcrumbItem>
+            </Link>
+          ))}
         </Breadcrumbs>
       )}
-      <Typography variant={isMobile ? 'heading-xl' : 'heading-2xl'} as="h1">
-        {currentApp?.title}
-      </Typography>
-      {apps.map(({ link, component: Page, title }) => (
-        <Route path={link} key={title}>
-          {Page ? <Page /> : null}
-        </Route>
-      ))}
+      {!breadcrumbs[0]?.disableHeader && (
+        <Typography variant={isMobile ? 'heading-xl' : 'heading-2xl'} as="h1">
+          {breadcrumbs[0]?.title}
+        </Typography>
+      )}
+      {Object.values(navigation.routes).map(
+        ({ link, component: Page, title }) => (
+          <Route path={link} key={title}>
+            {Page ? <Page /> : null}
+          </Route>
+        )
+      )}
     </Container>
   );
 };

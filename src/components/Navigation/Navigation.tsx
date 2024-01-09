@@ -14,57 +14,61 @@ import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
 import clsx from 'clsx';
 import { Link, useRoute } from 'wouter';
 
-import { apps, App } from '../../helpers';
+import { navigation } from '../../helpers';
 import { AccentList } from '../AccentList';
 import s from '../AccentList/AccentList.module.css';
 import { useAppBar } from '../AppBar';
 
-const NavigationItem: FC<App & { onClick?: () => void }> = ({
-  link = '',
-  title,
-  list,
-  count,
-  icon: Icon,
+const NavigationItem: FC<{ onClick?: () => void; name: string | string[] }> = ({
+  name,
   onClick,
 }) => {
-  const [isActive] = useRoute(link);
-  const hasList = !!list?.length;
   const [[, { off: close }], [expand]] = useAppBar();
-
   const [expandedList, { toggle }] = useBoolean(false);
+
+  const item = navigation.routes[Array.isArray(name) ? name[0] : name];
+
+  const Icon = item.icon;
+  const subItems = Array.isArray(name) ? name.slice(1) : undefined;
+
+  const hasSubItems = subItems?.length;
+
+  const [isActive] = useRoute(item.link || '404');
 
   const { m } = useBreakpoints();
   const isMobile = !m;
 
   const handeClick = () => {
-    if (hasList) {
+    if (hasSubItems) {
       toggle();
     } else {
       close?.();
     }
   };
 
-  const selected = !!link && isActive;
+  const selected = !!item.title && isActive;
 
   return (
     <>
       <Tooltip
-        label={title}
+        label={item.title}
         offset={[0, 20]}
         placement="right"
         disabled={expand || isMobile}
       >
         <ListItemButton
-          as={Link}
-          to={link}
+          {...(item.link && {
+            as: Link,
+            to: item.link || '/',
+          })}
+          className={clsx([selected && s.selectedItem])}
           selected={selected}
           onClick={onClick || handeClick}
-          className={clsx([selected && s.selectedItem])}
         >
           {Icon && (
             <ListItemIcon>
-              {!expand && count && !isMobile ? (
-                <Badge content={count} variant="dot" color="errorDark">
+              {!expand && item.count && !isMobile ? (
+                <Badge content={item.count} variant="dot" color="errorDark">
                   <Icon />
                 </Badge>
               ) : (
@@ -73,46 +77,50 @@ const NavigationItem: FC<App & { onClick?: () => void }> = ({
             </ListItemIcon>
           )}
           <ListItemText
-            primary={title}
+            primary={item.title}
             primaryTypographyProps={{ noWrap: true, color: 'accentPrimary' }}
           />
-          {count && (
+          {item.count && (
             <ListItemIcon>
-              <Badge content={count} color="errorDark" />
+              <Badge content={item.count} color="errorDark" />
             </ListItemIcon>
           )}
-          {hasList && (
+          {hasSubItems && (
             <ListItemIcon>
               {expandedList ? <ArrowUpFilledIcon /> : <ArrowDownFilledIcon />}
             </ListItemIcon>
           )}
         </ListItemButton>
       </Tooltip>
-      {hasList && (
+      {hasSubItems && (
         <Collapse expanded={expandedList} unmountOnClosed>
           <AccentList>
-            {list.map(({ title, link }, index) => (
-              <Tooltip
-                label={title}
-                offset={[0, 20]}
-                placement="right"
-                key={index}
-                disabled={expand || isMobile}
-              >
-                <ListItemButton as={Link} to={link || ''} onClick={close}>
-                  <ListItemIcon>
-                    {expand || isMobile ? null : <DotIcon />}
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={title}
-                    primaryTypographyProps={{
-                      noWrap: true,
-                      color: 'accentPrimary',
-                    }}
-                  />
-                </ListItemButton>
-              </Tooltip>
-            ))}
+            {subItems.map((name, index) => {
+              const { title, link } = navigation.routes[name];
+
+              return (
+                <Tooltip
+                  label={title}
+                  offset={[0, 20]}
+                  placement="right"
+                  key={index}
+                  disabled={expand || isMobile}
+                >
+                  <ListItemButton as={Link} to={link || ''} onClick={close}>
+                    <ListItemIcon>
+                      {expand || isMobile ? null : <DotIcon />}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={title}
+                      primaryTypographyProps={{
+                        noWrap: true,
+                        color: 'accentPrimary',
+                      }}
+                    />
+                  </ListItemButton>
+                </Tooltip>
+              );
+            })}
           </AccentList>
         </Collapse>
       )}
@@ -123,8 +131,8 @@ const NavigationItem: FC<App & { onClick?: () => void }> = ({
 export const Navigation = () => {
   return (
     <AccentList as="nav">
-      {apps.map((app) => {
-        return <NavigationItem {...app} key={app.title} />;
+      {navigation.apps.map((app, index) => {
+        return <NavigationItem name={app} key={index} />;
       })}
     </AccentList>
   );
