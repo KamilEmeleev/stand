@@ -22,5 +22,5 @@
   right: 0;
   bottom: 0;
   margin: var(--spacing-l);
-  z-index: 1001;
+  z-index: var(--z-index-popover);
 }
