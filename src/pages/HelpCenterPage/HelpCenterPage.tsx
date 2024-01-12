@@ -37,7 +37,7 @@ export const HelpCenterPage = () => {
             </Typography>
           )}
         </Stack>
-        <Stack direction="column" gap="6xl" fullWidth>
+        <Stack direction="column" gap={{ xs: '4xl', s: '6xl' }} fullWidth>
           <HelpCenterSearchPanel />
           <HelpCenterOnline />
           <HelpCenterFAQ />
