@@ -1,0 +1,25 @@
+.ava1 {
+  --avatar-bg-color: var(--color-additional-h3);
+  --avatar-color: var(--color-additional-h1);
+}
+
+.ava2 {
+  --avatar-bg-color: var(--color-additional-c3);
+  --avatar-color: var(--color-additional-c2);
+}
+
+.ava3 {
+  --avatar-bg-color: var(--color-additional-a3);
+  --avatar-color: var(--color-additional-a2);
+}
+
+.preLine {
+  white-space: pre-line;
+}
+
+.actions {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: var(--spacing-l);
+}

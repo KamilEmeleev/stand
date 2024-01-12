@@ -9,6 +9,7 @@ import {
   ShopIcon,
   PowerOutlineIcon,
   QuestionCircleOutlineIcon,
+  TrendsIcon,
 } from '@ozen-ui/icons';
 
 import {
@@ -19,6 +20,7 @@ import {
   OrdersPage,
   HelpCenterPage,
   HelpCenterDetailsPage,
+  LiveCoding,
 } from '../pages';
 
 export interface App {
@@ -63,7 +65,7 @@ const routes: { [key in string]: App } = {
     component: () => <SandboxPage />,
   },
   logout: {
-    title: ' Завершить сеанс',
+    title: 'Завершить сеанс',
     link: '/logout',
     icon: PowerOutlineIcon,
   },
@@ -91,6 +93,14 @@ const routes: { [key in string]: App } = {
       return <HelpCenterDetailsPage />;
     },
   },
+  'live-coding': {
+    title: 'Live coding',
+    icon: TrendsIcon,
+    link: '/live-coding',
+    component: () => {
+      return <LiveCoding />;
+    },
+  },
 };
 
 export type Navigation = {
@@ -106,6 +116,7 @@ export const navigation: Navigation = {
     'chat',
     'orders',
     'help-center',
+    'live-coding',
     'sandbox',
     ['level0', 'level1a', 'level1b'],
     'logout',
