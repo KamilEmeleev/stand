@@ -19,8 +19,8 @@
 
 .actions {
   position: fixed;
-  right: 0;
-  bottom: 0;
+  inset-inline-end: 0;
+  inset-block-end: 0;
   margin: var(--spacing-l);
   z-index: var(--z-index-popover);
 }

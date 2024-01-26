@@ -1,4 +1,4 @@
-import { generateUniqKey } from '@ozen-ui/kit/__inner__/cjs/utils/generateUniqKey';
+import { generateUniqKey } from '@ozen-ui/kit/__inner__/cjs/utils/generateUniqKey/generateUniqKey';
 
 import user_1 from '../assets/avatar-girl.avif';
 import user_3 from '../assets/avatar-man-2.jpg';
