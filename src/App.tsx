@@ -1,3 +1,4 @@
+import { BerekeIcon } from '@ozen-ui/icons';
 import { Divider } from '@ozen-ui/kit/Divider';
 
 import { AppProvider } from './AppContext.tsx';
@@ -14,7 +15,6 @@ import {
   AppBarProvider,
   Cookies,
 } from './components';
-import { BerekeLogo } from './icons';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
         <AppBar>
           <AppBarHeader>
             <AppBarHeaderLogo>
-              <BerekeLogo />
+              <BerekeIcon />
             </AppBarHeaderLogo>
             <AppBarHeaderTitle>Bereke Bank</AppBarHeaderTitle>
           </AppBarHeader>

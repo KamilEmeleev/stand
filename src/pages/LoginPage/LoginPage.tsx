@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 
-import { CloseEyesIcon, OpenEyesIcon } from '@ozen-ui/icons';
+import { BerekeIcon, CloseEyesIcon, OpenEyesIcon } from '@ozen-ui/icons';
 import { Button } from '@ozen-ui/kit/Button';
 import { Card } from '@ozen-ui/kit/Card';
 import { IconButton } from '@ozen-ui/kit/IconButton';
@@ -16,7 +16,6 @@ import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
 import clsx from 'clsx';
 
 import { useApp } from '../../AppContext.tsx';
-import { BerekeLogo } from '../../icons';
 
 import s from './LoginPage.module.css';
 
@@ -58,7 +57,7 @@ export const LoginPage = () => {
         <Stack direction="column" gap="xl" style={{ maxWidth: 420 }}>
           <Stack align="center" gap="l" justify="spaceBetween" fullWidth>
             <Stack align="center" gap="s" className={s.id}>
-              <BerekeLogo />
+              <BerekeIcon />
               <Typography variant="text-l_1" color="actionOn">
                 ID
               </Typography>

@@ -1,3 +1,4 @@
+import { BerekeIcon } from '@ozen-ui/icons';
 import { generateUniqKey } from '@ozen-ui/kit/__inner__/cjs/utils/generateUniqKey/generateUniqKey';
 
 import user_1 from '../assets/avatar-girl.avif';
@@ -6,7 +7,6 @@ import user_4 from '../assets/avatar-man-3.jpg';
 import user_2 from '../assets/avatar-man.avif';
 import emoji from '../assets/emoji.png';
 import img from '../assets/river.jpg';
-import { BerekeLogo } from '../icons';
 
 import { User } from './user';
 
@@ -168,7 +168,7 @@ export const chats: Chat[] = [
       name: 'Bereke Bank',
       online: true,
       avatar: {
-        icon: BerekeLogo,
+        icon: BerekeIcon,
       },
     },
     messages: [
