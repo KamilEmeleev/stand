@@ -1,5 +1,6 @@
 .AppBarBody {
   border-radius: var(--border-radius-s);
+  padding: var(--spacing-xs);
   overflow-y: scroll;
   scrollbar-width: none;
   flex-grow: 0;

@@ -12,9 +12,11 @@
   --list-item-children-margin-right: var(--spacing-s);
   --list-pipka-height: 16px;
   --list-pipka-width: 2px;
-  position: unset;
 
   :global(.ListItemButton_selected) {
     background-color: var(--color-accent-primary);
+  }
+  :global(.ListItemButton_selected:after) {
+    left: -12px
   }
 }

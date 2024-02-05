@@ -26,7 +26,7 @@ export const AppBar: FC<AppBarProps> = ({ children }) => {
             className="Toolbar"
             data-expand={expand}
             direction="column"
-            gap="m"
+            gap="0"
           >
             {children}
           </Stack>
@@ -47,7 +47,7 @@ export const AppBar: FC<AppBarProps> = ({ children }) => {
           hideCloseButton
           keepMounted
         >
-          <Stack className="Toolbar" data-expand direction="column" gap="m">
+          <Stack className="Toolbar" data-expand direction="column">
             {children}
           </Stack>
         </Drawer>
