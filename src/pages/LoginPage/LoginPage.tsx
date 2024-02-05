@@ -98,6 +98,7 @@ export const LoginPage = () => {
               label="Пароль"
               id="password"
               name="password"
+              inputProps={{ autoComplete: 'off' }}
               type={type}
               renderRight={({ size }) => (
                 <IconButton

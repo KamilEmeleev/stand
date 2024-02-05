@@ -1,6 +1,23 @@
-.main {
+@import url('../../../../vars.modules.css');
+
+main {
+  position: relative;
+  overflow-y: auto;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-s);
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+
+@media (--breakpoint-m) {
+  .container {
+    gap: var(--spacing-m);
+  }
 }

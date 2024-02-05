@@ -4,10 +4,8 @@ import { AlertOnIcon, DarkIcon, LightIcon } from '@ozen-ui/icons';
 import { Badge } from '@ozen-ui/kit/Badge';
 import { Container } from '@ozen-ui/kit/Container';
 import { IconButton } from '@ozen-ui/kit/IconButton';
-import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
-import clsx from 'clsx';
 
 import { useApp } from '../../../../AppContext.tsx';
 import { BurgerMenu } from '../../../BurgerMenu';
@@ -37,7 +35,7 @@ export const Header = () => {
       as="header"
       maxWidth="fullWidth"
       gutters={{ xs: 'm', m: '2xl' }}
-      className={clsx(s.header, spacing({ mb: 'l' }))}
+      className={s.header}
     >
       <Stack
         align="center"

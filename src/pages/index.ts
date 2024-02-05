@@ -8,3 +8,5 @@ export * from './OrdersPage';
 export * from './HelpCenterPage';
 export * from './HelpCenterDetailsPage';
 export * from './LiveCodingPage';
+export * from './IconsPage';
+export * from './GettingStartedPage';

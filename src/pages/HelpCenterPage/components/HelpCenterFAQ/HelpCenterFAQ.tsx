@@ -9,7 +9,7 @@ import { faq } from '../../../../helpers/help-center.ts';
 export const HelpCenterFAQ = () => {
   return (
     <Stack direction="column" gap="xl">
-      <Typography variant="text-xl_1" as="h2" align="center">
+      <Typography variant="text-xl_1" as="h2" align="center" color="secondary">
         Популярные разделы
       </Typography>
       <Grid cols={{ xs: 1, s: 3 }} gap="xl">

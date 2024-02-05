@@ -3,7 +3,6 @@ import { FC, ReactElement } from 'react';
 import {
   ChatMenuIcon,
   DashboardIcon,
-  GridIcon,
   TemplatesIcon,
   UserIcon,
   ShopIcon,
@@ -11,7 +10,9 @@ import {
   QuestionCircleOutlineIcon,
   TrendsIcon,
 } from '@ozen-ui/icons';
+import { type ContainerBaseProps } from '@ozen-ui/kit/Container';
 
+import { OzenLogo } from '../icons';
 import {
   MainPage,
   ProfilePage,
@@ -21,6 +22,8 @@ import {
   HelpCenterPage,
   HelpCenterDetailsPage,
   LiveCoding,
+  IconsPage,
+  GettingStartedPage,
 } from '../pages';
 
 export interface App {
@@ -28,11 +31,28 @@ export interface App {
   title: string;
   link?: string;
   count?: number;
+  containerProps?: Partial<ContainerBaseProps>;
   disableHeader?: boolean;
   component?: (params: unknown) => ReactElement;
 }
 
 const routes: { [key in string]: App } = {
+  ozenbook: {
+    title: 'Özenbook',
+    icon: OzenLogo,
+  },
+  icons: {
+    title: 'Витрина иконок',
+    link: '/ozenbook/icons',
+    containerProps: { maxWidth: 'm' },
+    component: () => <IconsPage />,
+  },
+  'getting-started': {
+    title: 'Начать работу',
+    link: '/ozenbook/getting-started',
+    containerProps: { maxWidth: 'm' },
+    component: () => <GettingStartedPage />,
+  },
   main: {
     title: 'Главная',
     link: '/',
@@ -69,21 +89,12 @@ const routes: { [key in string]: App } = {
     link: '/logout',
     icon: PowerOutlineIcon,
   },
-  level0: {
-    title: 'Уровень 0',
-    icon: GridIcon,
-  },
-  level1a: {
-    title: 'Уровень 1a',
-  },
-  level1b: {
-    title: 'Уровень 1b',
-  },
   'help-center': {
     title: 'Центр помощи',
     link: '/help-center',
     icon: QuestionCircleOutlineIcon,
     disableHeader: true,
+    containerProps: { maxWidth: 'm' },
     component: () => <HelpCenterPage />,
   },
   'help-center-details': {
@@ -118,7 +129,7 @@ export const navigation: Navigation = {
     'help-center',
     'live-coding',
     'sandbox',
-    ['level0', 'level1a', 'level1b'],
+    ['ozenbook', 'getting-started', 'icons'],
     'logout',
   ],
 };

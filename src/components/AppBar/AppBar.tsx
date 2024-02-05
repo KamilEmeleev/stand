@@ -45,6 +45,7 @@ export const AppBar: FC<AppBarProps> = ({ children }) => {
             background: 'accent',
           }}
           hideCloseButton
+          keepMounted
         >
           <Stack className="Toolbar" data-expand direction="column" gap="m">
             {children}

@@ -76,7 +76,7 @@ export const HelpCenterSearchPanel = () => {
   };
 
   return (
-    <Stack direction="column" gap="2xl">
+    <Stack direction="column" gap="xl">
       <Autocomplete
         open={open}
         value={value}

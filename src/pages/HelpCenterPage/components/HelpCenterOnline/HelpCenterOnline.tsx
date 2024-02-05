@@ -6,10 +6,14 @@ import { Card } from '@ozen-ui/kit/Card';
 import { Grid, GridItem } from '@ozen-ui/kit/Grid';
 import { Link } from '@ozen-ui/kit/Link';
 import { Stack } from '@ozen-ui/kit/Stack';
+import { Typography } from '@ozen-ui/kit/Typography';
 
 export const HelpCenterOnline = () => {
   return (
     <Stack direction="column" gap="xl">
+      <Typography variant="text-xl_1" as="h2" align="center" color="secondary">
+        Всегда на связи
+      </Typography>
       <Grid cols={{ xs: 1, s: 3 }} gap="xl">
         <GridItem as={Card} tabIndex={-1} borderWidth="none" interactive>
           <Link

@@ -8,6 +8,7 @@ import { parse } from 'regexparam';
 import { Link, Route, useLocation } from 'wouter';
 
 import { App, navigation } from '../../../../helpers';
+import { Footer } from '../Footer';
 
 import s from './Main.module.css';
 
@@ -32,38 +33,50 @@ export const Main = () => {
   }, []);
 
   return (
-    <Container
-      as="main"
-      position="center"
-      className={clsx(s.main, spacing({ pb: isMobile ? 'm' : 'xl' }))}
-      gutters={{ xs: 'm', m: '2xl' }}
-    >
-      {!isMobile && breadcrumbs.length > 1 && (
-        <Breadcrumbs>
-          {breadcrumbs.map(({ title, link }, index) => (
-            <Link to={link || ''} key={link}>
-              <BreadcrumbItem
-                key={link}
-                disabled={breadcrumbs.length - 1 === index}
-              >
-                {title}
-              </BreadcrumbItem>
-            </Link>
-          ))}
-        </Breadcrumbs>
-      )}
-      {!breadcrumbs[0]?.disableHeader && (
-        <Typography variant={isMobile ? 'heading-xl' : 'heading-2xl'} as="h1">
-          {breadcrumbs[0]?.title}
-        </Typography>
-      )}
+    <main>
       {Object.values(navigation.routes).map(
-        ({ link, component: Page, title }) => (
+        ({ link, component: Page, title, containerProps }) => (
           <Route path={link} key={title}>
-            {Page ? <Page /> : null}
+            {Page ? (
+              <Container
+                maxWidth="fullWidth"
+                position="center"
+                className={clsx(
+                  s.container,
+                  spacing({ py: isMobile ? 'm' : '2xl' })
+                )}
+                gutters={{ xs: 'm', m: '2xl' }}
+                {...containerProps}
+              >
+                {!isMobile && breadcrumbs.length > 1 && (
+                  <Breadcrumbs>
+                    {breadcrumbs.map(({ title, link }, index) => (
+                      <Link to={link || ''} key={link}>
+                        <BreadcrumbItem
+                          key={link}
+                          disabled={breadcrumbs.length - 1 === index}
+                        >
+                          {title}
+                        </BreadcrumbItem>
+                      </Link>
+                    ))}
+                  </Breadcrumbs>
+                )}
+                {!breadcrumbs[0]?.disableHeader && breadcrumbs[0]?.title && (
+                  <Typography
+                    variant={isMobile ? 'heading-xl' : 'heading-2xl'}
+                    as="h1"
+                  >
+                    {breadcrumbs[0]?.title}
+                  </Typography>
+                )}
+                <Page />
+              </Container>
+            ) : null}
           </Route>
         )
       )}
-    </Container>
+      {!isMobile && <Footer />}
+    </main>
   );
 };

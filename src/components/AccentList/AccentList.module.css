@@ -13,8 +13,8 @@
   --list-pipka-height: 16px;
   --list-pipka-width: 2px;
   position: unset;
-}
 
-.selectedItem {
-  background-color: var(--color-accent-primary);
+  :global(.ListItemButton_selected) {
+    background-color: var(--color-accent-primary);
+  }
 }

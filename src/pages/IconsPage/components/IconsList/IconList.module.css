@@ -1,0 +1,11 @@
+.card {
+  position: relative;
+  padding: var(--spacing-l) 0;
+}
+
+.badge {
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  position: absolute;
+  padding: var(--spacing-xs);
+}
