@@ -13,10 +13,10 @@
   --list-pipka-height: 16px;
   --list-pipka-width: 2px;
 
+  :global(.ListItemButton) {
+    margin: 0 var(--spacing-xs);
+  }
   :global(.ListItemButton_selected) {
     background-color: var(--color-accent-primary);
-  }
-  :global(.ListItemButton_selected:after) {
-    left: -12px
   }
 }
