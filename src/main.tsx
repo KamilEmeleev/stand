@@ -4,3 +4,5 @@ import App from './App.tsx';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(<App />);
+
+console.log('test', process.env.NODE_ENV, import.meta.env.DEV);
