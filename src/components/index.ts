@@ -6,3 +6,4 @@ export * from './Search';
 export * from './AccentList';
 export * from './Cookies';
 export * from './DateIcon';
+export * from './Actions';
