@@ -29,7 +29,9 @@ import { Tooltip } from '@ozen-ui/kit/Tooltip';
 import { Typography } from '@ozen-ui/kit/Typography';
 import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
 
-import { FigmaIcon } from './assets/FigmaIcon.tsx';
+import { Actions } from '../../components';
+import { FigmaIcon } from '../../icons';
+
 import img1 from './assets/img1.png';
 import img2 from './assets/img2.png';
 import img3 from './assets/img3.png';
@@ -299,7 +301,7 @@ export const LiveCoding = () => {
           </Stack>
         </GridItem>
       </Grid>
-      <div className={s.actions}>
+      <Actions>
         <Tooltip arrow={false} placement="top" size="xs" label="Макет">
           <IconButton
             icon={FigmaIcon}
@@ -310,7 +312,7 @@ export const LiveCoding = () => {
             href="https://www.figma.com/file/h2zzCj659L0pyzA9FamCuG/Assets-Core-%7C-%C3%96zen?node-id=7%3A195&mode=dev"
           />
         </Tooltip>
-      </div>
+      </Actions>
     </>
   );
 };
