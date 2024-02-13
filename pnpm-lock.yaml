@@ -6,17 +6,14 @@ settings:
 
 dependencies:
   '@ozen-ui/fonts':
-    specifier: ^0.37.1
-    version: 0.37.1
+    specifier: ^0.37.2
+    version: 0.37.2
   '@ozen-ui/icons':
-    specifier: ^0.37.1
-    version: 0.37.1(@ozen-ui/logger@0.37.1)(react@18.2.0)
+    specifier: ^0.37.2
+    version: 0.37.2(react@18.2.0)
   '@ozen-ui/kit':
-    specifier: ^0.37.1
-    version: 0.37.1(@ozen-ui/fonts@0.37.1)(@ozen-ui/icons@0.37.1)(@ozen-ui/logger@0.37.1)(react-dom@18.2.0)(react@18.2.0)
-  '@ozen-ui/logger':
-    specifier: ^0.37.1
-    version: 0.37.1(react@18.2.0)
+    specifier: ^0.37.2
+    version: 0.37.2(react-dom@18.2.0)(react@18.2.0)
   '@types/lodash.sortby':
     specifier: ^4.7.9
     version: 4.7.9
@@ -699,34 +696,30 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  /@ozen-ui/fonts@0.37.1:
-    resolution: {integrity: sha512-geah/q4OmPQZMWvam366djX/fGiKC+U+nEvm6E11znCzOdTYXS13PPwGjDrhwovg6MGO55rfoinQA+BwjBwDbw==}
+  /@ozen-ui/fonts@0.37.2:
+    resolution: {integrity: sha512-DAuVXMslciy9JTW2Iw1lcz4xuL1C52BxOIGqSEbPJ7n7LDz3ar6PELMKEEDGcLPosuKG3+YeregtmzUjDDdouA==}
     dev: false
 
-  /@ozen-ui/icons@0.37.1(@ozen-ui/logger@0.37.1)(react@18.2.0):
-    resolution: {integrity: sha512-Eajx8jbpkyiuKDbRsVbIoRNdfI6J1WV4EzXRU5GdwNwpXdx5KVjp4hH54QT6HFtPqZQCbil6YKU3eyvXEybngg==}
+  /@ozen-ui/icons@0.37.2(react@18.2.0):
+    resolution: {integrity: sha512-8C6v6AylVYdnQra4fnDeFybAPCb5a8ellWuKd/NdrPXF8DWZh5kslkpasp/LQUnt74yH1mg4icqj8AuxuBABNw==}
     peerDependencies:
-      '@ozen-ui/logger': latest
       react: '>=17.0.2 <19.0.0'
     dependencies:
-      '@ozen-ui/logger': 0.37.1(react@18.2.0)
+      '@ozen-ui/logger': 0.37.2(react@18.2.0)
       react: 18.2.0
     dev: false
 
-  /@ozen-ui/kit@0.37.1(@ozen-ui/fonts@0.37.1)(@ozen-ui/icons@0.37.1)(@ozen-ui/logger@0.37.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-elbKirTAORllL2rGWN8vIof5EWjyjGCiO4xpdd5HrreFgmU8bizEnucjUT2yLBSu2Xxr/D9WbZxfGDokUOCbow==}
+  /@ozen-ui/kit@0.37.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-rpEY9PD+9cZamISt0uJj5LuZmkVlQu0VCgkOWcQRf+MNrGCeQm8it1UgJREBOgLvG7zt8P3JtbiFFCj79l0hIQ==}
     peerDependencies:
-      '@ozen-ui/fonts': latest
-      '@ozen-ui/icons': latest
-      '@ozen-ui/logger': latest
       react: '>=17.0.2 <19.0.0'
       react-dom: '>=17.0.2 <19.0.0'
     dependencies:
       '@bem-react/classname': 1.6.0
       '@bem-react/classnames': 1.3.10
-      '@ozen-ui/fonts': 0.37.1
-      '@ozen-ui/icons': 0.37.1(@ozen-ui/logger@0.37.1)(react@18.2.0)
-      '@ozen-ui/logger': 0.37.1(react@18.2.0)
+      '@ozen-ui/fonts': 0.37.2
+      '@ozen-ui/icons': 0.37.2(react@18.2.0)
+      '@ozen-ui/logger': 0.37.2(react@18.2.0)
       '@popperjs/core': 2.11.8
       decimal.js: 10.4.3
       react: 18.2.0
@@ -737,8 +730,8 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@ozen-ui/logger@0.37.1(react@18.2.0):
-    resolution: {integrity: sha512-RUnocKA9LbT+HkR3uSSRCGnJF1sJkNjG5alfBvuKN+ep+GSk4+BgU3Ar/qNT7taCYhQKgfQo/naT80jozm8fgw==}
+  /@ozen-ui/logger@0.37.2(react@18.2.0):
+    resolution: {integrity: sha512-tvlSS5rBzOtDXJ7iyq02/iWTVB2LUKBs2KKuZgdCQHYM4VILyuyaacl2W7mSVpgnn3itYhl1D4FS0dIXVTAfHw==}
     peerDependencies:
       react: '>=17.0.2 <19.0.0'
     dependencies:
@@ -1414,21 +1407,20 @@ packages:
   /deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
 
-  /define-data-property@1.1.3:
-    resolution: {integrity: sha512-h3GBouC+RPtNX2N0hHVLo2ZwPYurq8mLmXpOLTsw71gr7lHt5VaI4vVkDUNOfiWmm48JEXe3VM7PmLX45AMmmg==}
+  /define-data-property@1.1.4:
+    resolution: {integrity: sha512-rBMvIzlpA8v6E+SJZoo++HAYqsLrkg7MSfIinMPFhmkorw7X+dOXVJQs+QT69zGkzMyfDnIMN2Wid1+NbL3T+A==}
     engines: {node: '>= 0.4'}
     dependencies:
+      es-define-property: 1.0.0
       es-errors: 1.3.0
-      get-intrinsic: 1.2.4
       gopd: 1.0.1
-      has-property-descriptors: 1.0.2
     dev: true
 
   /define-properties@1.2.1:
     resolution: {integrity: sha512-8QmQKqEASLd5nx0U1B1okLElbUuuttJ/AnYmRXbbbGDWh6uS208EjD4Xqq/I9wK7u0v6O08XhTWnt5XtEbR6Dg==}
     engines: {node: '>= 0.4'}
     dependencies:
-      define-data-property: 1.1.3
+      define-data-property: 1.1.4
       has-property-descriptors: 1.0.2
       object-keys: 1.1.1
     dev: true
@@ -3177,7 +3169,7 @@ packages:
     resolution: {integrity: sha512-j4t6ccc+VsKwYHso+kElc5neZpjtq9EnRICFZtWyBsLojhmeF/ZBd/elqm22WJh/BziDe/SBiOeAt0m2mfLD0g==}
     engines: {node: '>= 0.4'}
     dependencies:
-      define-data-property: 1.1.3
+      define-data-property: 1.1.4
       es-errors: 1.3.0
       function-bind: 1.1.2
       get-intrinsic: 1.2.4
@@ -3189,7 +3181,7 @@ packages:
     resolution: {integrity: sha512-tMNCiqYVkXIZgc2Hnoy2IvC/f8ezc5koaRFkCjrpWzGpCd3qbZXPzVy9MAZzK1ch/X0jvSkojys3oqJN0qCmdA==}
     engines: {node: '>= 0.4'}
     dependencies:
-      define-data-property: 1.1.3
+      define-data-property: 1.1.4
       functions-have-names: 1.2.3
       has-property-descriptors: 1.0.2
     dev: true
