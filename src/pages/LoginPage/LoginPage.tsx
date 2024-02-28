@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 
-import { BerekeIcon, CloseEyesIcon, OpenEyesIcon } from '@ozen-ui/icons';
+import { BerekeIcon, EyeCrossIcon, EyeIcon } from '@ozen-ui/icons';
 import { Button } from '@ozen-ui/kit/Button';
 import { Card } from '@ozen-ui/kit/Card';
 import { IconButton } from '@ozen-ui/kit/IconButton';
@@ -105,7 +105,7 @@ export const LoginPage = () => {
                   size={size}
                   type="button"
                   variant="function"
-                  icon={type === 'password' ? OpenEyesIcon : CloseEyesIcon}
+                  icon={type === 'password' ? EyeIcon : EyeCrossIcon}
                   onClick={() =>
                     setType(type === 'password' ? 'text' : 'password')
                   }

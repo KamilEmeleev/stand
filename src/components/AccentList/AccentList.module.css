@@ -16,6 +16,7 @@
   :global(.ListItemButton) {
     margin: 0 var(--spacing-xs);
   }
+
   :global(.ListItemButton_selected) {
     background-color: var(--color-accent-primary);
   }

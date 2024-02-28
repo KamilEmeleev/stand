@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 
-import { CloseIcon, SearchIcon, SortDefaultIcon } from '@ozen-ui/icons';
+import { CrossIcon, SearchIcon, SortDefaultIcon } from '@ozen-ui/icons';
 import { Divider } from '@ozen-ui/kit/Divider';
 import { Grid, GridItem } from '@ozen-ui/kit/Grid';
 import { IconButton } from '@ozen-ui/kit/IconButton';
@@ -73,7 +73,7 @@ export const OrdersPageFilter: FC<OrdersPageFilterProps> = ({
             renderRight={() =>
               filter.value ? (
                 <IconButton
-                  icon={CloseIcon}
+                  icon={CrossIcon}
                   tabIndex={-1}
                   variant="function"
                   onClick={() => {

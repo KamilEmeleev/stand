@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 
-import { ArrowRightIcon, TickIcon } from '@ozen-ui/icons';
+import { ArrowRightIcon, CheckIcon } from '@ozen-ui/icons';
 import { Avatar } from '@ozen-ui/kit/Avatar';
 import { Button } from '@ozen-ui/kit/Button';
 import { Divider } from '@ozen-ui/kit/Divider';
@@ -19,7 +19,7 @@ export const CompletedTasksWidget = () => {
             } as CSSProperties
           }
         >
-          <TickIcon />
+          <CheckIcon />
         </Avatar>
         <Stack direction="column">
           <Typography color="tertiary">Завершенных задач</Typography>

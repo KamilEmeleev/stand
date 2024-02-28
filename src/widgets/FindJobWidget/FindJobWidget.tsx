@@ -1,4 +1,4 @@
-import { ArrowRightIcon, Suitcase2Icon } from '@ozen-ui/icons';
+import { ArrowRightIcon, CaseIcon } from '@ozen-ui/icons';
 import { Button } from '@ozen-ui/kit/Button';
 import { Divider } from '@ozen-ui/kit/Divider';
 import { spacing } from '@ozen-ui/kit/MixSpacing';
@@ -21,7 +21,7 @@ export const FindJobWidget = () => {
             gap="m"
             className={spacing({ mb: 'xl' })}
           >
-            <Suitcase2Icon />
+            <CaseIcon />
             <span>Работа</span>
           </Typography>
           <Typography variant="text-l_1" className={spacing({ mb: 'm' })}>

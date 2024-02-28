@@ -4,11 +4,11 @@ import {
   ChatMenuIcon,
   DashboardIcon,
   TemplatesIcon,
-  UserIcon,
-  ShopIcon,
+  UserCircleOutlineIcon,
+  CartHandIcon,
   PowerOutlineIcon,
   QuestionCircleOutlineIcon,
-  TrendsIcon,
+  FlameIcon,
 } from '@ozen-ui/icons';
 import { type ContainerBaseProps } from '@ozen-ui/kit/Container';
 
@@ -62,7 +62,7 @@ const routes: { [key in string]: App } = {
   profile: {
     title: 'Профиль',
     link: '/profile',
-    icon: UserIcon,
+    icon: UserCircleOutlineIcon,
     component: () => <ProfilePage />,
   },
   chat: {
@@ -75,7 +75,7 @@ const routes: { [key in string]: App } = {
   orders: {
     title: 'Заказы',
     link: '/orders',
-    icon: ShopIcon,
+    icon: CartHandIcon,
     component: () => <OrdersPage />,
   },
   sandbox: {
@@ -106,7 +106,7 @@ const routes: { [key in string]: App } = {
   },
   'live-coding': {
     title: 'Live coding',
-    icon: TrendsIcon,
+    icon: FlameIcon,
     link: '/live-coding',
     component: () => {
       return <LiveCoding />;
