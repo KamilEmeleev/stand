@@ -6,14 +6,14 @@ settings:
 
 dependencies:
   '@ozen-ui/fonts':
-    specifier: ^0.38.0
-    version: 0.38.0
+    specifier: ^0.42.0
+    version: 0.42.0
   '@ozen-ui/icons':
-    specifier: ^0.38.0
-    version: 0.38.0(react@18.2.0)
+    specifier: ^0.42.0
+    version: 0.42.0(react@18.2.0)
   '@ozen-ui/kit':
-    specifier: ^0.38.0
-    version: 0.38.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^0.42.0
+    version: 0.42.0(react-dom@18.2.0)(react@18.2.0)
   '@types/lodash.sortby':
     specifier: ^4.7.9
     version: 4.7.9
@@ -696,30 +696,30 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  /@ozen-ui/fonts@0.38.0:
-    resolution: {integrity: sha512-hnz/icDDAK7J/ABxs2SM86/45HAVxZYHGKZDP0pxAylPZum865qeBNP6FRG1iTSWdt4ZVx8dTX32jc7QN4OVoQ==}
+  /@ozen-ui/fonts@0.42.0:
+    resolution: {integrity: sha512-0tB9tEQON2m4mpiVx9tBtGhHCWV0K6GNpTSNVHQwpIf1+wJZ6rcaQyD/Iu9L1639AagFhZ38cHXr+VQrXxTuwg==}
     dev: false
 
-  /@ozen-ui/icons@0.38.0(react@18.2.0):
-    resolution: {integrity: sha512-VD+LfPvipKTF3cuOp1z5BAv3IqxzTHMWztQo6SirnmjnE+nr3La2cgJvSblF16Y8xQPzeLn2/v/HZlwqq0OeUg==}
+  /@ozen-ui/icons@0.42.0(react@18.2.0):
+    resolution: {integrity: sha512-iwqrzUGxUFyudjVH6f8fnzgyAaKitKO13LheJlxt9gsnxvdEETfVTCT4lSEpcsSRicS544fagkeMtBkwtII52g==}
     peerDependencies:
       react: '>=17.0.2 <19.0.0'
     dependencies:
-      '@ozen-ui/logger': 0.38.0(react@18.2.0)
+      '@ozen-ui/logger': 0.42.0(react@18.2.0)
       react: 18.2.0
     dev: false
 
-  /@ozen-ui/kit@0.38.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-F4evV0ZoH2TI9LwUClghAAOJpK1+HXN7EGfS0bHHNzNtGS4K+FxIHI0BwldgV/GzlG4zY/YQrKLxDvAurKQ3Qw==}
+  /@ozen-ui/kit@0.42.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-j0hEhyNV/3a9LPEg/YbGqj++kOc8Q4HbUbiJQ6GRgcZpI3FcYUHt3qMBfbjKSe7roavl4FZMrazFHeV8+fcSVg==}
     peerDependencies:
       react: '>=17.0.2 <19.0.0'
       react-dom: '>=17.0.2 <19.0.0'
     dependencies:
       '@bem-react/classname': 1.6.0
       '@bem-react/classnames': 1.3.10
-      '@ozen-ui/fonts': 0.38.0
-      '@ozen-ui/icons': 0.38.0(react@18.2.0)
-      '@ozen-ui/logger': 0.38.0(react@18.2.0)
+      '@ozen-ui/fonts': 0.42.0
+      '@ozen-ui/icons': 0.42.0(react@18.2.0)
+      '@ozen-ui/logger': 0.42.0(react@18.2.0)
       '@popperjs/core': 2.11.8
       decimal.js: 10.4.3
       react: 18.2.0
@@ -730,8 +730,8 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@ozen-ui/logger@0.38.0(react@18.2.0):
-    resolution: {integrity: sha512-zmQq7wJb9/BreE9Eb74UGds3eIAWNxJTl+E9hvRMiRL7K0NIy7N1wVnBxxP0OCM2hmTdIAMiUYY38QahhqVUPA==}
+  /@ozen-ui/logger@0.42.0(react@18.2.0):
+    resolution: {integrity: sha512-j9aN+0/In3qwzFenZkTvnWkkV2veuj/zKlq5KWWBeIg0hCVVKAcoqWLWHw2sl6pfqOaepUPfJqpT73ywIgarfQ==}
     peerDependencies:
       react: '>=17.0.2 <19.0.0'
     dependencies:
