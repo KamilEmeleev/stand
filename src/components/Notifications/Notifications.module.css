@@ -14,9 +14,3 @@
   color: var(--color-content-action-on);
   justify-content: center;
 }
-
-@media screen and (width <= 480px) {
-  .drawer {
-    --drawer-border-radius: 0;
-  }
-}

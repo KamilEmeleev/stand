@@ -6,6 +6,6 @@
 
 @media (--breakpoint-m) {
   .img {
-    display: block;
+    display: flex;
   }
 }

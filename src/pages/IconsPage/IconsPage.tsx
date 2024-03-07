@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { type IconSize } from '@ozen-ui/icons';
-import { IconButton } from '@ozen-ui/kit/IconButton';
+import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Tooltip } from '@ozen-ui/kit/Tooltip';
 

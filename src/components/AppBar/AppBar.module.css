@@ -13,7 +13,6 @@
 
 :global(.AppBarMobile) {
   block-size: 100%;
-  border-radius: var(--drawer-border-radius);
 
   :global(.Divider) {
     border-color: var(--color-accent-primary);

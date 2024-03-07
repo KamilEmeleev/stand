@@ -1,8 +1,8 @@
 .showCase {
-  --show-case-color:  var(--color-background-primary);
+  --show-case-color: var(--color-background-primary);
   border: var(--border-width-s) dashed var(--color-border-main-hover);
   min-block-size: 120px;
-  border-radius: var(--border-radius-m);
+  border-radius: var(--border-radius-l);
   background-image: linear-gradient(45deg, var(--show-case-color) 25%, transparent 25%),
   linear-gradient(135deg, var(--show-case-color)25%, transparent 25%),
   linear-gradient(45deg, transparent 75%, var(--show-case-color) 75%),

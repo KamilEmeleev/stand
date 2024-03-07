@@ -26,7 +26,7 @@ export const Content = () => {
   }, [startTimer]);
 
   return (
-    <Paper className={s.content} radius="s">
+    <Paper className={s.content} radius="l">
       <Header />
       <Main />
     </Paper>

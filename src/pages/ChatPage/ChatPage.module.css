@@ -1,10 +1,13 @@
 @import url('../../vars.modules.css');
 
 .chat {
+  --chat-border-radius: var(--border-radius-xl);
+  border-radius: var(--chat-border-radius);
   flex-grow: 1;
   position: relative;
   overflow: hidden;
-  border-radius: var(--border-radius-m);
+  background: none;
+  padding: 0;
 }
 
 .chatContainer {
@@ -47,7 +50,7 @@
   .chatListBlock,
   .conversationBlock {
     :global(.Card) {
-      border-radius: var(--border-radius-m);
+      border-radius: var(--chat-border-radius);
     }
   }
 }
