@@ -3,7 +3,7 @@ import { FC, useState } from 'react';
 import { CrossIcon, SearchIcon, SortDefaultIcon } from '@ozen-ui/icons';
 import { Divider } from '@ozen-ui/kit/Divider';
 import { Grid, GridItem } from '@ozen-ui/kit/Grid';
-import { IconButton } from '@ozen-ui/kit/IconButton';
+import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { Input } from '@ozen-ui/kit/Input';
 import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { Option, Select, type SelectProps } from '@ozen-ui/kit/Select';

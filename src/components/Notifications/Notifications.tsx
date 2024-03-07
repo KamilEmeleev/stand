@@ -7,7 +7,7 @@ import {
   TasksIcon,
 } from '@ozen-ui/icons';
 import { Avatar } from '@ozen-ui/kit/Avatar';
-import { Button } from '@ozen-ui/kit/Button';
+import { Button } from '@ozen-ui/kit/ButtonNext';
 import { Divider } from '@ozen-ui/kit/Divider';
 import {
   Drawer,
@@ -100,7 +100,11 @@ export const Notifications: FC<DrawerProps> = ({ open, onClose }) => {
                 <Stack gap="m" className={spacing({ mt: 'l' })}>
                   <Stack gap="s">
                     <Button size="xs">Принять</Button>
-                    <Button size="xs" color="secondary">
+                    <Button
+                      size="xs"
+                      variant="contained-additional"
+                      color="secondary"
+                    >
                       Отклонить
                     </Button>
                   </Stack>

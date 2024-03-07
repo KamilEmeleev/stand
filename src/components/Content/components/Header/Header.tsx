@@ -3,7 +3,7 @@ import { useRef, useEffect } from 'react';
 import { AlertOnIcon, DarkIcon, LightIcon } from '@ozen-ui/icons';
 import { Badge } from '@ozen-ui/kit/Badge';
 import { Container } from '@ozen-ui/kit/Container';
-import { IconButton } from '@ozen-ui/kit/IconButton';
+import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
 

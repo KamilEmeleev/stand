@@ -1,5 +1,5 @@
 import { BurgerIcon } from '@ozen-ui/icons';
-import { IconButton } from '@ozen-ui/kit/IconButton';
+import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
 

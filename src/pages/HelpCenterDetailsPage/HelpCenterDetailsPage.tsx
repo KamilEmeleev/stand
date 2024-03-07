@@ -1,7 +1,7 @@
 import { ChevronLeftIcon } from '@ozen-ui/icons';
 import { Card } from '@ozen-ui/kit/Card';
 import { Container } from '@ozen-ui/kit/Container';
-import { IconButton } from '@ozen-ui/kit/IconButton';
+import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';

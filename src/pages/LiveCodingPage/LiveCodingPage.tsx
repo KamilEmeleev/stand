@@ -8,11 +8,11 @@ import {
   StarFilledIcon,
 } from '@ozen-ui/icons';
 import { Avatar } from '@ozen-ui/kit/Avatar';
-import { Button } from '@ozen-ui/kit/Button';
+import { Button } from '@ozen-ui/kit/ButtonNext';
 import { Card } from '@ozen-ui/kit/Card';
 import { Checkbox } from '@ozen-ui/kit/Checkbox';
 import { Grid, GridItem } from '@ozen-ui/kit/Grid';
-import { IconButton } from '@ozen-ui/kit/IconButton';
+import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { Input } from '@ozen-ui/kit/Input';
 import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { Segment, SegmentItem } from '@ozen-ui/kit/Segment';

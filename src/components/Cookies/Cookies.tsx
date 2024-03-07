@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Button } from '@ozen-ui/kit/Button';
+import { Button } from '@ozen-ui/kit/ButtonNext';
 import { Modal, type ModalProps } from '@ozen-ui/kit/Modal';
 import { cnPaper } from '@ozen-ui/kit/Paper';
 import { Stack } from '@ozen-ui/kit/Stack';

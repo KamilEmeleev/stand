@@ -1,6 +1,6 @@
 import { SearchIcon } from '@ozen-ui/icons';
 import { Dialog } from '@ozen-ui/kit/Dialog';
-import { IconButton } from '@ozen-ui/kit/IconButton';
+import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';

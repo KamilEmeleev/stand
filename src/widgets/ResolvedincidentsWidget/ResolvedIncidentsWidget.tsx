@@ -2,7 +2,7 @@ import { CSSProperties } from 'react';
 
 import { ArrowRightIcon, ChatInfoIcon } from '@ozen-ui/icons';
 import { Avatar } from '@ozen-ui/kit/Avatar';
-import { Button } from '@ozen-ui/kit/Button';
+import { Button } from '@ozen-ui/kit/ButtonNext';
 import { Divider } from '@ozen-ui/kit/Divider';
 import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { Stack } from '@ozen-ui/kit/Stack';

@@ -1,5 +1,5 @@
 import { Avatar } from '@ozen-ui/kit/Avatar';
-import { Button } from '@ozen-ui/kit/Button';
+import { Button } from '@ozen-ui/kit/ButtonNext';
 import { Card } from '@ozen-ui/kit/Card';
 import { Container } from '@ozen-ui/kit/Container';
 import { Link } from '@ozen-ui/kit/Link';

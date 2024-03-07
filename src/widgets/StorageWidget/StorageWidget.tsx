@@ -7,7 +7,7 @@ import {
   UploadCloudIcon,
   VideoOnIcon,
 } from '@ozen-ui/icons';
-import { IconButton } from '@ozen-ui/kit/IconButton';
+import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { Menu, MenuItem, MenuItemIcon, MenuItemText } from '@ozen-ui/kit/Menu';
 import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { ProgressBar } from '@ozen-ui/kit/ProgressBar';

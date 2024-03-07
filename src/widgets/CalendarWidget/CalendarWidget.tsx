@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 
 import { ArrowRightIcon, CalendarIcon } from '@ozen-ui/icons';
-import { Button } from '@ozen-ui/kit/Button';
+import { Button } from '@ozen-ui/kit/ButtonNext';
 import { Divider } from '@ozen-ui/kit/Divider';
-import { IconButton } from '@ozen-ui/kit/IconButton';
+import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { List, ListItem, ListItemIcon, ListItemText } from '@ozen-ui/kit/List';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';

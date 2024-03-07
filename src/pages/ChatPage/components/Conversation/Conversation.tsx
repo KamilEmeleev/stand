@@ -15,7 +15,7 @@ import { scrollContainerToElement } from '@ozen-ui/kit/__inner__/cjs/utils/scrol
 import { Avatar } from '@ozen-ui/kit/Avatar';
 import { Card } from '@ozen-ui/kit/Card';
 import { Divider } from '@ozen-ui/kit/Divider';
-import { IconButton } from '@ozen-ui/kit/IconButton';
+import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { Input } from '@ozen-ui/kit/Input';
 import { Menu, MenuItem, MenuItemIcon, MenuItemText } from '@ozen-ui/kit/Menu';
 import { spacing } from '@ozen-ui/kit/MixSpacing';

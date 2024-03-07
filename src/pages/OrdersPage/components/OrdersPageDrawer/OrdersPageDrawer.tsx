@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { BillIcon, CrossIcon, CheckIcon } from '@ozen-ui/icons';
-import { Button } from '@ozen-ui/kit/Button';
+import { Button } from '@ozen-ui/kit/ButtonNext';
 import { Divider } from '@ozen-ui/kit/Divider';
 import {
   Drawer,
@@ -122,14 +122,18 @@ export const OrdersPageDrawer: FC<OrdersPageDrawerProps> = ({
               className={spacing({ mb: 'xl' })}
               fullWidth
             >
-              <Button iconLeft={CheckIcon} size="s" variant="outlined">
+              <Button
+                iconLeft={CheckIcon}
+                size="s"
+                variant="contained-additional"
+              >
                 Принять
               </Button>
               <Button
                 iconLeft={CrossIcon}
                 size="s"
                 color="error"
-                variant="outlined"
+                variant="contained-additional"
               >
                 Отклонить
               </Button>

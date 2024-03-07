@@ -1,9 +1,9 @@
 import { FormEvent, useState } from 'react';
 
 import { BerekeIcon, EyeCrossIcon, EyeIcon } from '@ozen-ui/icons';
-import { Button } from '@ozen-ui/kit/Button';
+import { Button } from '@ozen-ui/kit/ButtonNext';
 import { Card } from '@ozen-ui/kit/Card';
-import { IconButton } from '@ozen-ui/kit/IconButton';
+import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { Input } from '@ozen-ui/kit/Input';
 import { Link } from '@ozen-ui/kit/Link';
 import { spacing } from '@ozen-ui/kit/MixSpacing';

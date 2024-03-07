@@ -11,7 +11,7 @@ import {
 import { FilterIcon, SearchIcon } from '@ozen-ui/icons';
 import { icons } from '@ozen-ui/icons/manifest.json';
 import { isKey } from '@ozen-ui/kit/__inner__/esm/utils/isKey';
-import { Button } from '@ozen-ui/kit/Button';
+import { Button } from '@ozen-ui/kit/ButtonNext';
 import { Checkbox } from '@ozen-ui/kit/Checkbox';
 import {
   DataList,

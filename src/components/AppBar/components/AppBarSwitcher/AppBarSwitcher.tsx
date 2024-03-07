@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '@ozen-ui/icons';
-import { IconButton } from '@ozen-ui/kit/IconButton';
+import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
 import { useDebounceCallback } from '@ozen-ui/kit/useDebounceCallback';
 
