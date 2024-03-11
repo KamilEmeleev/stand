@@ -24,10 +24,6 @@
 
 @media (--breakpoint-s) {
   .login {
-    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
-  }
-
-  .dark {
-    background-image: linear-gradient(to top, #000 0%, #232323 100%);
+    background: var(--color-background-primary);
   }
 }

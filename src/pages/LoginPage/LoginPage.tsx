@@ -13,7 +13,6 @@ import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
 import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
-import clsx from 'clsx';
 
 import { useApp } from '../../AppContext.tsx';
 
@@ -21,7 +20,7 @@ import s from './LoginPage.module.css';
 
 export const LoginPage = () => {
   const [loading, { on, off }] = useBoolean(false);
-  const { login, theme } = useApp();
+  const { login } = useApp();
   const { s: small } = useBreakpoints();
   const isMobile = !small;
   const [type, setType] = useState<'password' | 'text'>('password');
@@ -52,7 +51,7 @@ export const LoginPage = () => {
   };
 
   return (
-    <div className={clsx(s.login, theme === 'dark' && s.dark)}>
+    <div className={s.login}>
       <Card borderWidth="none" size="l">
         <Stack direction="column" gap="xl" style={{ maxWidth: 420 }}>
           <Stack align="center" gap="l" justify="spaceBetween" fullWidth>
@@ -113,7 +112,7 @@ export const LoginPage = () => {
               )}
               fullWidth
             />
-            <Button loading={loading} fullWidth type="submit">
+            <Button loading={loading} type="submit" fullWidth>
               Вперёд
             </Button>
             <Link align="center">У меня нет логина и пароля</Link>
