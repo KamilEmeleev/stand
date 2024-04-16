@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Card } from '@ozen-ui/kit/Card';
 import { Stack } from '@ozen-ui/kit/Stack';
@@ -6,7 +6,7 @@ import { useBoolean } from '@ozen-ui/kit/useBoolean';
 import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
 import { useTimer } from '@ozen-ui/kit/useTimer';
 
-import { orders, type Order, OrderStatus } from '../../helpers';
+import { type Order, orders } from '../../helpers';
 
 import {
   OrdersPageDrawer,
@@ -15,72 +15,33 @@ import {
 } from './components';
 import s from './OrdersPage.module.css';
 
-export type OrdersDateFilter = 'newest' | 'oldest';
-export type OrderStatusFilter = OrderStatus;
-
-export type OrdersFilter = {
-  status?: OrderStatusFilter;
-  date?: OrdersDateFilter;
-  value?: string;
-};
-
 export const OrdersPage = () => {
-  const [filter, addFilter] = useState<OrdersFilter>({
-    date: 'newest',
-    value: '',
-  });
-
-  const [order, setOrder] = useState<Order>();
-  const [open, { on, off }] = useBoolean(false);
-  const [loading, { on: onLoading, off: offLoading }] = useBoolean(false);
+  const [selectedOrder, setSelectedOrder] = useState<Order>();
+  const [filteredOrders, setFilteredOrders] = useState<Order[]>(orders);
+  const [open, setOpen] = useBoolean(false);
+  const [loading, setLoading] = useBoolean(false);
   const { m } = useBreakpoints();
   const isMobile = !m;
-
-  const setFilter = (params: OrdersFilter) => {
-    addFilter({
-      ...filter,
-      ...params,
-    });
-  };
-
-  const filteredOrders = orders
-    .filter(({ status, id }) => {
-      return (
-        (status === filter?.status || !filter?.status) &&
-        id.toLowerCase().includes(filter.value?.toLowerCase() || '')
-      );
-    })
-    .sort((a, b) => {
-      if (filter.date === 'newest') {
-        return new Date(a.date).getTime() - new Date(b.date).getTime() > 0
-          ? -1
-          : 1;
-      }
-
-      return new Date(a.date).getTime() - new Date(b.date).getTime() > 0
-        ? 1
-        : -1;
-    });
 
   const { startTimer } = useTimer({
     startTime: 0,
     endTime: 500,
     interval: 500,
-    onTimerEnd: offLoading,
+    onTimerEnd: setLoading.off,
   });
 
   useEffect(() => {
-    onLoading();
+    setLoading.on();
     startTimer();
-  }, [order, onLoading, startTimer]);
+  }, [selectedOrder, startTimer]);
 
-  const handleClickOnRow = (id: string) => {
-    setOrder(filteredOrders.find(({ id: idOrder }) => id === idOrder));
-    on();
+  const handleClickRow = (id: string) => {
+    setSelectedOrder(filteredOrders.find((order) => id === order.id));
+    setOpen.on();
   };
 
-  const handleClose = () => {
-    off();
+  const handleExited = () => {
+    setSelectedOrder(undefined);
   };
 
   return (
@@ -98,19 +59,17 @@ export const OrdersPage = () => {
           marginRight: open && !isMobile ? 480 : 0,
         }}
       >
-        <OrdersPageDrawer
-          order={order}
-          open={open}
-          onClose={handleClose}
-          onExited={() => {
-            setOrder(undefined);
-          }}
-          loading={loading}
-        />
-        <OrdersPageFilter filter={filter} setFilter={setFilter} />
+        <OrdersPageFilter orders={orders} setOrders={setFilteredOrders} />
         <OrdersPageTable
-          handleClickOnRow={handleClickOnRow}
           orders={filteredOrders}
+          handleClickOnRow={handleClickRow}
+        />
+        <OrdersPageDrawer
+          open={open}
+          loading={loading}
+          order={selectedOrder}
+          onClose={setOpen.off}
+          onExited={handleExited}
         />
       </Stack>
     </Card>
