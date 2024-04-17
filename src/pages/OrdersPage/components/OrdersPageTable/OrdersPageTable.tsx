@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { Stack } from '@ozen-ui/kit/Stack';
 import {
   Table,
   TableBody,
@@ -64,6 +65,17 @@ export const OrdersPageTable: FC<OrdersPageTableProps> = ({
               </TableCell>
             </TableRow>
           ))}
+          {!orders.length && (
+            <TableRow>
+              <TableCell colSpan={6}>
+                <Stack align="center" justify="center" fullWidth>
+                  <Typography variant="text-m_1" color="secondary">
+                    Ничего не найдено
+                  </Typography>
+                </Stack>
+              </TableCell>
+            </TableRow>
+          )}
         </TableBody>
       </Table>
     </TableContainer>
