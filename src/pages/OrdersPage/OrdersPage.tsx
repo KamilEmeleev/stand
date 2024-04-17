@@ -20,8 +20,8 @@ export const OrdersPage = () => {
   const [filteredOrders, setFilteredOrders] = useState<Order[]>(orders);
   const [open, setOpen] = useBoolean(false);
   const [loading, setLoading] = useBoolean(false);
-  const { m } = useBreakpoints();
-  const isMobile = !m;
+  const { l } = useBreakpoints();
+  const isMediumScreen = !l;
 
   const { startTimer } = useTimer({
     startTime: 0,
@@ -56,7 +56,7 @@ export const OrdersPage = () => {
         direction="column"
         className={s.container}
         style={{
-          marginRight: open && !isMobile ? 480 : 0,
+          marginRight: open && !isMediumScreen ? 480 : 0,
         }}
       >
         <OrdersPageFilter orders={orders} setOrders={setFilteredOrders} />

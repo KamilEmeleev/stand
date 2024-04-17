@@ -9,7 +9,6 @@ import {
   OrdersPageFilterByDate,
   OrdersPageFilterByNumber,
   OrdersPageFilterByStatus,
-  OrdersPageSortByDate,
 } from './components';
 import { OrdersFilter, OrdersPageFilterProps, OrdersSort } from './types.ts';
 import { dateInPeriod } from './utils.ts';
@@ -22,18 +21,11 @@ export const OrdersPageFilter: FC<OrdersPageFilterProps> = ({
     number: '',
   });
 
-  const [sort, addSort] = useState<OrdersSort>({ date: 'ASC' });
+  const [sort] = useState<OrdersSort>({ date: 'ASC' });
 
   const setFilter = (params: OrdersFilter) => {
     addFilter({
       ...filter,
-      ...params,
-    });
-  };
-
-  const setSort = (params: OrdersSort) => {
-    addSort({
-      ...sort,
       ...params,
     });
   };
@@ -72,17 +64,14 @@ export const OrdersPageFilter: FC<OrdersPageFilterProps> = ({
     <Stack gap="xl" direction="column" fullWidth>
       <OrdersPageFilterByStatus orders={orders} setFilter={setFilter} />
       <Grid cols={12} gap="l" className={spacing({ px: 'xl' })}>
-        <GridItem col={{ xs: 12, s: 12, m: 4 }}>
+        <GridItem col={{ s: 12, m: 6 }}>
           <OrdersPageFilterByNumber
             value={filter.number}
             setFilter={setFilter}
           />
         </GridItem>
-        <GridItem col={{ xs: 12, s: 7, m: 5 }}>
+        <GridItem col={{ s: 12, m: 6 }}>
           <OrdersPageFilterByDate value={filter.date} setFilter={setFilter} />
-        </GridItem>
-        <GridItem col={{ xs: 12, s: 5, m: 3 }}>
-          <OrdersPageSortByDate value={sort.date} setSort={setSort} />
         </GridItem>
       </Grid>
       <Divider color="secondary" />
