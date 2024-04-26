@@ -15,9 +15,9 @@
     "analyze": "source-map-explorer 'dist/assets/**/*.js'"
   },
   "dependencies": {
-    "@ozen-ui/fonts": "^0.48.0",
-    "@ozen-ui/icons": "^0.48.0",
-    "@ozen-ui/kit": "^0.48.0",
+    "@ozen-ui/fonts": "^0.49.1",
+    "@ozen-ui/icons": "^0.49.1",
+    "@ozen-ui/kit": "^0.49.1",
     "@types/lodash.sortby": "^4.7.9",
     "@types/react-transition-group": "^4.4.8",
     "clsx": "^2.0.0",
