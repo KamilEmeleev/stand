@@ -183,8 +183,8 @@ export const LiveCoding = () => {
           </Grid>
         </GridItem>
         <GridItem
-          col={{ xs: 12, m: 4 }}
-          colStart={{ xs: 1, m: 1 }}
+          col={{ xs: 12, l: 5 }}
+          colStart={{ xs: 1, m: 1, l: 1 }}
           as={Card}
           className={spacing({ p: 'xl' })}
           borderWidth="none"
@@ -249,7 +249,7 @@ export const LiveCoding = () => {
           </Stack>
         </GridItem>
         <GridItem
-          col={{ xs: 12, m: 8 }}
+          col={{ xs: 12, l: 7 }}
           as={Card}
           borderWidth="none"
           size="l"

@@ -43,10 +43,10 @@ export const MainPage = () => {
       <GridItem col={{ xs: 12, s: 6, m: 4 }}>
         <CreatedIssuesWidget />
       </GridItem>
-      <GridItem col={{ xs: 12, s: 12, m: 6 }}>
+      <GridItem col={{ xs: 12, s: 12, m: 7 }}>
         <FinancialTransactionsWidget />
       </GridItem>
-      <GridItem col={{ xs: 12, s: 12, m: 6 }}>
+      <GridItem col={{ xs: 12, s: 12, m: 5 }}>
         <CalendarWidget />
       </GridItem>
       <GridItem col={{ xs: 12, s: 6, m: 6 }}>

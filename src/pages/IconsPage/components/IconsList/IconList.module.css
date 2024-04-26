@@ -9,3 +9,8 @@
   position: absolute;
   padding: var(--spacing-xs);
 }
+
+.item {
+  overflow: hidden;
+  min-width: 0;
+}

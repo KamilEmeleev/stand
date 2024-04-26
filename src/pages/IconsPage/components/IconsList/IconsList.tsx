@@ -41,10 +41,12 @@ export const IconsList: FC<{ icons?: IconsProps }> = ({ icons }) => {
             iconComponents[componentName as keyof typeof iconComponents] ||
             null;
 
-          const isGhost = componentName.includes('GhostIcon');
+          const isGhost =
+            componentName.includes('GhostIcon') ||
+            componentName.includes('GhostColoredIcon');
 
           return (
-            <GridItem key={componentName}>
+            <GridItem key={componentName} className={s.item}>
               <Card
                 gap="m"
                 fullWidth
@@ -69,6 +71,7 @@ export const IconsList: FC<{ icons?: IconsProps }> = ({ icons }) => {
                 <Typography
                   color="secondary"
                   variant={isMobile ? 'text-xs' : 'text-s'}
+                  noWrap
                 >
                   {componentName}
                 </Typography>
