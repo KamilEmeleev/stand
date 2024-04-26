@@ -84,7 +84,7 @@ export const LoginPage = () => {
             onSubmit={onSubmit}
             fullWidth
           >
-            <Input label="Логин" id="login" name="login" fullWidth autoFocus />
+            <Input label="Логин" id="login" name="login" fullWidth />
             <Input
               label="Пароль"
               id="password"
