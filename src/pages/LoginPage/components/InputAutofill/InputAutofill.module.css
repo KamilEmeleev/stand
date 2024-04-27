@@ -1,0 +1,15 @@
+.input:-webkit-autofill {
+  animation-name: autofill-start;
+}
+
+.input:not(:-webkit-autofill) {
+  animation-name: autofill-cancel;
+}
+
+@keyframes autofill-start {
+  //
+}
+
+@keyframes autofill-cancel {
+  //
+}

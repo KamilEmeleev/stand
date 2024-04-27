@@ -10,18 +10,6 @@
   background: var(--color-background-main);
 }
 
-.id {
-  background-image: linear-gradient(
-    -225deg,
-    #2cd8d5 0%,
-    #6b8dd6 48%,
-    #8e37d7 100%
-  );
-  color: var(--color-content-action-on);
-  border-radius: 14px;
-  padding: 6px 12px;
-}
-
 @media (--breakpoint-s) {
   .login {
     background: var(--color-background-primary);
