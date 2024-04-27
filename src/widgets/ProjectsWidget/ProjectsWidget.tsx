@@ -1,4 +1,8 @@
-import { BerekeIcon, ExternalLinkIcon } from '@ozen-ui/icons';
+import {
+  BerekeIcon,
+  BrBerekeFilledColoredIcon,
+  ExternalLinkIcon,
+} from '@ozen-ui/icons';
 import { Card } from '@ozen-ui/kit/Card';
 import { Link } from '@ozen-ui/kit/Link';
 import { Stack } from '@ozen-ui/kit/Stack';
@@ -17,13 +21,13 @@ const projects = [
   },
   {
     id: '2',
-    icon: BerekeIcon,
+    icon: BrBerekeFilledColoredIcon,
     name: 'Интернет-банк «B-Business»',
     link: 'https://business.berekebank.kz/',
   },
   {
     id: '3',
-    icon: BerekeIcon,
+    icon: BrBerekeFilledColoredIcon,
     name: 'Интернет-банк «B-bank»',
     link: 'https://berekebank.kz/kz',
   },
