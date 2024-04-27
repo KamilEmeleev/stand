@@ -56,7 +56,7 @@ export const FinancialTransactionsWidget = () => {
 
                 return (
                   <TableRow key={index} hover>
-                    <TableCell>
+                    <TableCell verticalAlign="middle">
                       <Typography variant="text-m" noWrap>
                         {name.first}
                       </Typography>
@@ -64,7 +64,7 @@ export const FinancialTransactionsWidget = () => {
                         {name.second}
                       </Typography>
                     </TableCell>
-                    <TableCell>
+                    <TableCell verticalAlign="middle">
                       <Stack gap="m" align="center">
                         <div className={s.paymentMethod}>
                           <Icon />
@@ -79,15 +79,17 @@ export const FinancialTransactionsWidget = () => {
                         </Stack>
                       </Stack>
                     </TableCell>
-                    <TableCell>
+                    <TableCell verticalAlign="middle">
                       <Typography variant="text-m">{date}</Typography>
                     </TableCell>
-                    <TableCell>
+                    <TableCell verticalAlign="middle">
                       <Typography variant="text-m_1" noWrap>
                         {sum(amount)}
                       </Typography>
                     </TableCell>
-                    <TableCell>{transactionTypes[type]}</TableCell>
+                    <TableCell verticalAlign="middle">
+                      {transactionTypes[type]}
+                    </TableCell>
                   </TableRow>
                 );
               }
