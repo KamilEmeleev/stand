@@ -1,8 +1,4 @@
-import {
-  BerekeIcon,
-  BrBerekeFilledColoredIcon,
-  ExternalLinkIcon,
-} from '@ozen-ui/icons';
+import { BrBerekeFilledColoredIcon, ExternalLinkIcon } from '@ozen-ui/icons';
 import { Card } from '@ozen-ui/kit/Card';
 import { Link } from '@ozen-ui/kit/Link';
 import { Stack } from '@ozen-ui/kit/Stack';
