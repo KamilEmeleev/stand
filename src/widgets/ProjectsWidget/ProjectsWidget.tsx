@@ -1,17 +1,19 @@
-import { BrBerekeFilledColoredIcon, ExternalLinkIcon } from '@ozen-ui/icons';
+import {
+  BrBerekeFilledColoredIcon,
+  ExternalLinkIcon,
+  BrOzenIcon,
+} from '@ozen-ui/icons';
 import { Card } from '@ozen-ui/kit/Card';
 import { Link } from '@ozen-ui/kit/Link';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';
-
-import { OzenLogo } from '../../icons';
 
 import s from './ProjectsWidget.module.css';
 
 const projects = [
   {
     id: '1',
-    icon: OzenLogo,
+    icon: BrOzenIcon,
     name: 'Дизайн-система «Ozen»',
     link: 'https://ozen-ui.netlify.app/',
   },

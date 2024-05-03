@@ -9,10 +9,10 @@ import {
   PowerOutlineIcon,
   QuestionCircleOutlineIcon,
   FlameIcon,
+  BrOzenIcon,
 } from '@ozen-ui/icons';
 import { type ContainerBaseProps } from '@ozen-ui/kit/Container';
 
-import { OzenLogo } from '../icons';
 import {
   MainPage,
   ProfilePage,
@@ -39,7 +39,7 @@ export interface App {
 const routes: { [key in string]: App } = {
   ozenbook: {
     title: 'Özenbook',
-    icon: OzenLogo,
+    icon: BrOzenIcon,
   },
   icons: {
     title: 'Витрина иконок',

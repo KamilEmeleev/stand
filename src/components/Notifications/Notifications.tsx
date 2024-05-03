@@ -5,6 +5,7 @@ import {
   MessageIcon,
   SettingsIcon,
   TasksIcon,
+  BrOzenIcon,
 } from '@ozen-ui/icons';
 import { Avatar } from '@ozen-ui/kit/Avatar';
 import { Button } from '@ozen-ui/kit/ButtonNext';
@@ -25,7 +26,6 @@ import { Typography } from '@ozen-ui/kit/Typography';
 
 import woman from '../../assets/avatar-girl.avif';
 import man from '../../assets/avatar-man.avif';
-import { OzenLogo } from '../../icons';
 
 import s from './Notifications.module.css';
 
@@ -184,7 +184,7 @@ export const Notifications: FC<DrawerProps> = ({ open, onClose }) => {
           <ListItemButton>
             <Stack gap="l" fullWidth align="start">
               <Avatar size="s" name="Ozen">
-                <OzenLogo />
+                <BrOzenIcon />
               </Avatar>
               <Stack
                 direction="column"
