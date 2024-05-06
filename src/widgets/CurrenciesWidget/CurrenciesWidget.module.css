@@ -1,0 +1,8 @@
+.icon {
+  flex-shrink: 0;
+}
+
+.grid {
+  inline-size: 100%;
+  margin-block-end: var(--space-s);
+}

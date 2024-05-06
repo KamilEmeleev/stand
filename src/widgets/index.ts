@@ -12,3 +12,4 @@ export * from './CreatedIssuesWidget';
 export * from './FinancialTransactionsWidget';
 export * from './ResolvedincidentsWidget';
 export * from './FindJobWidget';
+export * from './CurrenciesWidget';
