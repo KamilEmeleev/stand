@@ -14,21 +14,28 @@ import {
   type Theme,
   themeOzenDark,
   themeOzenDefault,
+  themeBBusinessDark,
+  themeBBusinessDefault,
   ThemeProvider,
 } from '@ozen-ui/kit/ThemeProvider';
 import { useLocation } from 'wouter';
 
 import s from './App.module.css';
+import { Actions, ActionSettings, Cookies } from './components';
 import { LoginPage, LogoutPage } from './pages';
+
+export type ThemeColorSchema = 'light' | 'dark';
 
 export type App = {
   theme?: Themes;
   setTheme?: Dispatch<SetStateAction<Themes>>;
+  themeColorSchema?: ThemeColorSchema;
+  setThemeColorSchema?: Dispatch<SetStateAction<ThemeColorSchema>>;
   login?: () => void;
   logout?: () => void;
 };
 
-export type Themes = 'default' | 'dark';
+export type Themes = 'default' | 'custom';
 
 export const AppContext = createContext<App>({});
 
@@ -40,9 +47,15 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isLogin, setIsLogin] = useState(false);
   const [location] = useLocation();
 
-  const themes: { [key in Themes]: Theme } = {
-    default: themeOzenDefault,
-    dark: themeOzenDark,
+  const themes: { [key in Themes]: { [key in ThemeColorSchema]: Theme } } = {
+    default: {
+      light: themeOzenDefault,
+      dark: themeOzenDark,
+    },
+    custom: {
+      light: themeBBusinessDefault,
+      dark: themeBBusinessDark,
+    },
   };
 
   useLayoutEffect(() => {
@@ -77,8 +90,11 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const [theme, setTheme] = useState<Themes>('default');
 
+  const [themeColorSchema, setThemeColorSchema] =
+    useState<ThemeColorSchema>('light');
+
   return (
-    <ThemeProvider theme={themes[theme]} className={s.app}>
+    <ThemeProvider theme={themes[theme][themeColorSchema]} className={s.app}>
       <SnackbarProvider
         lifetime={10000}
         anchorOrigin={{
@@ -86,8 +102,21 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
           horizontal: 'right',
         }}
       >
-        <AppContext.Provider value={{ theme, setTheme, login, logout }}>
+        <AppContext.Provider
+          value={{
+            theme,
+            login,
+            logout,
+            setTheme,
+            themeColorSchema,
+            setThemeColorSchema,
+          }}
+        >
           {renderContent()}
+          <Cookies disabled />
+          <Actions>
+            <ActionSettings />
+          </Actions>
         </AppContext.Provider>
       </SnackbarProvider>
     </ThemeProvider>

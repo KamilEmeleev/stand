@@ -2,6 +2,8 @@
   --list-gap: 0;
   --list-item-border-radius: 0;
   --list-item-padding: var(--spacing-s);
+  max-block-size: 40vh;
+  overflow: auto;
 }
 
 .avatarIcon {
@@ -13,4 +15,9 @@
   background-color: var(--color-additional-f2);
   color: var(--color-content-action-on);
   justify-content: center;
+}
+
+.popover {
+  overflow: auto;
+  max-inline-size: 360px;
 }

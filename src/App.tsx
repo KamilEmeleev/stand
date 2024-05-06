@@ -13,7 +13,6 @@ import {
   Navigation,
   Content,
   AppBarProvider,
-  Cookies,
 } from './components';
 
 function App() {
@@ -37,7 +36,6 @@ function App() {
           </AppBarFooter>
         </AppBar>
         <Content />
-        <Cookies disabled />
       </AppBarProvider>
     </AppProvider>
   );

@@ -8,3 +8,4 @@ export * from './Cookies';
 export * from './DateIcon';
 export * from './Actions';
 export * from './BerekeID';
+export * from './Settings';

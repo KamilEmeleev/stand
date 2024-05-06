@@ -25,12 +25,8 @@ import {
   TableRow,
   TableCell,
 } from '@ozen-ui/kit/Table';
-import { Tooltip } from '@ozen-ui/kit/Tooltip';
 import { Typography } from '@ozen-ui/kit/Typography';
 import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
-
-import { Actions } from '../../components';
-import { FigmaIcon } from '../../icons';
 
 import img1 from './assets/img1.png';
 import img2 from './assets/img2.png';
@@ -95,224 +91,198 @@ export const LiveCoding = () => {
   };
 
   return (
-    <>
-      <Grid gap="l">
-        <GridItem col={{ xs: 12, m: 8 }}>
-          <Grid gap="l" cols={{ xs: 1, m: 3 }}>
-            <GridItem>
-              <Card
-                borderWidth="none"
-                size="l"
-                className={spacing({ p: 'xl' })}
-              >
-                <Stack gap="l">
-                  <Avatar size="s" className={s.ava1}>
-                    <StarFilledIcon size="s" />
-                  </Avatar>
-                  <Stack direction="column" gap="xl">
-                    <Stack direction="column">
-                      <Typography variant="text-xl_1">82</Typography>
-                      <Typography variant="text-xs">компонента</Typography>
-                    </Stack>
-                    <Button
-                      variant="function"
-                      size="s"
-                      iconRight={ArrowRightIcon}
-                      className={spacing({ mt: 'auto' })}
-                    >
-                      Начать работу
-                    </Button>
+    <Grid gap="l">
+      <GridItem col={{ xs: 12, m: 8 }}>
+        <Grid gap="l" cols={{ xs: 1, m: 3 }}>
+          <GridItem>
+            <Card borderWidth="none" size="l" className={spacing({ p: 'xl' })}>
+              <Stack gap="l">
+                <Avatar size="s" className={s.ava1}>
+                  <StarFilledIcon size="s" />
+                </Avatar>
+                <Stack direction="column" gap="xl">
+                  <Stack direction="column">
+                    <Typography variant="text-xl_1">82</Typography>
+                    <Typography variant="text-xs">компонента</Typography>
                   </Stack>
+                  <Button
+                    variant="function"
+                    size="s"
+                    iconRight={ArrowRightIcon}
+                    className={spacing({ mt: 'auto' })}
+                  >
+                    Начать работу
+                  </Button>
                 </Stack>
-              </Card>
-            </GridItem>
-            <GridItem>
-              <Card
-                borderWidth="none"
-                size="l"
-                className={spacing({ p: 'xl' })}
-              >
-                <Stack gap="l">
-                  <Avatar size="s" className={s.ava2}>
-                    <CrownFilledIcon size="s" />
-                  </Avatar>
-                  <Stack direction="column" gap="xl">
-                    <Stack direction="column">
-                      <Typography variant="text-xl_1">8</Typography>
-                      <Typography variant="text-xs">спринтов</Typography>
-                    </Stack>
-                    <Button
-                      variant="function"
-                      size="s"
-                      iconRight={ArrowRightIcon}
-                      className={spacing({ mt: 'auto' })}
-                    >
-                      Как это было
-                    </Button>
+              </Stack>
+            </Card>
+          </GridItem>
+          <GridItem>
+            <Card borderWidth="none" size="l" className={spacing({ p: 'xl' })}>
+              <Stack gap="l">
+                <Avatar size="s" className={s.ava2}>
+                  <CrownFilledIcon size="s" />
+                </Avatar>
+                <Stack direction="column" gap="xl">
+                  <Stack direction="column">
+                    <Typography variant="text-xl_1">8</Typography>
+                    <Typography variant="text-xs">спринтов</Typography>
                   </Stack>
+                  <Button
+                    variant="function"
+                    size="s"
+                    iconRight={ArrowRightIcon}
+                    className={spacing({ mt: 'auto' })}
+                  >
+                    Как это было
+                  </Button>
                 </Stack>
-              </Card>
-            </GridItem>
-            <GridItem>
-              <Card
-                borderWidth="none"
-                size="l"
-                className={spacing({ p: 'xl' })}
-              >
-                <Stack gap="l">
-                  <Avatar size="s" className={s.ava3}>
-                    <HeartFilledIcon size="s" />
-                  </Avatar>
-                  <Stack direction="column" gap="xl">
-                    <Stack direction="column">
-                      <Typography variant="text-xl_1">6</Typography>
-                      <Typography variant="text-xs">человек</Typography>
-                    </Stack>
-                    <Button
-                      variant="function"
-                      size="s"
-                      iconRight={ArrowRightIcon}
-                      className={spacing({ mt: 'auto' })}
-                    >
-                      Познакомиться
-                    </Button>
+              </Stack>
+            </Card>
+          </GridItem>
+          <GridItem>
+            <Card borderWidth="none" size="l" className={spacing({ p: 'xl' })}>
+              <Stack gap="l">
+                <Avatar size="s" className={s.ava3}>
+                  <HeartFilledIcon size="s" />
+                </Avatar>
+                <Stack direction="column" gap="xl">
+                  <Stack direction="column">
+                    <Typography variant="text-xl_1">6</Typography>
+                    <Typography variant="text-xs">человек</Typography>
                   </Stack>
+                  <Button
+                    variant="function"
+                    size="s"
+                    iconRight={ArrowRightIcon}
+                    className={spacing({ mt: 'auto' })}
+                  >
+                    Познакомиться
+                  </Button>
                 </Stack>
-              </Card>
-            </GridItem>
-          </Grid>
-        </GridItem>
-        <GridItem
-          col={{ xs: 12, l: 5 }}
-          colStart={{ xs: 1, m: 1, l: 1 }}
-          as={Card}
-          className={spacing({ p: 'xl' })}
-          borderWidth="none"
-          size="l"
-        >
-          <Stack direction="column" as="form" onSubmit={handleSubmit} fullWidth>
-            <Stack direction="column" gap="xs">
-              <Typography variant="text-l_1">
-                Присоединяйся к команде! 🔥
-              </Typography>
-              <Typography variant="text-s" color="secondary">
-                Заполните заявку и станьте частью корабля
-              </Typography>
-            </Stack>
-            <Segment
-              defaultValue="tomato"
-              className={spacing({ my: 'xl' })}
-              size="s"
-              fullWidth
-            >
-              <SegmentItem value="male">
-                {isMobile ? 'Mальчик' : 'Я – мальчик'}
-              </SegmentItem>
-              <SegmentItem value="female">
-                {isMobile ? 'Девочка' : 'Я – девочка'}
-              </SegmentItem>
-              <SegmentItem value="tomato">
-                {isMobile ? 'Томат' : 'Я – томат'}
-              </SegmentItem>
-            </Segment>
-            <Input size="s" label="Как тебя зовут?" hint="" fullWidth />
-            <Input size="s" label="Где ты живёшь?" hint="" fullWidth />
-            <Select
-              size="s"
-              label="Сколько лет ты уже варишься в IT?"
-              hint=" "
-              fullWidth
-            >
-              <Option value={1}>1 год</Option>
-              <Option value={5}>5 лет</Option>
-              <Option value={10}>10 лет</Option>
-            </Select>
-            <Checkbox
-              className={spacing({ mb: 'auto' })}
-              size="s"
-              label="Я посмотрел все серии Времени приключений!"
-            />
-            <Stack
-              align="center"
-              gap="m"
-              justify="end"
-              className={spacing({ mt: 'xl' })}
-              fullWidth
-            >
-              <Button size="s" variant="function">
-                Я уже с вами, котятки!
-              </Button>
-              <Button type="submit" size="s">
-                Присоединиться
-              </Button>
-            </Stack>
+              </Stack>
+            </Card>
+          </GridItem>
+        </Grid>
+      </GridItem>
+      <GridItem
+        col={{ xs: 12, l: 5 }}
+        colStart={{ xs: 1, m: 1, l: 1 }}
+        as={Card}
+        className={spacing({ p: 'xl' })}
+        borderWidth="none"
+        size="l"
+      >
+        <Stack direction="column" as="form" onSubmit={handleSubmit} fullWidth>
+          <Stack direction="column" gap="xs">
+            <Typography variant="text-l_1">
+              Присоединяйся к команде! 🔥
+            </Typography>
+            <Typography variant="text-s" color="secondary">
+              Заполните заявку и станьте частью корабля
+            </Typography>
           </Stack>
-        </GridItem>
-        <GridItem
-          col={{ xs: 12, l: 7 }}
-          as={Card}
-          borderWidth="none"
-          size="l"
-          className={spacing({ p: 'xl' })}
-        >
-          <Stack direction="column" gap="xl" fullWidth>
-            <Stack direction="column" gap="xs">
-              <Typography variant="text-l_1">
-                Что есть у нас в коробке?
-              </Typography>
-              <Typography variant="text-s" color="secondary">
-                Дизайн-система – это не только кнопочки, это намного больше
-              </Typography>
-            </Stack>
-            <TableContainer>
-              <Table size="s" fullWidth>
-                <TableBody>
-                  {table.map(
-                    ({ avatar, name, user_name, user_id, description }) => (
-                      <TableRow tabIndex={-1} key={name} hover>
-                        <TableCell verticalAlign="middle">
-                          <Stack gap="m" align="center">
-                            <Avatar name={name} src={avatar} size="2xs" />
-                            {name}
-                          </Stack>
-                        </TableCell>
-                        <TableCell verticalAlign="middle">
-                          {description}
-                        </TableCell>
-                        <TableCell verticalAlign="middle" className={s.preLine}>
-                          {user_id}
-                        </TableCell>
-                        <TableCell verticalAlign="middle" className={s.preLine}>
-                          {user_name}
-                        </TableCell>
-                        <TableCell verticalAlign="middle" align="right">
-                          <IconButton
-                            icon={ChevronRightIcon}
-                            size="s"
-                            compressed
-                          />
-                        </TableCell>
-                      </TableRow>
-                    )
-                  )}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </Stack>
-        </GridItem>
-      </Grid>
-      <Actions>
-        <Tooltip arrow={false} placement="top" size="xs" label="Макет">
-          <IconButton
-            icon={FigmaIcon}
-            variant="floating"
-            target="_blank"
-            rounded
-            as="a"
-            href="https://www.figma.com/file/h2zzCj659L0pyzA9FamCuG/Assets-Core-%7C-%C3%96zen?node-id=7%3A195&mode=dev"
+          <Segment
+            defaultValue="tomato"
+            className={spacing({ my: 'xl' })}
+            size="s"
+            fullWidth
+          >
+            <SegmentItem value="male">
+              {isMobile ? 'Mальчик' : 'Я – мальчик'}
+            </SegmentItem>
+            <SegmentItem value="female">
+              {isMobile ? 'Девочка' : 'Я – девочка'}
+            </SegmentItem>
+            <SegmentItem value="tomato">
+              {isMobile ? 'Томат' : 'Я – томат'}
+            </SegmentItem>
+          </Segment>
+          <Input size="s" label="Как тебя зовут?" hint="" fullWidth />
+          <Input size="s" label="Где ты живёшь?" hint="" fullWidth />
+          <Select
+            size="s"
+            label="Сколько лет ты уже варишься в IT?"
+            hint=" "
+            fullWidth
+          >
+            <Option value={1}>1 год</Option>
+            <Option value={5}>5 лет</Option>
+            <Option value={10}>10 лет</Option>
+          </Select>
+          <Checkbox
+            className={spacing({ mb: 'auto' })}
+            size="s"
+            label="Я посмотрел все серии Времени приключений!"
           />
-        </Tooltip>
-      </Actions>
-    </>
+          <Stack
+            align="center"
+            gap="m"
+            justify="end"
+            className={spacing({ mt: 'xl' })}
+            fullWidth
+          >
+            <Button size="s" variant="function">
+              Я уже с вами, котятки!
+            </Button>
+            <Button type="submit" size="s">
+              Присоединиться
+            </Button>
+          </Stack>
+        </Stack>
+      </GridItem>
+      <GridItem
+        col={{ xs: 12, l: 7 }}
+        as={Card}
+        borderWidth="none"
+        size="l"
+        className={spacing({ p: 'xl' })}
+      >
+        <Stack direction="column" gap="xl" fullWidth>
+          <Stack direction="column" gap="xs">
+            <Typography variant="text-l_1">
+              Что есть у нас в коробке?
+            </Typography>
+            <Typography variant="text-s" color="secondary">
+              Дизайн-система – это не только кнопочки, это намного больше
+            </Typography>
+          </Stack>
+          <TableContainer>
+            <Table size="s" fullWidth>
+              <TableBody>
+                {table.map(
+                  ({ avatar, name, user_name, user_id, description }) => (
+                    <TableRow tabIndex={-1} key={name} hover>
+                      <TableCell verticalAlign="middle">
+                        <Stack gap="m" align="center">
+                          <Avatar name={name} src={avatar} size="2xs" />
+                          {name}
+                        </Stack>
+                      </TableCell>
+                      <TableCell verticalAlign="middle">
+                        {description}
+                      </TableCell>
+                      <TableCell verticalAlign="middle" className={s.preLine}>
+                        {user_id}
+                      </TableCell>
+                      <TableCell verticalAlign="middle" className={s.preLine}>
+                        {user_name}
+                      </TableCell>
+                      <TableCell verticalAlign="middle" align="right">
+                        <IconButton
+                          icon={ChevronRightIcon}
+                          size="s"
+                          compressed
+                        />
+                      </TableCell>
+                    </TableRow>
+                  )
+                )}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Stack>
+      </GridItem>
+    </Grid>
   );
 };

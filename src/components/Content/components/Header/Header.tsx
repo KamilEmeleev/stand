@@ -1,13 +1,12 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 
-import { AlertOnIcon, DarkIcon, LightIcon } from '@ozen-ui/icons';
+import { AlertOnIcon, GroupUserIcon } from '@ozen-ui/icons';
 import { Badge } from '@ozen-ui/kit/Badge';
 import { Container } from '@ozen-ui/kit/Container';
 import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
 
-import { useApp } from '../../../../AppContext.tsx';
 import { BurgerMenu } from '../../../BurgerMenu';
 import Notifications from '../../../Notifications/Notifications.tsx';
 import { Search } from '../../../Search';
@@ -17,18 +16,6 @@ import s from './Header.module.css';
 export const Header = () => {
   const notificationRef = useRef<HTMLButtonElement | null>(null);
   const [open, { toggle, off }] = useBoolean(false);
-  const { theme, setTheme } = useApp();
-
-  const changeTheme = () => {
-    document.body.classList.add('disable-animation');
-    setTheme?.(theme === 'default' ? 'dark' : 'default');
-  };
-
-  useEffect(() => {
-    setTimeout(() => {
-      document.body.classList.remove('disable-animation');
-    }, 0);
-  }, [theme]);
 
   return (
     <Container
@@ -48,12 +35,7 @@ export const Header = () => {
           <Search />
         </Stack>
         <Stack gap="s" align="center">
-          <IconButton
-            variant="ghost"
-            icon={theme === 'default' ? DarkIcon : LightIcon}
-            onClick={changeTheme}
-            compressed
-          />
+          <IconButton icon={GroupUserIcon} compressed aria-label="Контакты" />
           <IconButton
             variant="ghost"
             icon={
@@ -61,12 +43,18 @@ export const Header = () => {
                 <AlertOnIcon />
               </Badge>
             }
+            aria-label="Уведомления"
             ref={notificationRef}
             onClick={toggle}
             compressed
           />
         </Stack>
-        <Notifications open={open} onClose={off} />
+        <Notifications
+          open={open}
+          onClose={off}
+          anchorRef={notificationRef}
+          placement="bottom-end"
+        />
       </Stack>
     </Container>
   );
