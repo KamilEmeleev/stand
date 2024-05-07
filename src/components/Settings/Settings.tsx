@@ -23,6 +23,12 @@ export const Settings = () => {
     set,
   } = settings;
 
+  useEffect(() => {
+    setTimeout(() => {
+      document.body.classList.remove('disable-animation');
+    }, 0);
+  }, [theme, themeColorSchema]);
+
   const changeTheme = () => {
     document.body.classList.add('disable-animation');
 
@@ -53,12 +59,6 @@ export const Settings = () => {
       };
     });
   };
-
-  useEffect(() => {
-    setTimeout(() => {
-      document.body.classList.remove('disable-animation');
-    }, 0);
-  }, [theme, themeColorSchema]);
 
   return (
     <Stack direction="column" gap="xl" fullWidth>

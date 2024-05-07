@@ -8,6 +8,7 @@ import {
   DrawerTitle,
 } from '@ozen-ui/kit/Drawer';
 import { IconButton } from '@ozen-ui/kit/IconButtonNext';
+import { Stack } from '@ozen-ui/kit/Stack';
 import { Tooltip } from '@ozen-ui/kit/Tooltip';
 import { Typography } from '@ozen-ui/kit/Typography';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
@@ -16,8 +17,6 @@ import { useApp } from '../../../../AppContext.tsx';
 import { Settings } from '../../../Settings';
 
 import s from './ActionSetting.module.css';
-
-const ACTION_SETTINGS_NAME = 'Настройки приложения';
 
 export const ActionSettings = () => {
   const {
@@ -31,8 +30,9 @@ export const ActionSettings = () => {
       <Tooltip
         arrow={false}
         size="xs"
+        disabled={open}
         placement="left"
-        label={ACTION_SETTINGS_NAME}
+        label="Настроить приложение"
       >
         <IconButton
           icon={SettingsIcon}
@@ -50,11 +50,22 @@ export const ActionSettings = () => {
         windowProps={{
           className: s.drawer,
         }}
+        hideCloseButton
         hideBackdrop
       >
         <DrawerHeader>
           <DrawerTitle>
-            <Typography variant="text-xl_1">{ACTION_SETTINGS_NAME}</Typography>
+            <Stack gap="m" align="center" justify="spaceBetween" fullWidth>
+              <Typography variant="text-xl_1">Настройки</Typography>
+              <IconButton
+                icon={RefreshIcon}
+                onClick={() => {
+                  document.body.classList.add('disable-animation');
+                  reset?.();
+                }}
+                compressed
+              />
+            </Stack>
           </DrawerTitle>
         </DrawerHeader>
         <DrawerBody>
@@ -62,13 +73,12 @@ export const ActionSettings = () => {
         </DrawerBody>
         <DrawerFooter>
           <Button
-            fullWidth
-            onClick={reset}
-            iconLeft={RefreshIcon}
-            variant="contained-additional"
+            onClick={off}
             color="secondary"
+            variant="contained-additional"
+            fullWidth
           >
-            Сбросить настройки
+            Закрыть
           </Button>
         </DrawerFooter>
       </Drawer>
