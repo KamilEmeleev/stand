@@ -1,13 +1,9 @@
 import { createContext, FC, ReactNode } from 'react';
 
-import { useBoolean } from '@ozen-ui/kit/useBoolean';
-
-// TODO: выгрузить типы из ozen-ui
-export type UseBooleanControllers = {
-  on: () => void;
-  off: () => void;
-  toggle: () => void;
-};
+import {
+  useBoolean,
+  type UseBooleanControllers,
+} from '@ozen-ui/kit/useBoolean';
 
 export type UseBooleanReturnValue = [boolean, Partial<UseBooleanControllers>];
 
