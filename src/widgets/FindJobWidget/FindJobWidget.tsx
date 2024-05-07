@@ -16,7 +16,7 @@ export const FindJobWidget = () => {
       <Stack gap="l">
         <Stack direction="column">
           <Typography
-            color="infoDark"
+            color="secondary"
             as={Stack}
             gap="m"
             className={spacing({ mb: 'xl' })}
