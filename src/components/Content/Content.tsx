@@ -4,6 +4,8 @@ import { Paper } from '@ozen-ui/kit/Paper';
 import { useSnackbar } from '@ozen-ui/kit/Snackbar';
 import { useTimer } from '@ozen-ui/kit/useTimer';
 
+import { version } from '../../../node_modules/@ozen-ui/kit/package.json';
+
 import { Header, Main } from './components';
 import s from './Content.module.css';
 
@@ -15,7 +17,8 @@ export const Content = () => {
     endTime: 2000,
     onTimerEnd: () => {
       pushMessage({
-        title: 'Демо-стенд библиотеки компонентов Ozen-UI',
+        title: 'Демо-стенд библиотеки Ozen-UI',
+        description: `Версия: ${version}`,
         status: 'success',
       });
     },
