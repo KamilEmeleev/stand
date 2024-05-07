@@ -63,7 +63,7 @@ export const OrdersPageFilter: FC<OrdersPageFilterProps> = ({
   return (
     <Stack gap="xl" direction="column" fullWidth>
       <OrdersPageFilterByStatus orders={orders} setFilter={setFilter} />
-      <Grid cols={12} gap="l" className={spacing({ px: 'xl' })}>
+      <Grid cols={{ s: 12, m: 12 }} gap="l" className={spacing({ px: 'xl' })}>
         <GridItem col={{ s: 12, m: 6 }}>
           <OrdersPageFilterByNumber
             value={filter.number}
