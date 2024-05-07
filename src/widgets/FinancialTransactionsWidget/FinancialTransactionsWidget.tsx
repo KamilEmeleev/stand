@@ -21,7 +21,7 @@ import s from './FinancialTransactionsWidget.module.css';
 import { sum } from './utils';
 
 const transactionTypes: TransactionTypes = {
-  success: <Tag variant="action" label="Исполнена" size="s" />,
+  success: <Tag variant="success" label="Исполнена" size="s" />,
   declined: <Tag variant="error" label="Отклонена" size="s" />,
 };
 
