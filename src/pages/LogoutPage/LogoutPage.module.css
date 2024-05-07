@@ -1,18 +1,24 @@
 @import url('../../vars.modules.css');
 
 .logout {
+  overflow: auto;
+  display: flex;
   block-size: 100vh;
   inline-size: 100vw;
   background-color: var(--color-background-main-hover);
 }
 
-.logoutForm {
+.container {
+  margin: 0 auto auto auto;
+}
+
+.form {
   max-inline-size: 420px;
-  margin: var(--spacing-s) auto;
+  margin: var(--spacing-s);
 }
 
 @media (--breakpoint-s) {
-  .logoutForm {
+  .form {
     margin: var(--spacing-l) auto;
   }
 }

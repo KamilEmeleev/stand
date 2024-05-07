@@ -1,7 +1,6 @@
 import { Avatar } from '@ozen-ui/kit/Avatar';
 import { Button } from '@ozen-ui/kit/ButtonNext';
 import { Card } from '@ozen-ui/kit/Card';
-import { Container } from '@ozen-ui/kit/Container';
 import { Link } from '@ozen-ui/kit/Link';
 import { List, ListItem, ListItemIcon, ListItemText } from '@ozen-ui/kit/List';
 import { Stack } from '@ozen-ui/kit/Stack';
@@ -22,11 +21,10 @@ export const LogoutPage = () => {
     setLocation('/');
   };
 
-  // TODO: disableGutters for List component
   return (
     <div className={s.logout}>
-      <Container maxWidth="fullWidth" gutters={{ xs: 'm', m: '2xl' }}>
-        <Card className={s.logoutForm} borderWidth="none" size="l">
+      <div className={s.container}>
+        <Card className={s.form} borderWidth="none" size="l">
           <Stack gap="2xl" direction="column" fullWidth>
             <Typography variant="heading-2xl">
               Хотите покинуть платформу?
@@ -50,7 +48,7 @@ export const LogoutPage = () => {
             </Link>
           </Stack>
         </Card>
-      </Container>
+      </div>
     </div>
   );
 };
