@@ -1,13 +1,19 @@
 @import url('../../vars.modules.css');
 
 .login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   inline-size: 100vw;
   block-size: 100vh;
+  display: flex;
+  overflow: auto;
   background: var(--color-background-main);
+}
+
+.container {
+  margin: auto;
+}
+
+.form {
+  margin: var(--spacing-m) 0;
 }
 
 @media (--breakpoint-s) {

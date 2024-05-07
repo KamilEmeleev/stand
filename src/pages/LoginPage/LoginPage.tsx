@@ -9,14 +9,16 @@ import s from './LoginPage.module.css';
 export const LoginPage = () => {
   return (
     <div className={s.login}>
-      <Card borderWidth="none" size="l">
-        <Stack direction="column" gap="xl" style={{ maxWidth: 420 }}>
-          <BerekeID />
-          <LoginPageHeader />
-          <LoginPageBody />
-          <LoginPageFooter />
-        </Stack>
-      </Card>
+      <div className={s.container}>
+        <Card borderWidth="none" size="l" className={s.form}>
+          <Stack direction="column" gap="xl" style={{ maxWidth: 420 }}>
+            <BerekeID />
+            <LoginPageHeader />
+            <LoginPageBody />
+            <LoginPageFooter />
+          </Stack>
+        </Card>
+      </div>
     </div>
   );
 };
