@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import { parse } from 'regexparam';
 import { Link, Route, useLocation } from 'wouter';
 
+import { useApp } from '../../../../AppContext.tsx';
 import { App, navigation } from '../../../../helpers';
 import { Footer } from '../Footer';
 
@@ -15,6 +16,7 @@ import s from './Main.module.css';
 export const Main = () => {
   const [location] = useLocation();
   const { m } = useBreakpoints();
+  const { setScrollContainerEl } = useApp();
   const isMobile = !m;
 
   const locations = location
@@ -33,7 +35,7 @@ export const Main = () => {
   }, []);
 
   return (
-    <main>
+    <main ref={(el) => setScrollContainerEl?.(el)}>
       {Object.values(navigation.routes).map(
         ({ link, component: Page, title, containerProps }) => (
           <Route path={link} key={title}>

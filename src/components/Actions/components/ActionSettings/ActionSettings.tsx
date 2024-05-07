@@ -12,11 +12,18 @@ import { Tooltip } from '@ozen-ui/kit/Tooltip';
 import { Typography } from '@ozen-ui/kit/Typography';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
 
+import { useApp } from '../../../../AppContext.tsx';
 import { Settings } from '../../../Settings';
+
+import s from './ActionSetting.module.css';
 
 const ACTION_SETTINGS_NAME = 'Настройки приложения';
 
 export const ActionSettings = () => {
+  const {
+    settings: { reset },
+  } = useApp();
+
   const [open, { toggle, off }] = useBoolean(false);
 
   return (
@@ -24,7 +31,7 @@ export const ActionSettings = () => {
       <Tooltip
         arrow={false}
         size="xs"
-        placement="top-end"
+        placement="left"
         label={ACTION_SETTINGS_NAME}
       >
         <IconButton
@@ -39,13 +46,15 @@ export const ActionSettings = () => {
         size="s"
         open={open}
         onClose={off}
-        variant="little"
         placement="right"
+        windowProps={{
+          className: s.drawer,
+        }}
         hideBackdrop
       >
         <DrawerHeader>
           <DrawerTitle>
-            <Typography variant="text-l_1">{ACTION_SETTINGS_NAME}</Typography>
+            <Typography variant="text-xl_1">{ACTION_SETTINGS_NAME}</Typography>
           </DrawerTitle>
         </DrawerHeader>
         <DrawerBody>
@@ -54,12 +63,12 @@ export const ActionSettings = () => {
         <DrawerFooter>
           <Button
             fullWidth
-            size="s"
+            onClick={reset}
             iconLeft={RefreshIcon}
             variant="contained-additional"
             color="secondary"
           >
-            Вернуть по умолчанию
+            Сбросить настройки
           </Button>
         </DrawerFooter>
       </Drawer>

@@ -9,6 +9,7 @@ import {
   useLayoutEffect,
 } from 'react';
 
+import { enUS, kkKZ, ruRU } from '@ozen-ui/kit/locale';
 import { SnackbarProvider } from '@ozen-ui/kit/Snackbar';
 import {
   type Theme,
@@ -17,27 +18,56 @@ import {
   themeBBusinessDark,
   themeBBusinessDefault,
   ThemeProvider,
+  extendTheme,
 } from '@ozen-ui/kit/ThemeProvider';
 import { useLocation } from 'wouter';
 
 import s from './App.module.css';
-import { Actions, ActionSettings, Cookies } from './components';
+import {
+  Actions,
+  ActionScrollTop,
+  ActionSettings,
+  Cookies,
+} from './components';
 import { LoginPage, LogoutPage } from './pages';
 
 export type ThemeColorSchema = 'light' | 'dark';
+export type Themes = 'default' | 'custom';
+export type ThemeLocale = 'en' | 'ru' | 'kz';
+
+const locales = {
+  en: enUS,
+  ru: ruRU,
+  kz: kkKZ,
+};
+
+export type AppSettings = {
+  theme: Themes;
+  themeColorSchema: ThemeColorSchema;
+  locale: ThemeLocale;
+};
+
+const initialStateSettings: AppSettings = {
+  theme: 'default',
+  themeColorSchema: 'light',
+  locale: 'ru',
+};
 
 export type App = {
-  theme?: Themes;
-  setTheme?: Dispatch<SetStateAction<Themes>>;
-  themeColorSchema?: ThemeColorSchema;
-  setThemeColorSchema?: Dispatch<SetStateAction<ThemeColorSchema>>;
+  settings: {
+    state: AppSettings;
+    set?: Dispatch<SetStateAction<AppSettings>>;
+    reset?: () => void;
+  };
+  scrollContainerEl?: HTMLElement | null;
+  setScrollContainerEl?: Dispatch<SetStateAction<HTMLElement | null>>;
   login?: () => void;
   logout?: () => void;
 };
 
-export type Themes = 'default' | 'custom';
-
-export const AppContext = createContext<App>({});
+export const AppContext = createContext<App>({
+  settings: { state: initialStateSettings },
+});
 
 export const useApp = () => {
   return useContext(AppContext);
@@ -45,6 +75,10 @@ export const useApp = () => {
 
 export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isLogin, setIsLogin] = useState(false);
+
+  const [scrollContainerEl, setScrollContainerEl] =
+    useState<HTMLElement | null>(null);
+
   const [location] = useLocation();
 
   const themes: { [key in Themes]: { [key in ThemeColorSchema]: Theme } } = {
@@ -88,13 +122,16 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
     return children;
   };
 
-  const [theme, setTheme] = useState<Themes>('default');
-
-  const [themeColorSchema, setThemeColorSchema] =
-    useState<ThemeColorSchema>('light');
+  const [settings, setSettings] = useState(initialStateSettings);
 
   return (
-    <ThemeProvider theme={themes[theme][themeColorSchema]} className={s.app}>
+    <ThemeProvider
+      theme={extendTheme(
+        themes[settings.theme][settings.themeColorSchema],
+        locales[settings.locale]
+      )}
+      className={s.app}
+    >
       <SnackbarProvider
         lifetime={10000}
         anchorOrigin={{
@@ -104,17 +141,21 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
       >
         <AppContext.Provider
           value={{
-            theme,
             login,
             logout,
-            setTheme,
-            themeColorSchema,
-            setThemeColorSchema,
+            settings: {
+              state: settings,
+              set: setSettings,
+              reset: () => setSettings(initialStateSettings),
+            },
+            scrollContainerEl,
+            setScrollContainerEl,
           }}
         >
           {renderContent()}
           <Cookies disabled />
           <Actions>
+            <ActionScrollTop />
             <ActionSettings />
           </Actions>
         </AppContext.Provider>
