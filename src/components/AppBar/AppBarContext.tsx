@@ -16,7 +16,7 @@ export const AppBarContext = createContext<AppBarContext>([
 
 export const AppBarProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const openState = useBoolean(false);
-  const expandState = useBoolean(false);
+  const expandState = useBoolean(true);
 
   return (
     <AppBarContext.Provider value={[openState, expandState]}>
