@@ -28,19 +28,19 @@ export const ProfilePage = () => {
       <GridItem col={{ xs: 1, m: 6, l: 4 }}>
         <SocialActivityWidget />
       </GridItem>
-      <GridItem col={{ xs: 1, m: 6, l: 4 }}>
+      <GridItem col={{ xs: 1, m: 6, l: 3 }}>
         <StorageWidget />
       </GridItem>
-      <GridItem col={{ xs: 1, m: 12, l: 4 }}>
+      <GridItem col={{ xs: 1, m: 12, l: 5 }}>
         <CalendarWidget />
       </GridItem>
       <GridItem col={{ xs: 1, m: 6, l: 4 }}>
         <ProjectsWidget />
       </GridItem>
-      <GridItem col={{ xs: 1, m: 6, l: 4 }}>
+      <GridItem col={{ xs: 1, m: 6, l: 5 }}>
         <GeneralInfoWidget />
       </GridItem>
-      <GridItem col={{ xs: 1, m: 12, l: 4 }}>
+      <GridItem col={{ xs: 1, m: 12, l: 3 }}>
         <NotificationControlsWidget />
       </GridItem>
     </Grid>

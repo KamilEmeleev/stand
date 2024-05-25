@@ -41,7 +41,7 @@ export const Main = () => {
           <Route path={link} key={title}>
             {Page ? (
               <Container
-                maxWidth="l"
+                maxWidth="fullWidth"
                 position="center"
                 className={clsx(
                   s.container,
