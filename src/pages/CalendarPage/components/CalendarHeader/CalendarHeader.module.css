@@ -1,0 +1,5 @@
+.calendarHeader {
+  border-bottom: var(--border-width-s) solid var(--color-border-secondary);
+  padding: var(--spacing-m);
+  box-sizing: border-box;
+}

@@ -11,7 +11,7 @@ import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';
 
 import { DateIcon } from '../../components';
-import { calendar } from '../../helpers';
+import { calendarEvents } from '../../helpers';
 
 import s from './CalendarWidget.module.css';
 import { formatTime } from './utils';
@@ -35,17 +35,23 @@ export const CalendarWidget = () => {
         События получены на основе календаря банка
       </Typography>
       <List className={s.list} disablePadding>
-        {calendar.map(({ title, id, date }, index) => {
+        {calendarEvents.map(({ title, id, date }, index) => {
           return (
             <Fragment key={id}>
               {index > 0 && <Divider color="secondary" />}
               <ListItem>
                 <ListItemIcon>
-                  <DateIcon date={date.from} active={index === 0} />
+                  <DateIcon
+                    date={date.from.toISOString()}
+                    active={index === 0}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary={title}
-                  secondary={formatTime(date.from, date.to)}
+                  secondary={formatTime(
+                    date.from.toISOString(),
+                    date.to.toISOString()
+                  )}
                 />
                 <ListItemIcon>
                   <IconButton

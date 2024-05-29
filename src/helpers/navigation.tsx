@@ -10,6 +10,7 @@ import {
   QuestionCircleOutlineIcon,
   FlameIcon,
   BrOzenIcon,
+  CalendarIcon,
 } from '@ozen-ui/icons';
 import { type ContainerBaseProps } from '@ozen-ui/kit/Container';
 
@@ -24,6 +25,7 @@ import {
   LiveCoding,
   IconsPage,
   GettingStartedPage,
+  CalendarPage,
 } from '../pages';
 
 export interface App {
@@ -78,6 +80,12 @@ const routes: { [key in string]: App } = {
     icon: CartHandIcon,
     component: () => <OrdersPage />,
   },
+  calendar: {
+    title: 'Календарь',
+    link: '/calendar',
+    icon: CalendarIcon,
+    component: () => <CalendarPage />,
+  },
   sandbox: {
     title: 'Песочница',
     link: '/sandbox',
@@ -126,6 +134,7 @@ export const navigation: Navigation = {
     'profile',
     'chat',
     'orders',
+    'calendar',
     'help-center',
     'live-coding',
     'sandbox',

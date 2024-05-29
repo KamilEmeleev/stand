@@ -1,44 +1,54 @@
+const now = new Date();
+
+type CalendarEventColor = 'green' | 'red' | 'blue';
+
 export interface CalendarEvent {
-  id: string;
+  id: string | number;
   date: {
-    from: string;
-    to: string;
+    from: Date;
+    to: Date;
   };
   title: string;
+  color?: CalendarEventColor;
 }
 
-export type Calendar = CalendarEvent[];
-export const calendar: Calendar = [
+export type CalendarEvents = CalendarEvent[];
+
+export const calendarEvents: CalendarEvents = [
   {
-    id: 'calendar1',
+    id: 1,
     date: {
-      from: '2023-10-06T14:00:00.000Z',
-      to: '2023-10-06T15:00:00.000Z',
+      from: new Date(now.getFullYear(), now.getMonth(), 1, 9, 30),
+      to: new Date(now.getFullYear(), now.getMonth(), 1, 10),
+    },
+    title: 'Ежедневный митинг',
+    color: 'green',
+  },
+  {
+    id: 2,
+    date: {
+      from: new Date(now.getFullYear(), now.getMonth(), 2, 9, 30),
+      to: new Date(now.getFullYear(), now.getMonth(), 2, 10),
+    },
+    title: 'Ежедневный митинг',
+    color: 'green',
+  },
+  {
+    id: 3,
+    date: {
+      from: new Date(now.getFullYear(), now.getMonth(), 3, 9, 30),
+      to: new Date(now.getFullYear(), now.getMonth(), 3, 10),
+    },
+    title: 'Ежедневный митинг',
+    color: 'green',
+  },
+  {
+    id: 4,
+    date: {
+      from: new Date(now.getFullYear(), now.getMonth(), 15, 11),
+      to: new Date(now.getFullYear(), now.getMonth(), 15, 12),
     },
     title: 'Встреча с заказчиком',
-  },
-  {
-    id: 'calendar2',
-    date: {
-      from: '2023-10-07T07:00:00.000Z',
-      to: '2023-10-07T07:30:00.000Z',
-    },
-    title: 'Ежедневный митинг',
-  },
-  {
-    id: 'calendar3',
-    date: {
-      from: '2023-10-08T07:00:00.000Z',
-      to: '2023-10-08T07:30:00.000Z',
-    },
-    title: 'Ежедневный митинг',
-  },
-  {
-    id: 'calendar4',
-    date: {
-      from: '2023-10-09T07:00:00.000Z',
-      to: '2023-10-09T07:30:00.000Z',
-    },
-    title: 'Ежедневный митинг',
+    color: 'red',
   },
 ];
