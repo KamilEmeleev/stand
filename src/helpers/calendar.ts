@@ -1,6 +1,8 @@
+import { TagVariant } from '@ozen-ui/kit/Tag';
+
 const now = new Date();
 
-type CalendarEventColor = 'green' | 'red' | 'blue';
+type CalendarEventColor = TagVariant;
 
 export interface CalendarEvent {
   id: string | number;
@@ -22,7 +24,7 @@ export const calendarEvents: CalendarEvents = [
       to: new Date(now.getFullYear(), now.getMonth(), 1, 10),
     },
     title: 'Ежедневный митинг',
-    color: 'green',
+    color: 'action',
   },
   {
     id: 2,
@@ -31,7 +33,7 @@ export const calendarEvents: CalendarEvents = [
       to: new Date(now.getFullYear(), now.getMonth(), 2, 10),
     },
     title: 'Ежедневный митинг',
-    color: 'green',
+    color: 'action',
   },
   {
     id: 3,
@@ -40,7 +42,7 @@ export const calendarEvents: CalendarEvents = [
       to: new Date(now.getFullYear(), now.getMonth(), 3, 10),
     },
     title: 'Ежедневный митинг',
-    color: 'green',
+    color: 'action',
   },
   {
     id: 4,
@@ -49,6 +51,6 @@ export const calendarEvents: CalendarEvents = [
       to: new Date(now.getFullYear(), now.getMonth(), 15, 12),
     },
     title: 'Встреча с заказчиком',
-    color: 'red',
+    color: 'error',
   },
 ];

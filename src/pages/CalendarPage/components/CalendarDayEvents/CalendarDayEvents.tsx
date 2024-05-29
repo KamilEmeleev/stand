@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
+import { Tag } from '@ozen-ui/kit/Tag';
 import { Typography } from '@ozen-ui/kit/Typography';
-import clsx from 'clsx';
 
 import { calendarEvents } from '../../../../helpers';
 import { compareDate, Day, getTime } from '../../../../utils';
@@ -19,17 +19,18 @@ export const CalendarDayEvents: FC<CalendarDayEventsProps> = ({ day }) => {
         .filter(({ date }) => compareDate(date.from, day.$date))
         .map(({ date, title, color }, index) => {
           return (
-            <button
+            <Tag
               key={index}
-              className={clsx(s.dayEvent, s[color || 'green'])}
-            >
-              <Typography variant="text-s" align="left" noWrap>
-                <Typography variant="text-s_1" as="span">
+              as="button"
+              label={title}
+              variant={color}
+              className={s.dayEvent}
+              iconLeft={() => (
+                <Typography color="inherit" variant="text-s_1">
                   {getTime(date.from)}
                 </Typography>
-                &nbsp;{title}
-              </Typography>
-            </button>
+              )}
+            />
           );
         })}
     </div>

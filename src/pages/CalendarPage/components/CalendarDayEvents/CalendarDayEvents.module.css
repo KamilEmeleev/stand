@@ -7,18 +7,7 @@
 }
 
 .dayEvent {
-  width: 100%;
-  padding: 4px;
-  cursor: pointer;
-  background-color: var(--color-additional-b3);
-  border-radius: var(--border-radius-s);
-  border: none;
-}
-
-.dayEvent:where(.green) {
-  background-color: var(--color-background-success-light);
-}
-
-.dayEvent:where(.red) {
-  background-color: var(--color-background-error-light);
+  box-sizing: border-box;
+  max-width: 100%;
+  white-space: nowrap;
 }
