@@ -1,0 +1,24 @@
+.dayEvents {
+  min-height: 60px;
+  display: flex;
+  gap: var(--spacing-3xs);
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dayEvent {
+  width: 100%;
+  padding: 4px;
+  cursor: pointer;
+  background-color: var(--color-additional-b3);
+  border-radius: var(--border-radius-s);
+  border: none;
+}
+
+.dayEvent:where(.green) {
+  background-color: var(--color-background-success-light);
+}
+
+.dayEvent:where(.red) {
+  background-color: var(--color-background-error-light);
+}
