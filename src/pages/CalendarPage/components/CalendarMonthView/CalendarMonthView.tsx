@@ -44,7 +44,11 @@ export const CalendarMonthView = () => {
               <TableCell
                 {...dayButton(day)}
                 key={`${day.$date}`}
-                className={clsx(s.monthTableCell, [day.now && s.today])}
+                className={clsx(
+                  s.monthTableCell,
+                  [day.now && s.today],
+                  [day.selected && s.selected]
+                )}
               >
                 <Typography
                   align="right"
