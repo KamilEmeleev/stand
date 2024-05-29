@@ -2,6 +2,7 @@ export type Day = {
   $date: Date;
   date: number;
   now: boolean;
+  selected: boolean;
   inCurrentMonth: boolean;
 };
 

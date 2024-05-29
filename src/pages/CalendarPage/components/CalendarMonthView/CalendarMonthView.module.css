@@ -8,7 +8,7 @@
 .monthTableCell {
   padding: var(--spacing-xs);
 
-  &.today {
+  &.today, &.selected {
     background-color: var(--color-background-primary);
   }
 }
