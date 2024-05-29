@@ -1,3 +1,5 @@
+import { HTMLAttributes, type MouseEvent } from 'react';
+
 export type Day = {
   $date: Date;
   date: number;
@@ -33,8 +35,11 @@ export type UseCalendarControlOffset = (
 
 export type UseCalendarControls = {
   offset: UseCalendarControlOffset;
-  dayButton: (date: Day) => {
-    onClick: () => void;
+  dayButton: (
+    date: Day,
+    props?: HTMLAttributes<HTMLElement>
+  ) => {
+    onClick: (e: MouseEvent<HTMLElement>) => void;
   };
 };
 
@@ -48,6 +53,7 @@ export type UseCalendarConfig = {
 // out
 export type UseCalendarReturn = {
   data: {
+    date: Date | null;
     calendars: Array<Calendar>;
     weekDays: Array<string | number>;
   };

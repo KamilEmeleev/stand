@@ -1,4 +1,3 @@
-import { spacing } from '@ozen-ui/kit/MixSpacing';
 import {
   Table,
   TableBody,
@@ -7,13 +6,13 @@ import {
   TableRow,
 } from '@ozen-ui/kit/Table';
 import { Typography } from '@ozen-ui/kit/Typography';
-import clsx from 'clsx';
+import { useBoolean } from '@ozen-ui/kit/useBoolean';
 
 import { type Day } from '../../../../utils';
 import { useCalendarPage } from '../../CalendarPageContext.ts';
-import { CalendarDayEvents } from '../CalendarDayEvents';
 
 import s from './CalendarMonthView.module.css';
+import { CalendarMonthViewCell, CalendarMonthViewDrawer } from './components';
 import { rowsDays } from './utils';
 
 export const CalendarMonthView = () => {
@@ -22,47 +21,39 @@ export const CalendarMonthView = () => {
     controls: { dayButton },
   } = useCalendarPage();
 
+  const [open, { off, toggle }] = useBoolean(false);
+
   const { days } = calendars[0];
 
   return (
-    <Table className={s.monthTable} divider="all" fullWidth compressed>
-      <TableHead>
-        <TableRow>
-          {weekDays.map((weekDay) => (
-            <TableCell align="left" key={weekDay}>
-              <Typography variant="text-s_1" align="center" color="secondary">
-                {`${weekDay}`.toUpperCase()}
-              </Typography>
-            </TableCell>
-          ))}
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {rowsDays<Day>(days).map((row, index) => (
-          <TableRow key={index}>
-            {row.map((day) => (
-              <TableCell
-                {...dayButton(day)}
-                key={`${day.$date}`}
-                className={clsx(
-                  s.monthTableCell,
-                  [day.now && s.today],
-                  [day.selected && s.selected]
-                )}
-              >
-                <Typography
-                  align="right"
-                  {...(!day.inCurrentMonth && { color: 'disabled' })}
-                  className={spacing({ mb: 's' })}
-                >
-                  {day.date}
+    <>
+      <Table className={s.monthTable} divider="all" fullWidth compressed>
+        <TableHead>
+          <TableRow>
+            {weekDays.map((weekDay) => (
+              <TableCell align="left" key={weekDay}>
+                <Typography variant="text-s_1" align="center" color="secondary">
+                  {`${weekDay}`.toUpperCase()}
                 </Typography>
-                <CalendarDayEvents day={day} />
               </TableCell>
             ))}
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHead>
+        <TableBody>
+          {rowsDays<Day>(days).map((row, index) => (
+            <TableRow key={index}>
+              {row.map((day) => (
+                <CalendarMonthViewCell
+                  day={day}
+                  key={String(day.$date)}
+                  {...dayButton(day, { onClick: toggle })}
+                />
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <CalendarMonthViewDrawer open={open} onClose={off} />
+    </>
   );
 };

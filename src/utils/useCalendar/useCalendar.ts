@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type MouseEvent } from 'react';
 
 import { createCalendars } from './create-calendars.ts';
 import { createDays } from './create-days.ts';
@@ -19,15 +19,17 @@ export function useCalendar(config?: UseCalendarConfig): UseCalendarReturn {
 
   return {
     data: {
+      date,
       calendars,
       weekDays,
     },
     controls: {
       offset: (params) => setOffsetDate(offset(offsetDate, params)),
-      dayButton: (date) => {
+      dayButton: (date, props) => {
         return {
-          onClick: () => {
+          onClick: (e: MouseEvent<HTMLElement>) => {
             onChange?.(date.$date);
+            props?.onClick?.(e);
           },
         };
       },

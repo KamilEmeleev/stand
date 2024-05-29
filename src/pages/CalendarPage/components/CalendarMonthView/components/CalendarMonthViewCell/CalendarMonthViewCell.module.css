@@ -1,0 +1,13 @@
+.monthTableCell {
+  padding: var(--spacing-xs);
+  cursor: pointer;
+
+  &.today, &.selected {
+    background-color: var(--color-background-primary);
+  }
+
+  &.disabled {
+    pointer-events: none;
+    cursor: none;
+  }
+}
