@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { capitalizeFirstLetter } from '@ozen-ui/kit/__inner__/esm/utils/capitalizeFirstLetter/capitalizeFirstLetter';
 import { Typography } from '@ozen-ui/kit/Typography';
 
-import type { Calendar, WeekDays } from '../../../../../../utils';
+import type { Calendar, WeekDays } from '../../../../../../hooks/useCalendar';
 
 import s from './CalendarGrid.module.css';
 import { CalendarGridItem } from './components';

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Card } from '@ozen-ui/kit/Card';
 import { spacing } from '@ozen-ui/kit/MixSpacing';
 
-import { CalendarProvider } from '../../utils';
+import { CalendarProvider } from '../../hooks/useCalendar';
 
 import {
   CalendarPageProvider,

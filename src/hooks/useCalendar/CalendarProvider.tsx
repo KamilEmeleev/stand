@@ -1,15 +1,10 @@
 import { useContext, createContext } from 'react';
 import type { FC, ReactNode } from 'react';
 
-import {
-  useCalendar,
-  type UseCalendarConfig,
-  type UseCalendarReturn,
-} from '../index.ts';
+import { type UseCalendarConfig, type UseCalendar } from './index';
+import { useCalendar } from './index';
 
-export const CalendarContext = createContext<UseCalendarReturn>(
-  {} as UseCalendarReturn
-);
+export const CalendarContext = createContext<UseCalendar>({} as UseCalendar);
 
 export const useCalendarContext = () => useContext(CalendarContext);
 

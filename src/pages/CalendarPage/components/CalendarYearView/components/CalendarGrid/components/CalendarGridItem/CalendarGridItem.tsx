@@ -4,7 +4,10 @@ import { ButtonBase } from '@ozen-ui/kit/ButtonBase';
 import { Typography } from '@ozen-ui/kit/Typography';
 import clsx from 'clsx';
 
-import { Day, useCalendarContext } from '../../../../../../../../utils';
+import {
+  type Day,
+  useCalendarContext,
+} from '../../../../../../../../hooks/useCalendar';
 
 import s from './CalendarGridItem.module.css';
 

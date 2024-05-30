@@ -24,19 +24,3 @@ export function isToday(day: Date) {
 export function getTime(date: Date) {
   return `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
 }
-
-type OffsetFuncParams = Date | { month?: number; year?: number; day?: number };
-
-export function offset(date: Date, params: OffsetFuncParams): Date {
-  if (params instanceof Date) {
-    return params;
-  } else {
-    const { month = 0, year = 0, day = 0 } = params;
-
-    return new Date(
-      date.getFullYear() + year,
-      date.getMonth() + month,
-      date.getDate() + day
-    );
-  }
-}

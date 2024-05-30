@@ -1,8 +1,9 @@
-import { createDays } from './create-days.ts';
-import type { UseCalendarConfig } from './types.ts';
+import { useCalendarState } from '../useCalendarState.ts';
 
-export const createCalendars = (offsetDate: Date, state: UseCalendarConfig) => {
-  const { options: { locale, calendar } = {} } = state;
+import { createDays } from './create-days.ts';
+
+export const createCalendars = (state: ReturnType<typeof useCalendarState>) => {
+  const { options: { locale, calendar } = {}, offsetDate } = state;
 
   const offset = calendar?.offset;
 
@@ -28,6 +29,8 @@ export const createCalendars = (offsetDate: Date, state: UseCalendarConfig) => {
     return [0, ...(offset || [])].map((value) => {
       const d = new Date(offsetDate);
       d.setMonth(d.getMonth() + value);
+
+      console.log(d);
 
       const days = createDays(d, state);
 
