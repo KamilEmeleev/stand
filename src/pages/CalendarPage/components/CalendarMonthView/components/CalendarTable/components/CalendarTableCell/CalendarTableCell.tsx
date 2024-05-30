@@ -1,21 +1,22 @@
-import { FC, HTMLAttributes } from 'react';
+import type { FC, HTMLAttributes, ReactNode } from 'react';
 
 import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { TableCell } from '@ozen-ui/kit/Table';
 import { Typography } from '@ozen-ui/kit/Typography';
 import clsx from 'clsx';
 
-import { Day } from '../../../../../../utils';
-import { CalendarDayEvents } from '../../../CalendarDayEvents';
+import { type Day } from '../../../../../../../../utils';
 
-import s from './CalendarMonthViewCell.module.css';
+import s from './CalendarTableCell.module.css';
 
-export type CalendarMonthViewCellProps = {
+export type CalendarTableCellProps = {
   day: Day;
+  children?: ReactNode;
 } & HTMLAttributes<HTMLTableCellElement>;
 
-export const CalendarMonthViewCell: FC<CalendarMonthViewCellProps> = ({
+export const CalendarTableCell: FC<CalendarTableCellProps> = ({
   day,
+  children,
   ...other
 }) => {
   const label = day.date;
@@ -41,7 +42,7 @@ export const CalendarMonthViewCell: FC<CalendarMonthViewCellProps> = ({
       >
         {label}
       </Typography>
-      <CalendarDayEvents day={day} />
+      {children}
     </TableCell>
   );
 };

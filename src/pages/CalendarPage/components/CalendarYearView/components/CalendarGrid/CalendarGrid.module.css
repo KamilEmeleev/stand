@@ -1,0 +1,19 @@
+.calendarGridBody {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  --calendar-grid-size: 292px;
+  --calendar-grid-gap: var(--spacing-4xs);
+  width: var(--calendar-grid-size);
+
+  & > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: calc(
+      (var(--calendar-grid-size) - var(--calendar-grid-gap) * 6) / 7
+    );
+    height: calc(
+      (var(--calendar-grid-size) - var(--calendar-grid-gap) * 6) / 7
+    );
+  }
+}
