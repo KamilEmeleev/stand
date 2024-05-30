@@ -4,7 +4,8 @@ import { Tag } from '@ozen-ui/kit/Tag';
 import { Typography } from '@ozen-ui/kit/Typography';
 
 import { calendarEvents } from '../../../../helpers';
-import { compareDate, Day, getTime } from '../../../../utils';
+import { Day } from '../../../../hooks/useCalendar';
+import { compareDate, getTime } from '../../../../utils';
 
 import s from './CalendarDayEvents.module.css';
 

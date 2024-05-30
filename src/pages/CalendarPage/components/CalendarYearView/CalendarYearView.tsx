@@ -1,7 +1,7 @@
 import { Grid, GridItem } from '@ozen-ui/kit/Grid';
 import { spacing } from '@ozen-ui/kit/MixSpacing';
 
-import { useCalendarContext } from '../../../../utils';
+import { useCalendarContext } from '../../../../hooks/useCalendar';
 
 import { CalendarGrid } from './components';
 

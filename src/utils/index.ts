@@ -1,2 +1,2 @@
 export * from './sum';
-export * from './useCalendar';
+export * from './date';

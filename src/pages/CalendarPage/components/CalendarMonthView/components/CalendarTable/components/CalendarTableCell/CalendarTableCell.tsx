@@ -5,7 +5,7 @@ import { TableCell } from '@ozen-ui/kit/Table';
 import { Typography } from '@ozen-ui/kit/Typography';
 import clsx from 'clsx';
 
-import { type Day } from '../../../../../../../../utils';
+import { type Day } from '../../../../../../../../hooks/useCalendar';
 
 import s from './CalendarTableCell.module.css';
 

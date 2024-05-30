@@ -32,9 +32,9 @@
     }
 
     &.disabled {
+      --calendar-grid-item-color: var(--color-content-tertiary);
       pointer-events: none;
       background-color: inherit;
-      --calendar-grid-item-color: var(--color-content-tertiary);
     }
 
     &:focus:not(:focus-visible) {

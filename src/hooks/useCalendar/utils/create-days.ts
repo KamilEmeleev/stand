@@ -1,15 +1,15 @@
-import type { UseCalendarConfig } from './types.ts';
-import { compareDate, isToday } from './utils.ts';
+import { compareDate, isToday } from '../../../utils';
+import type { UseCalendarConfig } from '../types';
 
-export const createDays = (offsetDate: Date, state: UseCalendarConfig) => {
-  const month = offsetDate.getMonth();
-  const year = offsetDate.getFullYear();
+export const createDays = (date: Date, state: UseCalendarConfig) => {
+  const month = date.getMonth();
+  const year = date.getFullYear();
 
   const { options: { startDay = 0 } = {}, date: selectedDate } = state;
 
-  const date = new Date(year, month, 1);
+  const d = new Date(year, month, 1);
 
-  const start = (date.getDay() || 7) - startDay;
+  const start = (d.getDay() || 7) - startDay;
 
   return new Array(42).fill(null).map((_, index) => {
     const $date = new Date(year, month, index + 1 - start);

@@ -1,4 +1,4 @@
-import { TagVariant } from '@ozen-ui/kit/Tag';
+import type { TagVariant } from '@ozen-ui/kit/Tag';
 
 const now = new Date();
 

@@ -9,7 +9,10 @@ import {
 } from '@ozen-ui/kit/Table';
 import { Typography } from '@ozen-ui/kit/Typography';
 
-import { type Day, useCalendarContext } from '../../../../../../utils';
+import {
+  type Day,
+  useCalendarContext,
+} from '../../../../../../hooks/useCalendar';
 import { CalendarDayEvents } from '../../../CalendarDayEvents';
 import { rowsDays } from '../../utils';
 
