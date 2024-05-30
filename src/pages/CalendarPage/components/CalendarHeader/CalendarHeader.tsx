@@ -9,7 +9,7 @@ import { Option, Select } from '@ozen-ui/kit/Select';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';
 
-import { useCalendarPage } from '../../CalendarPageContext.ts';
+import { useCalendarContext } from '../../../../utils';
 
 import s from './CalendarHeader.module.css';
 
@@ -17,7 +17,7 @@ export const CalendarHeader = () => {
   const {
     data: { calendars },
     controls: { offset },
-  } = useCalendarPage();
+  } = useCalendarContext();
 
   const { month, year } = calendars[0];
 

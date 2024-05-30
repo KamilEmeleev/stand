@@ -8,12 +8,12 @@ import {
   DrawerTitle,
 } from '@ozen-ui/kit/Drawer';
 
-import { useCalendarPage } from '../../../../CalendarPageContext.ts';
+import { useCalendarContext } from '../../../../../../utils';
 
 export const CalendarMonthViewDrawer: FC<DrawerProps> = (props) => {
   const {
     data: { date },
-  } = useCalendarPage();
+  } = useCalendarContext();
 
   const d = date?.toLocaleString('ru-RU', {
     month: 'long',
