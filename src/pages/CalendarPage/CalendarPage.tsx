@@ -3,9 +3,8 @@ import { useState } from 'react';
 import { Card } from '@ozen-ui/kit/Card';
 import { spacing } from '@ozen-ui/kit/MixSpacing';
 
-import { useCalendar } from '../../utils';
+import { CalendarProvider } from '../../utils';
 
-import { CalendarPageContext } from './CalendarPageContext.ts';
 import { CalendarBody, CalendarHeader } from './components';
 
 export const CalendarPage = () => {
@@ -16,11 +15,11 @@ export const CalendarPage = () => {
   };
 
   return (
-    <CalendarPageContext.Provider value={useCalendar({ date, onChange })}>
+    <CalendarProvider config={{ date, onChange }}>
       <Card borderWidth="none" className={spacing({ p: 0 })}>
         <CalendarHeader />
         <CalendarBody />
       </Card>
-    </CalendarPageContext.Provider>
+    </CalendarProvider>
   );
 };

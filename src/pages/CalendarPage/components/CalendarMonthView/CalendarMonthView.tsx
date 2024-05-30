@@ -9,7 +9,7 @@ import { Typography } from '@ozen-ui/kit/Typography';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
 
 import { type Day } from '../../../../utils';
-import { useCalendarPage } from '../../CalendarPageContext.ts';
+import { useCalendarContext } from '../../../../utils';
 
 import s from './CalendarMonthView.module.css';
 import { CalendarMonthViewCell, CalendarMonthViewDrawer } from './components';
@@ -19,7 +19,7 @@ export const CalendarMonthView = () => {
   const {
     data: { weekDays, calendars },
     controls: { dayButton },
-  } = useCalendarPage();
+  } = useCalendarContext();
 
   const [open, { off, toggle }] = useBoolean(false);
 
