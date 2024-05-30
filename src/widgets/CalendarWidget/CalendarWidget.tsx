@@ -9,6 +9,7 @@ import { List, ListItem, ListItemIcon, ListItemText } from '@ozen-ui/kit/List';
 import { Popover } from '@ozen-ui/kit/Popover';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';
+import { Link } from 'wouter';
 
 import { DateIcon } from '../../components';
 import { calendarEvents } from '../../helpers';
@@ -75,9 +76,11 @@ export const CalendarWidget = () => {
       >
         <Calendar />
       </Popover>
-      <Button variant="function" iconRight={<ArrowRightIcon size="s" />}>
-        Все события календаря
-      </Button>
+      <Link to="/calendar">
+        <Button variant="function" iconRight={<ArrowRightIcon size="s" />}>
+          Все события календаря
+        </Button>
+      </Link>
     </Stack>
   );
 };

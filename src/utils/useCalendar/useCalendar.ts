@@ -15,7 +15,7 @@ export function useCalendar(config?: UseCalendarConfig): UseCalendarReturn {
 
   const days = createDays(offsetDate, state);
   const weekDays = createWeekdays(days, state);
-  const calendars = createCalendars(offsetDate, days, state);
+  const calendars = createCalendars(offsetDate, state);
 
   return {
     data: {

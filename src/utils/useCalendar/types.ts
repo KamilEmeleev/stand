@@ -16,13 +16,18 @@ export type Calendar = {
   month: number | string;
 };
 
+export type WeekDays = (string | number)[];
+
 export type UseCalendarConfigLocale = {
   locales: Intl.LocalesArgument;
 } & Pick<Intl.DateTimeFormatOptions, 'month' | 'year' | 'weekday'>;
 
 export type UseCalendarConfigOptions = {
   startDay?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-  locale: UseCalendarConfigLocale;
+  calendar?: {
+    offset?: number[] | 'year';
+  };
+  locale?: UseCalendarConfigLocale;
 };
 
 export type UseCalendarControlOffsetParams =
@@ -43,6 +48,12 @@ export type UseCalendarControls = {
   };
 };
 
+export type UseCalendarData = {
+  date: Date | null;
+  calendars: Calendar[];
+  weekDays: WeekDays;
+};
+
 // in
 export type UseCalendarConfig = {
   date?: Date;
@@ -52,10 +63,6 @@ export type UseCalendarConfig = {
 
 // out
 export type UseCalendarReturn = {
-  data: {
-    date: Date | null;
-    calendars: Array<Calendar>;
-    weekDays: Array<string | number>;
-  };
+  data: UseCalendarData;
   controls: UseCalendarControls;
 };
