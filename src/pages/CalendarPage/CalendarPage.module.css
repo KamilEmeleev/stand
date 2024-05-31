@@ -1,0 +1,14 @@
+.calendar {
+  display: flex;
+  flex-grow: 1;
+  padding: 0;
+  overflow: hidden;
+  flex-direction: column;
+  transform: scale(1);
+}
+
+.calendarContainer {
+  transition: margin-inline-end var(--transition-slow);
+  flex-grow: 1;
+  block-size: 0;
+}

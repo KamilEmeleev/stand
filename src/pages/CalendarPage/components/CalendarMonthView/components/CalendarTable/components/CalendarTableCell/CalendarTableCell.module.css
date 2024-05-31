@@ -11,12 +11,13 @@
     }
   }
 
+
   .date {
-    margin-bottom: var(--spacing-xs);
+    margin-block-end: var(--spacing-2xs);
 
     span {
-      width: 28px;
-      height: 28px;
+      inline-size: 28px;
+      block-size: 28px;
       align-items: center;
       display: inline-flex;
       box-sizing: border-box;

@@ -1,2 +1,2 @@
-export * from './CalendarMonthViewDrawer';
+export * from '../../CalendarDrawer';
 export * from './CalendarTable';

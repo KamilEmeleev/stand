@@ -1,14 +1,9 @@
-import { useBoolean } from '@ozen-ui/kit/useBoolean';
+import { useCalendarPageContext } from '../../CalendarPageProvider.tsx';
 
-import { CalendarMonthViewDrawer, CalendarTable } from './components';
+import { CalendarTable } from './components';
 
 export const CalendarMonthView = () => {
-  const [open, { off, toggle }] = useBoolean(false);
+  const { setDrawer } = useCalendarPageContext();
 
-  return (
-    <>
-      <CalendarTable cellProps={{ onClick: toggle }} />
-      <CalendarMonthViewDrawer open={open} onClose={off} />
-    </>
-  );
+  return <CalendarTable cellProps={{ onClick: setDrawer.on }} />;
 };

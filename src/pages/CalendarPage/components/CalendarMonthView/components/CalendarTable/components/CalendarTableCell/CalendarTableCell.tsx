@@ -22,6 +22,7 @@ export const CalendarTableCell: FC<CalendarTableCellProps> = ({
   const now = day.now;
   const selected = day.selected;
   const disabled = !day.inCurrentMonth;
+  const offDay = day.day === 0 || day.day === 6;
 
   return (
     <TableCell
@@ -30,14 +31,14 @@ export const CalendarTableCell: FC<CalendarTableCellProps> = ({
         s.monthTableCell,
         [now && s.today],
         [selected && s.selected],
-        [disabled && s.disabled]
+        [(disabled || offDay) && s.disabled]
       )}
       {...other}
     >
       <Typography
         align="right"
         {...(now && { color: 'action' })}
-        {...(disabled && { color: 'disabled' })}
+        {...((disabled || offDay) && { color: 'disabled' })}
         className={s.date}
       >
         <span>{label}</span>

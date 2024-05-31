@@ -36,7 +36,7 @@ export const CalendarWidget = () => {
         События получены на основе календаря банка
       </Typography>
       <List className={s.list} disablePadding>
-        {calendarEvents.map(({ title, id, date }, index) => {
+        {calendarEvents.slice(0, 4).map(({ title, id, date }, index) => {
           return (
             <Fragment key={id}>
               {index > 0 && <Divider color="secondary" />}
