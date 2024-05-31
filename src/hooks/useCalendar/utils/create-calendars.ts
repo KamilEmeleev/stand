@@ -30,8 +30,6 @@ export const createCalendars = (state: ReturnType<typeof useCalendarState>) => {
       const d = new Date(offsetDate);
       d.setMonth(d.getMonth() + value);
 
-      console.log(d);
-
       const days = createDays(d, state);
 
       return {
