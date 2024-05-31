@@ -1,19 +1,23 @@
 import { useState } from 'react';
 
 import { Card } from '@ozen-ui/kit/Card';
-import { spacing } from '@ozen-ui/kit/MixSpacing';
+import { Stack } from '@ozen-ui/kit/Stack';
+import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
 
 import { CalendarProvider } from '../../hooks/useCalendar';
 
+import s from './CalendarPage.module.css';
 import {
   CalendarPageProvider,
   useCalendarPageContext,
 } from './CalendarPageProvider.tsx';
-import { CalendarBody, CalendarHeader } from './components';
+import { CalendarBody, CalendarHeader, CalendarDrawer } from './components';
 
 const CalendarConsumer = () => {
-  const { step } = useCalendarPageContext();
+  const { step, drawerOpen, setDrawer } = useCalendarPageContext();
   const [date, setDate] = useState(new Date());
+  const { l } = useBreakpoints();
+  const isMediumScreen = !l;
 
   const onChange = (date: Date) => {
     setDate(date);
@@ -31,9 +35,25 @@ const CalendarConsumer = () => {
         },
       }}
     >
-      <Card borderWidth="none" className={spacing({ p: 0 })}>
-        <CalendarHeader />
-        <CalendarBody />
+      <Card borderWidth="none" className={s.calendar}>
+        <Stack
+          direction="column"
+          gap="0"
+          className={s.calendarContainer}
+          style={{
+            marginRight: drawerOpen && !isMediumScreen ? 480 : 0,
+          }}
+        >
+          <CalendarHeader />
+          <CalendarBody />
+          <CalendarDrawer
+            open={drawerOpen}
+            onClose={setDrawer.off}
+            disablePortal
+            disableClickOutside
+            hideBackdrop
+          />
+        </Stack>
       </Card>
     </CalendarProvider>
   );

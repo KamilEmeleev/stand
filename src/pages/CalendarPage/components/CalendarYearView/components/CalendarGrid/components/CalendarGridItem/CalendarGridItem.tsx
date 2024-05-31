@@ -8,6 +8,7 @@ import {
   type Day,
   useCalendarContext,
 } from '../../../../../../../../hooks/useCalendar';
+import { useCalendarPageContext } from '../../../../../../CalendarPageProvider.tsx';
 
 import s from './CalendarGridItem.module.css';
 
@@ -25,6 +26,8 @@ export const CalendarGridItem: FC<CalendarGridItemProps> = ({ day }) => {
     controls: { dayButton },
   } = useCalendarContext();
 
+  const { setDrawer } = useCalendarPageContext();
+
   return (
     <ButtonBase
       className={clsx(
@@ -33,7 +36,7 @@ export const CalendarGridItem: FC<CalendarGridItemProps> = ({ day }) => {
         [selected && s.selected],
         [now && s.now]
       )}
-      {...dayButton(day)}
+      {...dayButton(day, { onClick: setDrawer.on })}
     >
       <Typography variant="text-m">{label}</Typography>
     </ButtonBase>

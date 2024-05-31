@@ -2,16 +2,20 @@ import { useCalendarPageContext } from '../../CalendarPageProvider.tsx';
 import { CalendarMonthView } from '../CalendarMonthView';
 import { CalendarYearView } from '../CalendarYearView';
 
+import s from './CalendarBody.module.css';
+
 export const CalendarBody = () => {
   const { step } = useCalendarPageContext();
 
+  let content = null;
+
   if (step === 'month') {
-    return <CalendarMonthView />;
+    content = <CalendarMonthView />;
   }
 
   if (step === 'year') {
-    return <CalendarYearView />;
+    content = <CalendarYearView />;
   }
 
-  return null;
+  return <div className={s.calendarBody}>{content}</div>;
 };
