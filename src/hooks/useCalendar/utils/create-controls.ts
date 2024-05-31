@@ -43,6 +43,7 @@ export const createControls = (
       return {
         ...props,
         onClick: (e: MouseEvent<HTMLElement>) => {
+          setOffsetDate(date.$date);
           onChange?.(date.$date);
           props?.onClick?.(e);
         },
