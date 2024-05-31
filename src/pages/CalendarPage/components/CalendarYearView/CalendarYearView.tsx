@@ -15,9 +15,11 @@ export const CalendarYearView = () => {
 
   return (
     <Grid
-      cols={{ xs: 1, m: 3, l: drawerOpen ? 3 : 4 }}
+      cols={{ xs: 1, s: 2, m: 3, l: drawerOpen ? 3 : 4 }}
       gap="l"
       style={{ overflow: 'auto' }}
+      align="center"
+      justify="center"
       className={spacing({ p: 'xl' })}
     >
       {calendars.map((calendar) => (
