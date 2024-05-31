@@ -3,4 +3,5 @@
   --table-header-cell-padding: 20px 12px;
   table-layout: fixed;
   background-color: transparent;
+  min-width: 800px;
 }

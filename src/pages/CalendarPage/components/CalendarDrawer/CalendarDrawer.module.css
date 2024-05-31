@@ -1,5 +1,14 @@
+@import url('../../../../vars.modules.css');
+
 .drawer {
   border-radius: 0;
-  border-inline-start: 1px solid var(--color-border-secondary) !important;
   box-shadow: none;
+}
+
+
+@media (--breakpoint-s) {
+  .drawer {
+    min-inline-size: var(--drawer-width);
+    border-inline-start: 1px solid var(--color-border-secondary) !important;
+  }
 }

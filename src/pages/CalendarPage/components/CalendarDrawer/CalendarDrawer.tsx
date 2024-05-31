@@ -1,11 +1,9 @@
 import { FC } from 'react';
 
-import { Button } from '@ozen-ui/kit/ButtonNext';
 import { Divider } from '@ozen-ui/kit/Divider';
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   type DrawerProps,
   DrawerTitle,
@@ -59,11 +57,6 @@ export const CalendarDrawer: FC<DrawerProps> = (props) => {
           })}
         </Stack>
       </DrawerBody>
-      <DrawerFooter>
-        <Button variant="contained-additional" color="secondary" fullWidth>
-          Закрыть
-        </Button>
-      </DrawerFooter>
     </Drawer>
   );
 };

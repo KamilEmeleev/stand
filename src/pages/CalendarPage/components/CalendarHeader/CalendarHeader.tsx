@@ -5,10 +5,12 @@ import {
 } from '@ozen-ui/icons';
 import { capitalizeFirstLetter } from '@ozen-ui/kit/__inner__/esm/utils/capitalizeFirstLetter/capitalizeFirstLetter';
 import { Button } from '@ozen-ui/kit/ButtonNext';
+import { Grid, GridItem } from '@ozen-ui/kit/Grid';
 import { IconButton } from '@ozen-ui/kit/IconButtonNext';
 import { Option, Select, type SelectProps } from '@ozen-ui/kit/Select';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';
+import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
 
 import { useCalendarContext } from '../../../../hooks/useCalendar';
 import {
@@ -18,11 +20,15 @@ import {
 
 import s from './CalendarHeader.module.css';
 
+// TODO: add justify-self an align-self to GridItem
 export const CalendarHeader = () => {
   const {
     data: { calendars },
     controls: { offsetButton },
   } = useCalendarContext();
+
+  const { m } = useBreakpoints();
+  const isMobile = !m;
 
   const { step, goToStep } = useCalendarPageContext();
 
@@ -33,23 +39,20 @@ export const CalendarHeader = () => {
   };
 
   return (
-    <Stack
-      align="center"
-      justify="spaceBetween"
-      className={s.calendarHeader}
-      fullWidth
-    >
-      <Stack gap="s">
-        <Button
-          color="secondary"
-          variant="contained-additional"
-          {...offsetButton(new Date())}
-        >
-          Сегодня
-        </Button>
-        {step === 'month' && (
-          <Stack gap="s">
-            <Stack align="center" gap="0" justify="center">
+    <Grid cols={6} className={s.calendarHeader}>
+      <GridItem col={{ xs: 6, s: 3, m: 5 }} className={s.calendarHeaderItem}>
+        <div className={s.calendarNavigation}>
+          {step === 'month' && (
+            <>
+              {!isMobile && (
+                <Button
+                  color="secondary"
+                  variant="contained-additional"
+                  {...offsetButton(new Date())}
+                >
+                  Сегодня
+                </Button>
+              )}
               <IconButton
                 color="secondary"
                 variant="ghost"
@@ -62,18 +65,25 @@ export const CalendarHeader = () => {
                 icon={ChevronRightIcon}
                 {...offsetButton({ month: 1 })}
               />
-            </Stack>
-            <Stack align="center" justify="center">
-              <Typography variant="text-xl_1">
-                {capitalizeFirstLetter(`${month}`)}&nbsp;
-              </Typography>
-              <Typography variant="text-xl">{year}</Typography>
-            </Stack>
-          </Stack>
-        )}
-        {step === 'year' && (
-          <Stack gap="s">
-            <Stack align="center" justify="center">
+              <Stack align="center" justify="center">
+                <Typography variant="text-xl_1">
+                  {capitalizeFirstLetter(`${month}`)}&nbsp;
+                </Typography>
+                <Typography variant="text-xl">{year}</Typography>
+              </Stack>
+            </>
+          )}
+          {step === 'year' && (
+            <>
+              {!isMobile && (
+                <Button
+                  color="secondary"
+                  variant="contained-additional"
+                  {...offsetButton(new Date())}
+                >
+                  Сегодня
+                </Button>
+              )}
               <IconButton
                 color="secondary"
                 variant="ghost"
@@ -85,17 +95,22 @@ export const CalendarHeader = () => {
                 icon={ChevronRightIcon}
                 {...offsetButton({ year: 1 })}
               />
-            </Stack>
-            <Stack align="center" justify="center">
               <Typography variant="text-xl">{year}</Typography>
-            </Stack>
-          </Stack>
-        )}
-      </Stack>
-      <Select value={step} onChange={handleChange} renderLeft={CalendarIcon}>
-        <Option label="Месяц" value="month" />
-        <Option label="Год" value="year" />
-      </Select>
-    </Stack>
+            </>
+          )}
+        </div>
+      </GridItem>
+      <GridItem col={{ xs: 6, s: 3, m: 1 }}>
+        <Select
+          value={step}
+          onChange={handleChange}
+          renderLeft={CalendarIcon}
+          fullWidth
+        >
+          <Option label="Месяц" value="month" />
+          <Option label="Год" value="year" />
+        </Select>
+      </GridItem>
+    </Grid>
   );
 };

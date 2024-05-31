@@ -1,5 +1,28 @@
+@import url('../../../../vars.modules.css');
+
 .calendarHeader {
   border-block-end: var(--border-width-s) solid var(--color-border-secondary);
   padding: var(--spacing-m);
   box-sizing: border-box;
+}
+
+.calendarNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-2xs);
+
+  & > *:nth-child(2) {
+    order: 1;
+  }
+}
+
+@media (--breakpoint-s) {
+  .calendarNavigation {
+    justify-content: unset;
+
+    & > *:nth-child(2) {
+      order: unset;
+    }
+  }
 }
