@@ -21,7 +21,7 @@ import s from './CalendarHeader.module.css';
 export const CalendarHeader = () => {
   const {
     data: { calendars },
-    controls: { offset },
+    controls: { offsetButton },
   } = useCalendarContext();
 
   const { step, goToStep } = useCalendarPageContext();
@@ -41,9 +41,9 @@ export const CalendarHeader = () => {
     >
       <Stack gap="s">
         <Button
-          onClick={() => offset(new Date())}
           color="secondary"
           variant="contained-additional"
+          {...offsetButton(new Date())}
         >
           Сегодня
         </Button>
@@ -54,13 +54,13 @@ export const CalendarHeader = () => {
                 color="secondary"
                 variant="ghost"
                 icon={ChevronLeftIcon}
-                onClick={() => offset({ month: -1 })}
+                {...offsetButton({ month: -1 })}
               />
               <IconButton
                 color="secondary"
                 variant="ghost"
                 icon={ChevronRightIcon}
-                onClick={() => offset({ month: 1 })}
+                {...offsetButton({ month: 1 })}
               />
             </Stack>
             <Stack align="center" justify="center">
@@ -78,14 +78,12 @@ export const CalendarHeader = () => {
                 color="secondary"
                 variant="ghost"
                 icon={ChevronLeftIcon}
-                onClick={() => offset({ year: -1 })}
+                {...offsetButton({ year: -1 })}
               />
-
               <IconButton
-                color="secondary"
                 variant="ghost"
                 icon={ChevronRightIcon}
-                onClick={() => offset({ year: 1 })}
+                {...offsetButton({ year: 1 })}
               />
             </Stack>
             <Stack align="center" justify="center">
