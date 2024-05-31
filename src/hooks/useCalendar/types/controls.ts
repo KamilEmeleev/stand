@@ -9,10 +9,10 @@ export type UseCalendarControlOffsetParams =
 export type UseCalendarControls = {
   offsetButton(
     params: UseCalendarControlOffsetParams,
-    props?: Pick<HTMLAttributes<HTMLButtonElement>, 'onClick'>
-  ): Pick<HTMLAttributes<HTMLButtonElement>, 'onClick'>;
+    props?: Pick<HTMLAttributes<HTMLElement>, 'onClick'>
+  ): Pick<HTMLAttributes<HTMLElement>, 'onClick'>;
   dayButton(
     date: Day,
-    props?: Pick<HTMLAttributes<HTMLButtonElement>, 'onClick'>
-  ): Pick<HTMLAttributes<HTMLButtonElement>, 'onClick'>;
+    props?: Pick<HTMLAttributes<HTMLElement>, 'onClick'>
+  ): Pick<HTMLAttributes<HTMLElement>, 'onClick'>;
 };
