@@ -1,5 +1,6 @@
 import type { MouseEvent } from 'react';
 
+import { daysInMonth } from '../../../utils';
 import { UseCalendarControlOffsetParams, UseCalendarControls } from '../types';
 import { useCalendarState } from '../useCalendarState.ts';
 
@@ -11,12 +12,15 @@ export function offset(
     return params;
   } else {
     const { month = 0, year = 0, day = 0 } = params;
+    const Y = date.getFullYear();
+    const M = date.getMonth();
+    let D = date.getDate();
 
-    return new Date(
-      date.getFullYear() + year,
-      date.getMonth() + month,
-      date.getDate() + day
-    );
+    if (D > daysInMonth(new Date(Y, M + month, 1))) {
+      D = daysInMonth(new Date(Y, M + month, 1));
+    }
+
+    return new Date(Y + year, M + month, D + day);
   }
 }
 
