@@ -1,11 +1,12 @@
 import type { MouseEvent } from 'react';
 
-import type { UseCalendarControls } from '../types';
+import { UseCalendarControlOffsetParams, UseCalendarControls } from '../types';
 import { useCalendarState } from '../useCalendarState.ts';
 
-type OffsetFuncParams = Date | { month?: number; year?: number; day?: number };
-
-export function offset(date: Date, params: OffsetFuncParams): Date {
+export function offset(
+  date: Date,
+  params: UseCalendarControlOffsetParams
+): Date {
   if (params instanceof Date) {
     return params;
   } else {
@@ -25,7 +26,15 @@ export const createControls = (
   const { offsetDate, setOffsetDate, onChange } = state;
 
   return {
-    offset: (params) => setOffsetDate(offset(offsetDate, params)),
+    offsetButton: (params, props) => {
+      return {
+        ...props,
+        onClick: (e: MouseEvent<HTMLElement>) => {
+          setOffsetDate(offset(offsetDate, params));
+          props?.onClick?.(e);
+        },
+      };
+    },
     dayButton: (date, props) => {
       return {
         ...props,
