@@ -66,7 +66,7 @@ export const Main = () => {
                 )}
                 {!breadcrumbs[0]?.disableHeader && breadcrumbs[0]?.title && (
                   <Typography
-                    variant={isMobile ? 'heading-xl' : 'heading-2xl'}
+                    variant={isMobile ? 'heading-l' : 'heading-xl'}
                     as="h1"
                   >
                     {breadcrumbs[0]?.title}
