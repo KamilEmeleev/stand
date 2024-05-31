@@ -1,7 +1,5 @@
-export function daysInMonth({ year, month }: { month: number; year: number }) {
-  const now = new Date(year, month);
-
-  return new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+export function daysInMonth(date: Date) {
+  return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 }
 
 export function compareDate(d1?: Date, d2?: Date) {
