@@ -18,6 +18,7 @@ export const createDays = (date: Date, state: UseCalendarConfig) => {
       $date,
       selected: compareDate(selectedDate, $date),
       date: $date.getDate(),
+      day: $date.getDay(),
       now: isToday($date),
       inCurrentMonth: $date.getMonth() === month,
     };

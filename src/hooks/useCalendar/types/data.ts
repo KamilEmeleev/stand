@@ -1,6 +1,13 @@
+export type Time = {
+  $date: Date;
+};
+
+export type Times = Time[];
+
 export type Day = {
   $date: Date;
   date: number;
+  day: number;
   now: boolean;
   selected: boolean;
   inCurrentMonth: boolean;
@@ -22,4 +29,5 @@ export type UseCalendarData = {
   date: Date | null;
   calendars: Calendars;
   weekDays: WeekDays;
+  time: Times;
 };
