@@ -2,8 +2,29 @@
   padding: var(--spacing-xs);
   cursor: pointer;
 
-  &.today, &.selected {
+  &.selected {
     background-color: var(--color-background-primary);
+
+    .date > span {
+      color: var(--color-content-action-on);
+      background-color: var(--color-background-action);
+    }
+  }
+
+  .date {
+    margin-bottom: var(--spacing-xs);
+
+    span {
+      width: 28px;
+      height: 28px;
+      align-items: center;
+      display: inline-flex;
+      box-sizing: border-box;
+      justify-content: center;
+      padding: var(--spacing-3xs);
+      border-radius: var(--border-radius-s);
+      transition: background-color color var(--transition-slow);
+    }
   }
 
   &.disabled {

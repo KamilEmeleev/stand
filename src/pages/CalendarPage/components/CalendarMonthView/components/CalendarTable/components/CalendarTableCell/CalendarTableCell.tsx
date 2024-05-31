@@ -1,6 +1,5 @@
 import type { FC, HTMLAttributes, ReactNode } from 'react';
 
-import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { TableCell } from '@ozen-ui/kit/Table';
 import { Typography } from '@ozen-ui/kit/Typography';
 import clsx from 'clsx';
@@ -37,10 +36,11 @@ export const CalendarTableCell: FC<CalendarTableCellProps> = ({
     >
       <Typography
         align="right"
+        {...(now && { color: 'action' })}
         {...(disabled && { color: 'disabled' })}
-        className={spacing({ mb: 's' })}
+        className={s.date}
       >
-        {label}
+        <span>{label}</span>
       </Typography>
       {children}
     </TableCell>
