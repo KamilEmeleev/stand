@@ -1,6 +1,5 @@
 .monthTable {
-  --table-caption-padding: 20px;
-  --table-header-cell-padding: 20px 12px;
+  --table-header-cell-padding: 12px;
   table-layout: fixed;
   background-color: transparent;
   min-width: 800px;

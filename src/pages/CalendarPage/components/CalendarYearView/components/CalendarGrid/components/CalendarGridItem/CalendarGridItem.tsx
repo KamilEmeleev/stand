@@ -36,6 +36,7 @@ export const CalendarGridItem: FC<CalendarGridItemProps> = ({ day }) => {
         [selected && s.selected],
         [now && s.now]
       )}
+      {...(selected && { autoFocus: true })}
       {...dayButton(day, { onClick: setDrawer.on })}
     >
       <Typography variant="text-m">{label}</Typography>

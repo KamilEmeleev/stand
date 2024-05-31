@@ -1,5 +1,5 @@
 .dayEvents {
-  min-block-size: 96px;
+  min-block-size: 64px;
   display: flex;
   gap: var(--spacing-3xs);
   flex-direction: column;
