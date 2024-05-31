@@ -23,9 +23,13 @@ export const CalendarGrid: FC<CalendarGridProps> = ({ calendar, weekDays }) => {
       </div>
       <div className={s.calendarGridBody}>
         {weekDays.map((day) => (
-          <Typography color="secondary">{day}</Typography>
+          <Typography color="secondary" key={`${calendar.month}-${day}`}>
+            {day}
+          </Typography>
         ))}
-        {calendar?.days.map((day) => <CalendarGridItem day={day} />)}
+        {calendar?.days.map((day) => (
+          <CalendarGridItem key={day.$date.toDateString()} day={day} />
+        ))}
       </div>
     </div>
   );

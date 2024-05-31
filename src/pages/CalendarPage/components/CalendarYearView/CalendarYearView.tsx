@@ -18,7 +18,7 @@ export const CalendarYearView = () => {
       className={spacing({ p: 'xl' })}
     >
       {calendars.map((calendar) => (
-        <GridItem>
+        <GridItem key={`${calendar.year}-${calendar.month}`}>
           <CalendarGrid calendar={calendar} weekDays={weekDays} />
         </GridItem>
       ))}
