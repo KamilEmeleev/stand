@@ -71,7 +71,7 @@ const generateEvents = () => {
       });
     }
 
-    if (day === 4 && !added2) {
+    if (day === 5 && !added2) {
       added2 = true;
 
       res.push({

@@ -39,7 +39,7 @@ export const CalendarHeader = () => {
   };
 
   return (
-    <Grid cols={6} className={s.calendarHeader}>
+    <Grid cols={6} className={s.calendarHeader} gap="s">
       <GridItem col={{ xs: 6, s: 3, m: 5 }} className={s.calendarHeaderItem}>
         <div className={s.calendarNavigation}>
           {step === 'month' && (

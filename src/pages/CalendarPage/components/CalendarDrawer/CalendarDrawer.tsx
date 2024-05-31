@@ -38,7 +38,7 @@ export const CalendarDrawer: FC<DrawerProps> = (props) => {
             const minutes = $date.getMinutes();
 
             return (
-              <Stack gap="xl" fullWidth align="center">
+              <Stack gap="xl" fullWidth align="center" key={String($date)}>
                 <Typography
                   color="secondary"
                   style={{ visibility: minutes ? 'hidden' : 'visible' }}
