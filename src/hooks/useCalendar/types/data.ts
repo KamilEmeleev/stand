@@ -1,3 +1,5 @@
+export type UseCalendarDayInteger = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+
 export type Time = {
   $date: Date;
 };
@@ -10,6 +12,7 @@ export type Day = {
   day: number;
   now: boolean;
   selected: boolean;
+  disabled: boolean;
   inCurrentMonth: boolean;
 };
 
@@ -26,8 +29,8 @@ export type Calendars = Calendar[];
 export type Days = Day[];
 
 export type UseCalendarData = {
-  date: Date | null;
-  calendars: Calendars;
-  weekDays: WeekDays;
   time: Times;
+  date: Date | null;
+  weekDays: WeekDays;
+  calendars: Calendars;
 };

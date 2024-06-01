@@ -28,6 +28,7 @@ const CalendarConsumer = () => {
       config={{
         date,
         onChange,
+        exclude: { day: [0, 6], date: [new Date(2024, 2, 8)] },
         options: {
           calendar: {
             offset: step === 'year' ? 'year' : undefined,

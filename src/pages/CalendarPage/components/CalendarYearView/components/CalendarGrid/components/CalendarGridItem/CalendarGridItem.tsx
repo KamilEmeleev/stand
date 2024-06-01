@@ -20,7 +20,7 @@ export const CalendarGridItem: FC<CalendarGridItemProps> = ({ day }) => {
   const label = day.date;
   const now = day.now;
   const selected = day.selected;
-  const disabled = !day.inCurrentMonth;
+  const disabled = !day.inCurrentMonth || day.disabled;
 
   const {
     controls: { dayButton },

@@ -1,21 +1,29 @@
 // Intl.DateTimeFormatOptions
-export type UseCalendarConfigLocale = {
+import { UseCalendarDayInteger } from './data.ts';
+
+export type UseCalendarLocaleConfig = {
   locales: Intl.LocalesArgument;
   month?: 'numeric' | '2-digit' | 'long' | 'short' | 'narrow' | undefined;
   year?: 'numeric' | '2-digit' | undefined;
   weekday?: 'long' | 'short' | 'narrow' | undefined;
 };
 
-export type UseCalendarConfigOptions = {
-  startDay?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+export type UseCalendarOptionsConfig = {
+  startDay?: UseCalendarDayInteger;
+  locale?: UseCalendarLocaleConfig;
   calendar?: {
     offset?: number[] | 'year';
   };
-  locale?: UseCalendarConfigLocale;
 };
+
+export interface UseCalendarExcludeConfig {
+  day?: UseCalendarDayInteger[];
+  date?: Date[];
+}
 
 export type UseCalendarConfig = {
   date?: Date;
   onChange?(date: Date): void;
-  options?: UseCalendarConfigOptions;
+  options?: UseCalendarOptionsConfig;
+  exclude?: UseCalendarExcludeConfig;
 };

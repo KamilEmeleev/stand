@@ -18,11 +18,10 @@ export const CalendarTableCell: FC<CalendarTableCellProps> = ({
   children,
   ...other
 }) => {
-  const label = day.date;
   const now = day.now;
+  const label = day.date;
   const selected = day.selected;
-  const disabled = !day.inCurrentMonth;
-  const offDay = day.day === 0 || day.day === 6;
+  const disabled = !day.inCurrentMonth || day.disabled;
 
   return (
     <TableCell
@@ -31,15 +30,15 @@ export const CalendarTableCell: FC<CalendarTableCellProps> = ({
         s.monthTableCell,
         [now && s.today],
         [selected && s.selected],
-        [(disabled || offDay) && s.disabled]
+        [disabled && s.disabled]
       )}
       {...other}
     >
       <Typography
         align="right"
-        {...(now && { color: 'action' })}
-        {...((disabled || offDay) && { color: 'disabled' })}
         className={s.date}
+        {...(now && { color: 'action' })}
+        {...(disabled && { color: 'disabled' })}
       >
         <span>{label}</span>
       </Typography>
