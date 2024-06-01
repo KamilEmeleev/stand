@@ -16,7 +16,7 @@ export const createDays = (date: Date, state: UseCalendarConfig) => {
   return new Array(42).fill(null).map((_, index) => {
     const $date = new Date(year, month, index + 1 - start);
 
-    const disabled = isExcluded($date, exclude);
+    const disabled = isExcluded($date, exclude) || false;
 
     return {
       $date,

@@ -2,5 +2,5 @@
   --table-header-cell-padding: 12px;
   table-layout: fixed;
   background-color: transparent;
-  min-width: 800px;
+  min-inline-size: 800px;
 }
