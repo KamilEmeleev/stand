@@ -7,7 +7,7 @@ import { Tab, Tabs, type TabsProps } from '@ozen-ui/kit/Tabs';
 import { Typography } from '@ozen-ui/kit/Typography';
 import { dedent } from 'ts-dedent';
 
-import { Code } from '../index.ts';
+import { Code } from '../Code';
 
 import { Npm, Pnpm, Yarn } from './RegistryLogos';
 
