@@ -8,6 +8,6 @@
 
 .dayEvent {
   box-sizing: border-box;
-  max-inline-size: 100%;
+  inline-size: 100%;
   white-space: nowrap;
 }
