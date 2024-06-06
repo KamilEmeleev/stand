@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, type MouseEvent, useState } from 'react';
 
 import { ArrowRightIcon, CalendarIcon } from '@ozen-ui/icons';
 import { Button } from '@ozen-ui/kit/ButtonNext';
@@ -21,7 +21,7 @@ export const CalendarWidget = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const open = Boolean(anchorEl);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -38,7 +38,7 @@ export const CalendarWidget = () => {
       <List className={s.list} disablePadding>
         {calendarEvents.slice(0, 4).map(({ title, id, date }, index) => {
           return (
-            <Fragment key={id}>
+            <Fragment key={`${title}-${id}`}>
               {index > 0 && <Divider color="secondary" />}
               <ListItem>
                 <ListItemIcon>
