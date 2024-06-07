@@ -25,7 +25,7 @@ dependencies:
     version: 9.0.0(eslint@8.52.0)
   eslint-plugin-prettier:
     specifier: ^5.0.1
-    version: 5.0.1(eslint-config-prettier@9.0.0)(eslint@8.52.0)(prettier@3.0.3)
+    version: 5.0.1(eslint-config-prettier@9.0.0)(eslint@8.52.0)(prettier@3.3.1)
   lightningcss:
     specifier: ^1.25.1
     version: 1.25.1
@@ -33,8 +33,8 @@ dependencies:
     specifier: ^4.7.0
     version: 4.7.0
   prettier:
-    specifier: ^3.0.3
-    version: 3.0.3
+    specifier: ^3.3.1
+    version: 3.3.1
   react:
     specifier: ^18.3.1
     version: 18.3.1
@@ -1872,7 +1872,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-prettier@5.0.1(eslint-config-prettier@9.0.0)(eslint@8.52.0)(prettier@3.0.3):
+  /eslint-plugin-prettier@5.0.1(eslint-config-prettier@9.0.0)(eslint@8.52.0)(prettier@3.3.1):
     resolution: {integrity: sha512-m3u5RnR56asrwV/lDC4GHorlW75DsFfmUcjfCYylTUs85dBRnB7VM6xG8eCMJdeDRnppzmxZVf1GEPJvl1JmNg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -1888,7 +1888,7 @@ packages:
     dependencies:
       eslint: 8.52.0
       eslint-config-prettier: 9.0.0(eslint@8.52.0)
-      prettier: 3.0.3
+      prettier: 3.3.1
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.8
     dev: false
@@ -3074,8 +3074,8 @@ packages:
       fast-diff: 1.3.0
     dev: false
 
-  /prettier@3.0.3:
-    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
+  /prettier@3.3.1:
+    resolution: {integrity: sha512-7CAwy5dRsxs8PHXT3twixW9/OEll8MLE0VRPCJyl7CkS6VHGPSlsVaWTiASPTyGyYRyApxlaWTzwUxVNrhcwDg==}
     engines: {node: '>=14'}
     hasBin: true
     dev: false
