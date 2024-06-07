@@ -28,7 +28,7 @@
     "react-dom": "^18.3.1",
     "regexparam": "^3.0.0",
     "ts-dedent": "^2.2.0",
-    "wouter": "^2.12.1"
+    "wouter": "^3.2.0"
   },
   "devDependencies": {
     "@types/lodash.sortby": "^4.7.9",

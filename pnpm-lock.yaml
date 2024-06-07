@@ -42,8 +42,8 @@ dependencies:
     specifier: ^2.2.0
     version: 2.2.0
   wouter:
-    specifier: ^2.12.1
-    version: 2.12.1(react@18.3.1)
+    specifier: ^3.2.0
+    version: 3.2.0(react@18.3.1)
 
 devDependencies:
   '@types/lodash.sortby':
@@ -2811,6 +2811,10 @@ packages:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
     dev: true
 
+  /mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
+    dev: false
+
   /mkdirp@0.5.6:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
     hasBin: true
@@ -3883,12 +3887,14 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /wouter@2.12.1(react@18.3.1):
-    resolution: {integrity: sha512-G7a6JMSLSNcu6o8gdOfIzqxuo8Qx1qs+9rpVnlurH69angsSFPZP5gESNuVNeJct/MGpQg191pDo4HUjTx7IIQ==}
+  /wouter@3.2.0(react@18.3.1):
+    resolution: {integrity: sha512-6g+5H4zYcGtqSte99EpZbgaZNfl1M9H5wk6fLwZ1p5vPRvsDdk4LqRKVz3ka0KHBcire4IuaFvM2zRsgt16t6g==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
+      mitt: 3.0.1
       react: 18.3.1
+      regexparam: 3.0.0
       use-sync-external-store: 1.2.2(react@18.3.1)
     dev: false
 
