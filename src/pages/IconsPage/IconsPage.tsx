@@ -1,26 +1,34 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
-import { type IconSize } from '@ozen-ui/icons';
+import { icons } from '@ozen-ui/icons/manifest.json';
 import { Stack } from '@ozen-ui/kit/Stack';
+import sortBy from 'lodash.sortby';
 
 import { IconsList, IconsSearch } from './components';
 
-export type IconProps = {
-  name: string;
-  size: IconSize | IconSize[];
-  componentName: string;
-  colored: boolean;
-  deprecated: boolean;
+export type IconsFilter = {
+  name?: string;
+  category?: string;
 };
 
-export type IconsProps = IconProps[];
-
 export const IconsPage = () => {
-  const [filteredIcons, setIcons] = useState<IconsProps>();
+  const [filter, setFilter] = useState<IconsFilter>({ name: '', category: '' });
+
+  const filteredIcons = useMemo(
+    () =>
+      sortBy(icons, ['deprecated', 'colored', 'name']).filter(
+        ({ componentName, category }) =>
+          componentName
+            .toLowerCase()
+            .includes((filter.name || '').toLowerCase()) &&
+          (category === filter.category || !filter.category)
+      ),
+    [filter]
+  );
 
   return (
     <Stack direction="column" gap={{ xs: 'l', m: '2xl' }}>
-      <IconsSearch onFilterIcons={(icons) => setIcons(icons)} />
+      <IconsSearch filter={filter} setFilter={setFilter} />
       <IconsList icons={filteredIcons} />
     </Stack>
   );

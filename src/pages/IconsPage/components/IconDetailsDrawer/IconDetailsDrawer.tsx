@@ -1,7 +1,10 @@
-import { useState, FC, ChangeEvent } from 'react';
+import { useState } from 'react';
+import type { FC, ChangeEvent } from 'react';
 
 import * as iconComponents from '@ozen-ui/icons';
-import { CheckIcon, type IconSize } from '@ozen-ui/icons';
+import { CheckIcon } from '@ozen-ui/icons';
+import type { IconProps, IconSize } from '@ozen-ui/icons';
+import { icons } from '@ozen-ui/icons/manifest.json';
 import { Badge } from '@ozen-ui/kit/Badge';
 import {
   DrawerBody,
@@ -23,13 +26,12 @@ import { Stack } from '@ozen-ui/kit/Stack';
 import { themeHelper } from '@ozen-ui/kit/ThemeProvider';
 
 import { Code, ShowCase } from '../../../../ozenbook';
-import { IconProps } from '../../IconsPage.tsx';
 
 import { filterColor, code } from './utils.ts';
 
 export type IconDetailDrawerProps = {
   open?: boolean;
-  icon?: IconProps;
+  icon?: (typeof icons)[0];
   onClose?: () => void;
 };
 
@@ -52,12 +54,7 @@ export const IconDetailDrawer: FC<IconDetailDrawerProps> = ({
     setSize(e.target.value as IconSize);
   };
 
-  const {
-    componentName: iconName,
-    size: iconSize,
-    deprecated,
-    colored,
-  } = icon || {};
+  const { componentName, size: iconSize, deprecated, colored } = icon || {};
 
   const reset = () => {
     onClose?.();
@@ -67,16 +64,18 @@ export const IconDetailDrawer: FC<IconDetailDrawerProps> = ({
 
   const isMultiSize = Array.isArray(iconSize);
 
-  const Icon = iconName
-    ? // eslint-disable-next-line import/namespace
-      iconComponents[iconName as keyof typeof iconComponents]
-    : undefined;
+  const icons = iconComponents as Record<
+    string,
+    FC<IconProps & { size: IconSize }>
+  >;
+
+  const Icon = componentName ? icons[componentName] : undefined;
 
   return (
     <Drawer open={open} size="s" onClose={onClose} onExited={reset}>
       <DrawerHeader>
         <Stack direction="column" gap="s" fullWidth>
-          <DrawerTitle>{iconName}</DrawerTitle>
+          <DrawerTitle>{componentName}</DrawerTitle>
           {deprecated && (
             <Badge as="span" content="Deprecated" color="errorLight" />
           )}
@@ -142,7 +141,7 @@ export const IconDetailDrawer: FC<IconDetailDrawerProps> = ({
             <FormTitle>Применение:</FormTitle>
             <Code
               code={code({
-                name: iconName || '',
+                name: componentName || '',
                 colored: !!colored,
                 multiSize: isMultiSize,
                 size,

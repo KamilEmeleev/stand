@@ -1,16 +1,47 @@
-.card {
-  position: relative;
-  padding: var(--spacing-l) 0;
-}
-
 .badge {
+  position: absolute;
   inset-inline-end: 0;
   inset-block-start: 0;
-  position: absolute;
   padding: var(--spacing-xs);
 }
 
 .item {
   overflow: hidden;
   min-inline-size: 0;
+  place-self: center center;
+}
+
+.btn {
+  display: flex;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius-l);
+  border: 1px dashed transparent;
+  transition: border-color outline var(--transition-default);
+
+  &:hover {
+    border: 1px dashed var(--color-border-main-hover);
+  }
+
+  &:active {
+    border: 1px dashed var(--color-border-main-pressed);
+  }
+
+  &:focus {
+    outline-color: var(--color-border-focused);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &.ghost {
+    background-color: var(--color-background-main-inverse);
+  }
+
+  &.deprecated {
+    background-color: var(--color-background-error-light);
+  }
 }

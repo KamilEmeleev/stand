@@ -20,6 +20,9 @@ dependencies:
   lightningcss:
     specifier: ^1.25.1
     version: 1.25.1
+  lodash.groupby:
+    specifier: ^4.6.0
+    version: 4.6.0
   lodash.sortby:
     specifier: ^4.7.0
     version: 4.7.0
@@ -46,6 +49,9 @@ dependencies:
     version: 3.2.0(react@18.3.1)
 
 devDependencies:
+  '@types/lodash.groupby':
+    specifier: ^4.6.9
+    version: 4.6.9
   '@types/lodash.sortby':
     specifier: ^4.7.9
     version: 4.7.9
@@ -950,6 +956,12 @@ packages:
 
   /@types/json5@0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/lodash.groupby@4.6.9:
+    resolution: {integrity: sha512-z2xtCX2ko7GrqORnnYea4+ksT7jZNAvaOcLd6mP9M7J09RHvJs06W8BGdQQAX8ARef09VQLdeRilSOcfHlDQJQ==}
+    dependencies:
+      '@types/lodash': 4.17.4
     dev: true
 
   /@types/lodash.sortby@4.7.9:
@@ -2724,6 +2736,10 @@ packages:
     dependencies:
       p-locate: 5.0.0
     dev: true
+
+  /lodash.groupby@4.6.0:
+    resolution: {integrity: sha512-5dcWxm23+VAoz+awKmBaiBvzox8+RqMgFhi7UvX9DHZr2HdxHXM/Wrf8cfKpsW37RNrvtPn6hSwNqurSILbmJw==}
+    dev: false
 
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}

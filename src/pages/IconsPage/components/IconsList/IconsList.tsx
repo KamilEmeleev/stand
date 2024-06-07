@@ -1,86 +1,92 @@
-import { useState, FC } from 'react';
+import { useState } from 'react';
+import type { FC } from 'react';
 
 import * as iconComponents from '@ozen-ui/icons';
+import type { icons } from '@ozen-ui/icons/manifest.json';
 import { Badge } from '@ozen-ui/kit/Badge';
 import { Card } from '@ozen-ui/kit/Card';
 import { Grid, GridItem } from '@ozen-ui/kit/Grid';
+import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { Stack } from '@ozen-ui/kit/Stack';
+import { Tooltip } from '@ozen-ui/kit/Tooltip';
 import { Typography } from '@ozen-ui/kit/Typography';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
-import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
+import clsx from 'clsx';
+import groupBy from 'lodash.groupby';
 
-import { IconProps, IconsProps } from '../../IconsPage.tsx';
 import { IconDetailDrawer } from '../IconDetailsDrawer';
 
 import s from './IconList.module.css';
 
-export const IconsList: FC<{ icons?: IconsProps }> = ({ icons }) => {
-  const { m } = useBreakpoints();
-  const isMobile = !m;
+export const IconsList: FC<{ icons: typeof icons }> = ({ icons }) => {
+  const iconsGroupByCategory = Object.entries(groupBy(icons, 'category'));
 
   const [open, { toggle, off }] = useBoolean(false);
-  const [selectedIcon, setSelectedIcon] = useState<IconProps>();
+  const [selectedIcon, setSelectedIcon] = useState<(typeof icons)[0]>();
 
-  const handleOnClick = (icon: IconProps) => () => {
+  const handleOnClick = (icon: (typeof icons)[0]) => () => {
     toggle();
     setSelectedIcon(icon);
   };
 
   return (
-    <Grid cols={{ xs: 2, s: 3, m: 4, l: 5 }} gap="l">
-      {!icons?.length ? (
-        <GridItem col={12}>
-          <Typography>Ничего не найдено</Typography>
-        </GridItem>
-      ) : (
-        icons?.map((icon) => {
-          const { componentName, deprecated } = icon;
+    <>
+      {iconsGroupByCategory.map(([key, icons]) => (
+        <Card borderWidth="none" key={key}>
+          <Stack
+            align="center"
+            gap="m"
+            className={spacing({ mb: 'l' })}
+            fullWidth
+          >
+            <Typography variant="heading-xl">{key}</Typography>
+            <Badge content={icons.length} color="actionLight" />
+          </Stack>
+          <Grid cols={{ xs: 4, s: 6, m: 8 }} gap="l" align="center" key={key}>
+            {!!icons.length &&
+              icons.map((icon) => {
+                const { componentName, deprecated } = icon;
 
-          const Icon =
-            // eslint-disable-next-line import/namespace
-            iconComponents[componentName as keyof typeof iconComponents] ||
-            null;
+                const ghost =
+                  componentName.includes('GhostIcon') ||
+                  componentName.includes('GhostColoredIcon');
 
-          const isGhost =
-            componentName.includes('GhostIcon') ||
-            componentName.includes('GhostColoredIcon');
+                const Icon =
+                  iconComponents[
+                    // eslint-disable-next-line import/namespace
+                    componentName as keyof typeof iconComponents
+                  ] || null;
 
-          return (
-            <GridItem key={componentName} className={s.item}>
-              <Card
-                gap="m"
-                fullWidth
-                as={Stack}
-                interactive
-                align="center"
-                className={s.card}
-                borderWidth="none"
-                direction="column"
-                onClick={handleOnClick(icon)}
-                background={isGhost ? 'main-inverse' : 'main'}
-              >
-                <Icon />
-                {deprecated && (
-                  <Badge
-                    size="xs"
-                    color="errorLight"
-                    className={s.badge}
-                    content="Deprecated"
-                  />
-                )}
-                <Typography
-                  color="secondary"
-                  variant={isMobile ? 'text-xs' : 'text-s'}
-                  noWrap
-                >
-                  {componentName}
-                </Typography>
-              </Card>
-            </GridItem>
-          );
-        })
+                return (
+                  <GridItem key={componentName} className={s.item}>
+                    <Tooltip
+                      label={componentName}
+                      placement="bottom"
+                      delayEnter={300}
+                      delayLeave={100}
+                      disableInteractive
+                    >
+                      <button
+                        className={clsx({
+                          [s.btn]: true,
+                          [s.deprecated]: deprecated,
+                          [s.ghost]: ghost,
+                        })}
+                        onClick={handleOnClick(icon)}
+                      >
+                        <Icon />
+                      </button>
+                    </Tooltip>
+                  </GridItem>
+                );
+              })}
+          </Grid>
+        </Card>
+      ))}
+      {!iconsGroupByCategory.length && (
+        <Typography>Ничего не найдено</Typography>
       )}
       <IconDetailDrawer icon={selectedIcon} open={open} onClose={off} />
-    </Grid>
+    </>
   );
 };
