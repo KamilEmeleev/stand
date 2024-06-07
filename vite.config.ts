@@ -1,5 +1,6 @@
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+// eslint-disable-next-line import/no-unresolved
+import { defineConfig } from 'vitest/config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,5 +20,10 @@ export default defineConfig({
   build: {
     cssMinify: 'lightningcss',
     sourcemap: true,
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './setupTests.ts',
   },
 });
