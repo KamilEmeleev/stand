@@ -33,6 +33,7 @@ export const OrdersPage = () => {
   useEffect(() => {
     setLoading.on();
     startTimer();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedOrder, startTimer]);
 
   const handleClickRow = (id: string) => {
