@@ -26,12 +26,12 @@ export const CalendarTableCell: FC<CalendarTableCellProps> = ({
   return (
     <TableCell
       role="button"
-      className={clsx(
-        s.monthTableCell,
-        [now && s.today],
-        [selected && s.selected],
-        [disabled && s.disabled]
-      )}
+      className={clsx({
+        [s.monthTableCell]: true,
+        [s.now]: now,
+        [s.selected]: selected,
+        [s.disabled]: disabled,
+      })}
       {...other}
     >
       <Typography

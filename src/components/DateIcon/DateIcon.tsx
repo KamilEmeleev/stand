@@ -15,7 +15,7 @@ export const DateIcon: FC<DateIconProps> = ({ date, active }) => {
   const [day, month] = formatDate(date);
 
   return (
-    <div className={clsx(s.dateIcon, [active && s.dateActive])}>
+    <div className={clsx({ [s.dateIcon]: true, [s.active]: active })}>
       <Typography align="center" variant="text-xl_1">
         {day}
       </Typography>
