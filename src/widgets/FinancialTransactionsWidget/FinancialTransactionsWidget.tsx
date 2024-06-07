@@ -8,7 +8,7 @@ import {
   TableHead,
   TableRow,
 } from '@ozen-ui/kit/Table';
-import { Tag } from '@ozen-ui/kit/Tag';
+import { Tag } from '@ozen-ui/kit/TagNext';
 import { Typography } from '@ozen-ui/kit/Typography';
 
 import {
@@ -21,8 +21,8 @@ import s from './FinancialTransactionsWidget.module.css';
 import { sum } from './utils';
 
 const transactionTypes: TransactionTypes = {
-  success: <Tag variant="success" label="Исполнена" size="s" />,
-  declined: <Tag variant="error" label="Отклонена" size="s" />,
+  success: <Tag color="success" label="Исполнена" size="s" />,
+  declined: <Tag color="error" label="Отклонена" size="s" />,
 };
 
 export const FinancialTransactionsWidget = () => {

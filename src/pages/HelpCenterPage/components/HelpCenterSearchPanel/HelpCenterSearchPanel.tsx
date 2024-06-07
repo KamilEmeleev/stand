@@ -8,7 +8,7 @@ import {
 import { DataListOption } from '@ozen-ui/kit/DataList';
 import { ListItemText } from '@ozen-ui/kit/List';
 import { Stack } from '@ozen-ui/kit/Stack';
-import { Tag } from '@ozen-ui/kit/Tag';
+import { Tag } from '@ozen-ui/kit/TagNext';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
 import { useLocation } from 'wouter';
 
@@ -101,12 +101,14 @@ export const HelpCenterSearchPanel = () => {
       <Stack gap="m" align="center" justify="center" wrap fullWidth>
         {TAGS.map((tag) => (
           <Tag
+            size="s"
             key={tag}
             as="button"
             label={tag}
             value={tag}
-            variant="info"
+            color="info"
             onClick={handleClickOnTag}
+            interactive
           />
         ))}
       </Stack>

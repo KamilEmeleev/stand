@@ -1,10 +1,10 @@
-import type { TagVariant } from '@ozen-ui/kit/Tag';
+import type { TagColor } from '@ozen-ui/kit/TagNext';
 
 import { daysInMonth } from '../utils';
 
 const now = new Date();
 
-type CalendarEventColor = TagVariant;
+type CalendarEventColor = TagColor;
 
 export interface CalendarEvent {
   id: string | number;

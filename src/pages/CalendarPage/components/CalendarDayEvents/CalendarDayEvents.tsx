@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Tag } from '@ozen-ui/kit/Tag';
+import { Tag } from '@ozen-ui/kit/TagNext';
 import { Typography } from '@ozen-ui/kit/Typography';
 
 import { calendarEvents } from '../../../../helpers';
@@ -21,16 +21,18 @@ export const CalendarDayEvents: FC<CalendarDayEventsProps> = ({ day }) => {
         .map(({ date, title, color }, index) => {
           return (
             <Tag
+              size="s"
               key={index}
               as="button"
               label={title}
-              variant={color}
+              color={color}
               className={s.dayEvent}
-              iconLeft={() => (
+              iconLeft={
                 <Typography color="inherit" variant="text-s_1">
                   {getTime(date.from)}
                 </Typography>
-              )}
+              }
+              interactive
             />
           );
         })}
