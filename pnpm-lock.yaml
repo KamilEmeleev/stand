@@ -10,10 +10,10 @@ dependencies:
     version: 0.54.0
   '@ozen-ui/icons':
     specifier: ^0.54.0
-    version: 0.54.0(react@18.2.0)
+    version: 0.54.0(react@18.3.1)
   '@ozen-ui/kit':
     specifier: ^0.54.0
-    version: 0.54.0(react-dom@18.2.0)(react@18.2.0)
+    version: 0.54.0(react-dom@18.3.1)(react@18.3.1)
   '@types/lodash.sortby':
     specifier: ^4.7.9
     version: 4.7.9
@@ -39,17 +39,17 @@ dependencies:
     specifier: ^3.0.3
     version: 3.0.3
   react:
-    specifier: ^18.2.0
-    version: 18.2.0
+    specifier: ^18.3.1
+    version: 18.3.1
   react-code-blocks:
     specifier: ^0.1.6
-    version: 0.1.6(react-dom@18.2.0)(react@18.2.0)
+    version: 0.1.6(react-dom@18.3.1)(react@18.3.1)
   react-dom:
-    specifier: ^18.2.0
-    version: 18.2.0(react@18.2.0)
+    specifier: ^18.3.1
+    version: 18.3.1(react@18.3.1)
   react-transition-group:
     specifier: ^4.4.5
-    version: 4.4.5(react-dom@18.2.0)(react@18.2.0)
+    version: 4.4.5(react-dom@18.3.1)(react@18.3.1)
   regexparam:
     specifier: ^3.0.0
     version: 3.0.0
@@ -73,7 +73,7 @@ dependencies:
     version: 2.2.0
   wouter:
     specifier: ^2.12.1
-    version: 2.12.1(react@18.2.0)
+    version: 2.12.1(react@18.3.1)
 
 devDependencies:
   '@types/react':
@@ -716,16 +716,16 @@ packages:
     resolution: {integrity: sha512-sCUCXA9JULyWIgj5BRsz5jBe0STkUTMmMdJrNfoo+eSVn/1DM/BoPVcGUta0v1f94jx/sJyS0RKx1cbr5XahqA==}
     dev: false
 
-  /@ozen-ui/icons@0.54.0(react@18.2.0):
+  /@ozen-ui/icons@0.54.0(react@18.3.1):
     resolution: {integrity: sha512-eS2Ix3hMa/n3zkRjfXZd+Cr2oFgQ5B5489zEZgGeBz3mC3ElBbKi75SE5xqQcpaAyuI6X5sUWHWunHUK8GuZLg==}
     peerDependencies:
       react: '>=17.0.2 <19.0.0'
     dependencies:
-      '@ozen-ui/logger': 0.54.0(react@18.2.0)
-      react: 18.2.0
+      '@ozen-ui/logger': 0.54.0(react@18.3.1)
+      react: 18.3.1
     dev: false
 
-  /@ozen-ui/kit@0.54.0(react-dom@18.2.0)(react@18.2.0):
+  /@ozen-ui/kit@0.54.0(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-mrxJ1QBrA0MwthID6YHsp78Rr4+FEJiX9GoyIvKiSigX9AyY0M7Hmm5M9+FSch2B5lujnPFc6XlqkDNqOemkNA==}
     peerDependencies:
       react: '>=17.0.2 <19.0.0'
@@ -734,25 +734,25 @@ packages:
       '@bem-react/classname': 1.6.0
       '@bem-react/classnames': 1.3.10
       '@ozen-ui/fonts': 0.54.0
-      '@ozen-ui/icons': 0.54.0(react@18.2.0)
-      '@ozen-ui/logger': 0.54.0(react@18.2.0)
+      '@ozen-ui/icons': 0.54.0(react@18.3.1)
+      '@ozen-ui/logger': 0.54.0(react@18.3.1)
       '@popperjs/core': 2.11.8
-      '@rehookify/datepicker': 6.6.1(react@18.2.0)
+      '@rehookify/datepicker': 6.6.1(react@18.3.1)
       decimal.js: 10.4.3
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       react-is: 18.3.1
-      react-popper: 2.3.0(@popperjs/core@2.11.8)(react-dom@18.2.0)(react@18.2.0)
-      react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
+      react-popper: 2.3.0(@popperjs/core@2.11.8)(react-dom@18.3.1)(react@18.3.1)
+      react-transition-group: 4.4.5(react-dom@18.3.1)(react@18.3.1)
       tslib: 2.6.3
     dev: false
 
-  /@ozen-ui/logger@0.54.0(react@18.2.0):
+  /@ozen-ui/logger@0.54.0(react@18.3.1):
     resolution: {integrity: sha512-4hdxoAfEwtE1g84lfJf0X1kqAmUfDAOoF2MIWul8EqXqvk79Umi2Indjqoy+NLt7bSObfme1eQ1R4DY4rfP5xA==}
     peerDependencies:
       react: '>=17.0.2 <19.0.0'
     dependencies:
-      react: 18.2.0
+      react: 18.3.1
     dev: false
 
   /@pkgr/core@0.1.1:
@@ -764,13 +764,13 @@ packages:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
     dev: false
 
-  /@rehookify/datepicker@6.6.1(react@18.2.0):
+  /@rehookify/datepicker@6.6.1(react@18.3.1):
     resolution: {integrity: sha512-g1Ap4Jz1iHd9pNW7mZ02qFb4kvjvli483j+/KQNiW3+6J11ZFJmLweO+IHd20J4p7agxCtlXW+HPeNNZeLOGLg==}
     engines: {node: '>=16'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
     dependencies:
-      react: 18.2.0
+      react: 18.3.1
     dev: false
 
   /@rollup/rollup-android-arm-eabi@4.18.0:
@@ -3125,28 +3125,28 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /react-code-blocks@0.1.6(react-dom@18.2.0)(react@18.2.0):
+  /react-code-blocks@0.1.6(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-ENNuxG07yO+OuX1ChRje3ieefPRz6yrIpHmebQlaFQgzcAHbUfVeTINpOpoI9bSRSObeYo/OdHsporeToZ7fcg==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '>=16'
     dependencies:
       '@babel/runtime': 7.24.7
-      react: 18.2.0
-      react-syntax-highlighter: 15.5.0(react@18.2.0)
-      styled-components: 6.1.11(react-dom@18.2.0)(react@18.2.0)
+      react: 18.3.1
+      react-syntax-highlighter: 15.5.0(react@18.3.1)
+      styled-components: 6.1.11(react-dom@18.3.1)(react@18.3.1)
       tslib: 2.6.3
     transitivePeerDependencies:
       - react-dom
     dev: false
 
-  /react-dom@18.2.0(react@18.2.0):
-    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
+  /react-dom@18.3.1(react@18.3.1):
+    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^18.3.1
     dependencies:
       loose-envify: 1.4.0
-      react: 18.2.0
+      react: 18.3.1
       scheduler: 0.23.2
     dev: false
 
@@ -3162,7 +3162,7 @@ packages:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
     dev: false
 
-  /react-popper@2.3.0(@popperjs/core@2.11.8)(react-dom@18.2.0)(react@18.2.0):
+  /react-popper@2.3.0(@popperjs/core@2.11.8)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-e1hj8lL3uM+sgSR4Lxzn5h1GxBlpa4CQz0XLF8kx4MDrDRWY0Ena4c97PUeSX9i5W3UAfDP0z0FXCTQkoXUl3Q==}
     peerDependencies:
       '@popperjs/core': ^2.0.0
@@ -3170,8 +3170,8 @@ packages:
       react-dom: ^16.8.0 || ^17 || ^18
     dependencies:
       '@popperjs/core': 2.11.8
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       react-fast-compare: 3.2.2
       warning: 4.0.3
     dev: false
@@ -3181,7 +3181,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-syntax-highlighter@15.5.0(react@18.2.0):
+  /react-syntax-highlighter@15.5.0(react@18.3.1):
     resolution: {integrity: sha512-+zq2myprEnQmH5yw6Gqc8lD55QHnpKaU8TOcFeC/Lg/MQSs8UknEA0JC4nTZGFAXC2J2Hyj/ijJ7NlabyPi2gg==}
     peerDependencies:
       react: '>= 0.14.0'
@@ -3190,11 +3190,11 @@ packages:
       highlight.js: 10.7.3
       lowlight: 1.20.0
       prismjs: 1.29.0
-      react: 18.2.0
+      react: 18.3.1
       refractor: 3.6.0
     dev: false
 
-  /react-transition-group@4.4.5(react-dom@18.2.0)(react@18.2.0):
+  /react-transition-group@4.4.5(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
     peerDependencies:
       react: '>=16.6.0'
@@ -3204,12 +3204,12 @@ packages:
       dom-helpers: 5.2.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
-  /react@18.2.0:
-    resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
+  /react@18.3.1:
+    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
@@ -3562,7 +3562,7 @@ packages:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
     dev: false
 
-  /styled-components@6.1.11(react-dom@18.2.0)(react@18.2.0):
+  /styled-components@6.1.11(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-Ui0jXPzbp1phYij90h12ksljKGqF8ncGx+pjrNPsSPhbUUjWT2tD1FwGo2LF6USCnbrsIhNngDfodhxbegfEOA==}
     engines: {node: '>= 16'}
     peerDependencies:
@@ -3575,8 +3575,8 @@ packages:
       css-to-react-native: 3.2.0
       csstype: 3.1.3
       postcss: 8.4.38
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       shallowequal: 1.1.0
       stylis: 4.3.2
       tslib: 2.6.2
@@ -3869,12 +3869,12 @@ packages:
     dependencies:
       punycode: 2.3.1
 
-  /use-sync-external-store@1.2.2(react@18.2.0):
+  /use-sync-external-store@1.2.2(react@18.3.1):
     resolution: {integrity: sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      react: 18.2.0
+      react: 18.3.1
     dev: false
 
   /util-deprecate@1.0.2:
@@ -3969,13 +3969,13 @@ packages:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
     engines: {node: '>=0.10.0'}
 
-  /wouter@2.12.1(react@18.2.0):
+  /wouter@2.12.1(react@18.3.1):
     resolution: {integrity: sha512-G7a6JMSLSNcu6o8gdOfIzqxuo8Qx1qs+9rpVnlurH69angsSFPZP5gESNuVNeJct/MGpQg191pDo4HUjTx7IIQ==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
-      react: 18.2.0
-      use-sync-external-store: 1.2.2(react@18.2.0)
+      react: 18.3.1
+      use-sync-external-store: 1.2.2(react@18.3.1)
     dev: false
 
   /wrap-ansi@7.0.0:
