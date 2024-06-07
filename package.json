@@ -49,6 +49,6 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "husky": "^9.0.11",
     "typescript": "^5.2.2",
-    "vite": "^5.2.12"
+    "vite": "^5.2.13"
   }
 }
