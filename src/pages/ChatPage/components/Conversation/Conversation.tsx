@@ -65,7 +65,7 @@ export const Conversation: FC<ConversationProps> = ({
         justify="center"
         disabled
       >
-        <Card>Здесь пусто – выросла капуста!</Card>
+        <Card>Здесь пусто — выросла капуста!</Card>
       </Card>
     );
   }

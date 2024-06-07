@@ -189,13 +189,13 @@ export const LiveCoding = () => {
             fullWidth
           >
             <SegmentItem value="male">
-              {isMobile ? 'Mальчик' : 'Я – мальчик'}
+              {isMobile ? 'Mальчик' : 'Я — мальчик'}
             </SegmentItem>
             <SegmentItem value="female">
-              {isMobile ? 'Девочка' : 'Я – девочка'}
+              {isMobile ? 'Девочка' : 'Я — девочка'}
             </SegmentItem>
             <SegmentItem value="tomato">
-              {isMobile ? 'Томат' : 'Я – томат'}
+              {isMobile ? 'Томат' : 'Я — томат'}
             </SegmentItem>
           </Segment>
           <Input size="s" label="Как тебя зовут?" hint="" fullWidth />
@@ -244,7 +244,7 @@ export const LiveCoding = () => {
               Что есть у нас в коробке?
             </Typography>
             <Typography variant="text-s" color="secondary">
-              Дизайн-система – это не только кнопочки, это намного больше
+              Дизайн-система — это не только кнопочки, это намного больше
             </Typography>
           </Stack>
           <TableContainer>
