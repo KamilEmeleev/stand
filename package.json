@@ -12,7 +12,8 @@
     "lint": "pnpm lint:js && pnpm lint:css",
     "preview": "vite preview",
     "update:deps": "pnpm update --interactive --latest -r",
-    "analyze": "source-map-explorer 'dist/assets/**/*.js'"
+    "analyze": "source-map-explorer 'dist/assets/**/*.js'",
+    "prepare": "husky"
   },
   "dependencies": {
     "@ozen-ui/fonts": "^0.54.0",
@@ -49,6 +50,7 @@
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
+    "husky": "^9.0.11",
     "typescript": "^5.2.2",
     "vite": "^4.5.0"
   }
