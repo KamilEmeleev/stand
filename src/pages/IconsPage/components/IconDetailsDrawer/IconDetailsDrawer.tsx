@@ -64,10 +64,7 @@ export const IconDetailDrawer: FC<IconDetailDrawerProps> = ({
 
   const isMultiSize = Array.isArray(iconSize);
 
-  const icons = iconComponents as Record<
-    string,
-    FC<IconProps & { size: IconSize }>
-  >;
+  const icons = iconComponents as unknown as Record<string, FC<IconProps>>;
 
   const Icon = componentName ? icons[componentName] : undefined;
 

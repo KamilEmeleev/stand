@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { FC } from 'react';
 
 import * as iconComponents from '@ozen-ui/icons';
+import type { IconProps } from '@ozen-ui/icons';
 import type { icons } from '@ozen-ui/icons/manifest.json';
 import { Badge } from '@ozen-ui/kit/Badge';
 import { Card } from '@ozen-ui/kit/Card';
@@ -51,11 +52,12 @@ export const IconsList: FC<{ icons: typeof icons }> = ({ icons }) => {
                   componentName.includes('GhostIcon') ||
                   componentName.includes('GhostColoredIcon');
 
-                const Icon =
-                  iconComponents[
-                    // eslint-disable-next-line import/namespace
-                    componentName as keyof typeof iconComponents
-                  ] || null;
+                const icons = iconComponents as unknown as Record<
+                  string,
+                  FC<IconProps>
+                >;
+
+                const Icon = icons[componentName] || null;
 
                 return (
                   <GridItem key={componentName} className={s.item}>

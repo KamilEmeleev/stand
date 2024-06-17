@@ -4,7 +4,7 @@ import { Card } from '@ozen-ui/kit/Card';
 import {
   Grid,
   GridItem as OzenGridItem,
-  type GridItemProps,
+  type GridItemBaseProps,
 } from '@ozen-ui/kit/Grid';
 
 import {
@@ -18,7 +18,7 @@ import {
 
 import s from './ProfilePage.module.css';
 
-const GridItem: FC<GridItemProps> = (props) => (
+const GridItem: FC<GridItemBaseProps> = (props) => (
   <OzenGridItem as={Card} borderWidth="none" className={s.card} {...props} />
 );
 

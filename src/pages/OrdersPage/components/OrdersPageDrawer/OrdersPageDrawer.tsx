@@ -31,7 +31,7 @@ export type OrdersPageDrawerProps = DrawerProps & {
   loading?: boolean;
 };
 
-export const OrdersPageDrawer: FC<OrdersPageDrawerProps> = ({
+export const OrdersPageDrawer: FC<Partial<OrdersPageDrawerProps>> = ({
   open,
   onClose,
   order,

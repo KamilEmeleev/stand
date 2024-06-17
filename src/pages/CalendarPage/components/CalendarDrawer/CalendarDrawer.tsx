@@ -16,7 +16,7 @@ import { getTime } from '../../../../utils';
 
 import s from './CalendarDrawer.module.css';
 
-export const CalendarDrawer: FC<DrawerProps> = (props) => {
+export const CalendarDrawer: FC<Partial<DrawerProps>> = (props) => {
   const {
     data: { date, time },
   } = useCalendarContext();
