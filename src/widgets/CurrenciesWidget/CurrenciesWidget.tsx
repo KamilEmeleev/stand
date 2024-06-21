@@ -22,11 +22,13 @@ export const CurrenciesWidget = () => {
     setLoading.on();
     const url = 'https://latest.currency-api.pages.dev/v1/currencies/kzt.json';
 
-    const response = await fetch(url);
-
-    const currency = await response.json();
-
-    setCurrency(currency);
+    try {
+      const response = await fetch(url);
+      const currency = await response.json();
+      setCurrency(currency);
+    } catch (error) {
+      // console.log(error);
+    }
 
     setLoading.off();
   };
