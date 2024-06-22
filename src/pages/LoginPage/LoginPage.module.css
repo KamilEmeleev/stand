@@ -1,10 +1,9 @@
 @import url('../../vars.modules.css');
 
 .login {
-  inline-size: 100vw;
-  block-size: 100vh;
   display: flex;
   overflow: auto;
+  inline-size: 100%;
   background: var(--color-background-main);
 }
 

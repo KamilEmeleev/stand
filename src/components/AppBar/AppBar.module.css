@@ -3,7 +3,6 @@
   --appbar-fullwidth: 256px;
   position: relative;
   display: inline-flex;
-  block-size: 100vh;
   background-color: var(--color-accent-main);
 
   :global(.Divider) {

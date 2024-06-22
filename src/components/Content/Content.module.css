@@ -2,13 +2,12 @@
 
 .content {
   flex-grow: 1;
+  display: flex;
   border-radius: 0;
-  background-color: var(--color-background-primary);
-  block-size: 100vh;
   overflow-y: hidden;
   box-sizing: border-box;
-  display: flex;
   flex-direction: column;
+  background-color: var(--color-background-primary);
 
   &::after {
     content: "";

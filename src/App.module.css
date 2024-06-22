@@ -1,3 +1,4 @@
 .app {
   display: flex;
+  block-size: calc(var(--vh, 1vh) * 100);
 }

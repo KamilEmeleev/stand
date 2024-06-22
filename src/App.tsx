@@ -14,8 +14,11 @@ import {
   Content,
   AppBarProvider,
 } from './components';
+import { use1vh } from './hooks/use1vh';
 
 function App() {
+  use1vh();
+
   return (
     <AppProvider>
       <AppBarProvider>

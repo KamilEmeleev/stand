@@ -3,8 +3,7 @@
 .logout {
   overflow: auto;
   display: flex;
-  block-size: 100vh;
-  inline-size: 100vw;
+  inline-size: 100%;
   background-color: var(--color-background-main-hover);
 }
 
