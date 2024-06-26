@@ -44,12 +44,19 @@ export const LoginPageBody = () => {
 
   return (
     <Stack gap="xl" as="form" direction="column" onSubmit={onSubmit} fullWidth>
-      <InputAutofill id="login" name="login" label="Логин" fullWidth />
+      <InputAutofill
+        id="login"
+        name="login"
+        label="Логин"
+        defaultValue="guest"
+        fullWidth
+      />
       <InputAutofill
         type={type}
         id="password"
         label="Пароль"
         name="password"
+        defaultValue="guest"
         renderRight={({ size }) => (
           <IconButton
             size={size}
