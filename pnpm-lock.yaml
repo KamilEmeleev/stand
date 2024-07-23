@@ -6,14 +6,14 @@ settings:
 
 dependencies:
   '@ozen-ui/fonts':
-    specifier: ^0.57.0
-    version: 0.57.0
+    specifier: ^0.58.0
+    version: 0.58.0
   '@ozen-ui/icons':
-    specifier: ^0.57.0
-    version: 0.57.0(react@18.3.1)
+    specifier: ^0.58.0
+    version: 0.58.0(react@18.3.1)
   '@ozen-ui/kit':
-    specifier: ^0.57.0
-    version: 0.57.0(react-dom@18.3.1)(react@18.3.1)
+    specifier: ^0.58.0
+    version: 0.58.0(react-dom@18.3.1)(react@18.3.1)
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
@@ -338,6 +338,13 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.1
+
+  /@babel/runtime@7.24.8:
+    resolution: {integrity: sha512-5F7SDGs1T72ZczbRwbGO9lQi0NLjQxzl6i4lJxLxfW9U5UluCSyEJeniWvnhl3/euNiqQVbo8zruhsDfid0esA==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.14.1
+    dev: false
 
   /@babel/template@7.24.7:
     resolution: {integrity: sha512-jYqfPrU9JTF0PmPy1tLYHW4Mp4KlgxJD9l2nP9fD6yT/ICi554DmrWBAEYpIelzjHf1msDP3PxJIRt/nFNfBig==}
@@ -759,32 +766,32 @@ packages:
       fastq: 1.17.1
     dev: true
 
-  /@ozen-ui/fonts@0.57.0:
-    resolution: {integrity: sha512-C/eHwa5vouXzWtQF6lwKiXWerRTRnYRp2bqhZoBflrv1XLfjpnVsPBTRgV6nKutZMVhqmOTeK0e1ulbGWNjgCg==}
+  /@ozen-ui/fonts@0.58.0:
+    resolution: {integrity: sha512-uuVpFX1R8yiG5XBI1l6byDx9Oynb79LUidW1jzb7unY3v1yLtVwR4M5r3OxoJ/DN8RSmR4c1ByY/WmfNh3UlWg==}
     dev: false
 
-  /@ozen-ui/icons@0.57.0(react@18.3.1):
-    resolution: {integrity: sha512-czTwQTZh25Z/QGeWHJB2Q61OXoa2jsvCQusN8TQBATc9tBr4rgbXSqhVBSvnooVQEZx8F+Bmdi4K5iqcf6VGnQ==}
+  /@ozen-ui/icons@0.58.0(react@18.3.1):
+    resolution: {integrity: sha512-1/aqkViocJmCDwpz7DY/sx5C4B173E/S6wY9nAn1hsPAv28gveOngUnqqet1R7r4wLyz7cTAPfAUn20sHMeHUw==}
     peerDependencies:
       react: '>=17.0.2 <19.0.0'
     dependencies:
-      '@ozen-ui/logger': 0.57.0(react@18.3.1)
+      '@ozen-ui/logger': 0.58.0(react@18.3.1)
       react: 18.3.1
     dev: false
 
-  /@ozen-ui/kit@0.57.0(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-f6NujzZiuCbfbjfyWqvQUz2GiIkIG+UtS3BOmpfLfxAa77pXs+ImMPme3Fkbh53A/+Sn+dXBbyIrQHxKor7NTA==}
+  /@ozen-ui/kit@0.58.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-gnb7/7Q6+maOpAhNujZemLMVNb/0JtCGBlXL93xG/Qx1Fy9KlXFrdOK7QjIAdSN2GIldF2xaLDI/Bltqq93dmQ==}
     peerDependencies:
       react: '>=17.0.2 <19.0.0'
       react-dom: '>=17.0.2 <19.0.0'
     dependencies:
       '@bem-react/classname': 1.6.0
       '@bem-react/classnames': 1.3.10
-      '@ozen-ui/fonts': 0.57.0
-      '@ozen-ui/icons': 0.57.0(react@18.3.1)
-      '@ozen-ui/logger': 0.57.0(react@18.3.1)
+      '@ozen-ui/fonts': 0.58.0
+      '@ozen-ui/icons': 0.58.0(react@18.3.1)
+      '@ozen-ui/logger': 0.58.0(react@18.3.1)
       '@popperjs/core': 2.11.8
-      '@rehookify/datepicker': 6.6.1(react@18.3.1)
+      '@rehookify/datepicker': 6.6.4(react@18.3.1)
       decimal.js: 10.4.3
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -794,8 +801,8 @@ packages:
       tslib: 2.6.3
     dev: false
 
-  /@ozen-ui/logger@0.57.0(react@18.3.1):
-    resolution: {integrity: sha512-f4J/FaGrzstvHZ+fdrBEJ/93UQmbAOwgGsKWCpgFjY+Hsm+k0r1zPQx7sTTJfeOXpgAirQdVgwr8pYN8UvSHpA==}
+  /@ozen-ui/logger@0.58.0(react@18.3.1):
+    resolution: {integrity: sha512-lYDeO/hO8bsYOMZO20WHE1Cx/G+FgVZpYgM3M9lAxFQgv2zyF9V1e5bbFMa608hneJaXKE8hDQptjob7SF2xAQ==}
     peerDependencies:
       react: '>=17.0.2 <19.0.0'
     dependencies:
@@ -811,8 +818,8 @@ packages:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
     dev: false
 
-  /@rehookify/datepicker@6.6.1(react@18.3.1):
-    resolution: {integrity: sha512-g1Ap4Jz1iHd9pNW7mZ02qFb4kvjvli483j+/KQNiW3+6J11ZFJmLweO+IHd20J4p7agxCtlXW+HPeNNZeLOGLg==}
+  /@rehookify/datepicker@6.6.4(react@18.3.1):
+    resolution: {integrity: sha512-afowNYYVevuz0q8Npn3j/2zqDoh5nlxX3ye7KIoY02XNpEeWJl9xD4MBp3jRVY+PeZd8zvAfG+4pA8jigxI23A==}
     engines: {node: '>=16'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
@@ -1900,7 +1907,7 @@ packages:
   /dom-helpers@5.2.1:
     resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==}
     dependencies:
-      '@babel/runtime': 7.24.7
+      '@babel/runtime': 7.24.8
       csstype: 3.1.3
     dev: false
 
@@ -3752,7 +3759,7 @@ packages:
       react: '>=16.6.0'
       react-dom: '>=16.6.0'
     dependencies:
-      '@babel/runtime': 7.24.7
+      '@babel/runtime': 7.24.8
       dom-helpers: 5.2.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
