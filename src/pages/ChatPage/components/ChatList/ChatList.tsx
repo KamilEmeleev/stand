@@ -51,12 +51,12 @@ export const ChatList: FC<ChatListProps> = ({
                 }}
               >
                 <ListItemIcon>
-                  <Avatar name={user.name} src={user.avatar?.url}>
+                  <Avatar name={user.fullName} src={user.avatar?.url}>
                     {AvatarIcon && <AvatarIcon />}
                   </Avatar>
                 </ListItemIcon>
                 <ListItemText
-                  primary={user.name}
+                  primary={user.fullName}
                   secondary={lastMessage?.text}
                   primaryTypographyProps={{
                     variant: 'text-m_1',

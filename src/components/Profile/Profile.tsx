@@ -13,14 +13,14 @@ export const Profile = () => {
         <ListItemIcon>
           <Avatar
             size="xs"
-            name={user.name}
+            name={user.fullName}
             src={user.avatar.url}
             indicatorProps={{ className: s.indicator }}
             online
           />
         </ListItemIcon>
         <ListItemText
-          primary={user.name}
+          primary={user.fullName}
           secondary="Online"
           primaryTypographyProps={{
             noWrap: true,

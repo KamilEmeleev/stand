@@ -1,10 +1,10 @@
 @import url('../../../../vars.modules.css');
 
 main {
-  position: relative;
-  overflow-y: auto;
   flex-grow: 1;
   display: flex;
+  overflow-y: auto;
+  position: relative;
   flex-direction: column;
 }
 

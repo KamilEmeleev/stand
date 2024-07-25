@@ -1,0 +1,13 @@
+.img {
+  border-radius: var(--border-radius-l);
+  max-block-size: 30vh;
+  object-fit: cover;
+  inline-size: 100%;
+}
+
+.minRead {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--spacing-2xs);
+}

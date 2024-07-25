@@ -20,13 +20,13 @@ export const SocialActivityWidget = () => {
       >
         <Avatar
           size="xl"
-          name={user.name}
+          name={user.fullName}
           src={user.avatar.url}
           className={s.avatar}
         />
         <Stack direction="column" gap="xs">
           <Typography variant="text-xl_1" align="center">
-            {user.name}
+            {user.fullName}
           </Typography>
           <Typography color="tertiary" align="center">
             {user.role}

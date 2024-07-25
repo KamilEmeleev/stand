@@ -32,10 +32,10 @@ export const LogoutPage = () => {
             <List disablePadding>
               <ListItem disableGutters>
                 <ListItemIcon>
-                  <Avatar name={user.name} src={user.avatar.url} />
+                  <Avatar name={user.fullName} src={user.avatar.url} />
                 </ListItemIcon>
                 <ListItemText
-                  primary={user.name}
+                  primary={user.fullName}
                   secondary="Текущая сессия"
                   primaryTypographyProps={{ variant: 'text-l' }}
                   secondaryTypographyProps={{ variant: 'text-s' }}

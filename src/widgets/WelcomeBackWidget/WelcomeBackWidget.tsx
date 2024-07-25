@@ -4,6 +4,7 @@ import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';
 
 import img from '../../assets/3d-casual-life-trophy-and-target.png';
+import { user } from '../../helpers';
 
 import s from './WelcomeBackWidget.module.css';
 
@@ -12,7 +13,7 @@ export const WelcomeBackWidget = () => {
     <Stack gap="2xl" direction={{ xs: 'column', s: 'row' }}>
       <Stack direction="column" gap="l" align="start" fullWidth>
         <Typography variant="text-2xl_1" as="h4">
-          Поздравляем, Айлин! 🥳
+          Поздравляем, {user.name}! 🥳
         </Typography>
         <Typography variant="text-m_1">
           Вы успешно завершили все свои задачи за прошедший спринт.

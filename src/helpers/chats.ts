@@ -37,7 +37,8 @@ export const chats: Chat[] = [
   {
     id: generateUniqKey(),
     user: {
-      name: 'Анастасия Петрова',
+      fullName: 'Анастасия Петрова',
+      name: 'Анастасия',
       online: true,
       avatar: {
         url: user_1,
@@ -91,7 +92,8 @@ export const chats: Chat[] = [
   {
     id: generateUniqKey(),
     user: {
-      name: 'Саят Ахметов',
+      fullName: 'Саят Ахметов',
+      name: 'Саят',
       online: true,
       avatar: {
         url: user_2,
@@ -109,7 +111,8 @@ export const chats: Chat[] = [
   {
     id: generateUniqKey(),
     user: {
-      name: 'Александр Ишков',
+      name: 'Александр',
+      fullName: 'Александр Ишков',
       online: true,
       avatar: {
         url: user_3,
@@ -127,7 +130,8 @@ export const chats: Chat[] = [
   {
     id: generateUniqKey(),
     user: {
-      name: 'Арсен Насипов',
+      fullName: 'Арсен Насипов',
+      name: 'Арсен',
     },
     messages: [
       {
@@ -141,7 +145,8 @@ export const chats: Chat[] = [
   {
     id: generateUniqKey(),
     user: {
-      name: 'Рустем Гатиатулин',
+      fullName: 'Рустем Гатиатулин',
+      name: 'Рустем',
       avatar: {
         url: user_4,
       },
@@ -165,6 +170,7 @@ export const chats: Chat[] = [
   {
     id: generateUniqKey(),
     user: {
+      fullName: 'Bereke Bank',
       name: 'Bereke Bank',
       online: true,
       avatar: {
@@ -189,7 +195,8 @@ export const chats: Chat[] = [
   {
     id: generateUniqKey(),
     user: {
-      name: 'Вагиз Ибрагимов',
+      fullName: 'Вагиз Ибрагимов',
+      name: 'Вагиз ',
     },
     messages: [
       {

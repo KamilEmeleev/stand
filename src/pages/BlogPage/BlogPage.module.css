@@ -1,0 +1,27 @@
+.img {
+  border-start-start-radius: inherit;
+  border-start-end-radius: inherit;
+  max-block-size: 30vh;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  gap: var(--spacing-s);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--spacing-l);
+}
+
+.writeArticle {
+  button {
+    flex-shrink: 0;
+  }
+}
+
+.minRead {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--spacing-2xs);
+}

@@ -3,6 +3,7 @@ import { FC } from 'react';
 import ava from '../assets/avatar-user.png';
 
 export interface User {
+  fullName: string;
   name: string;
   online?: boolean;
   role?: string;
@@ -13,7 +14,8 @@ export interface User {
 }
 
 export const user = {
-  name: 'Айлин Ким',
+  fullName: 'Айлин Ким',
+  name: 'Aйлин',
   role: 'Продуктовый дизайнер',
   avatar: {
     url: ava,

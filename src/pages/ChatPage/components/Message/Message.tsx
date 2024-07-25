@@ -27,7 +27,7 @@ export const Message = forwardRef<HTMLDivElement, ChatMessage & { user: User }>(
         align="center"
         fullWidth
       >
-        <Avatar name={user?.name} size="s" src={user?.avatar?.url}>
+        <Avatar name={user?.fullName} size="s" src={user?.avatar?.url}>
           {AvatarIcon && <AvatarIcon />}
         </Avatar>
         <Stack
@@ -42,7 +42,7 @@ export const Message = forwardRef<HTMLDivElement, ChatMessage & { user: User }>(
             gap="xs"
             radius="l"
           >
-            <Typography variant="text-m_1">{user?.name}</Typography>
+            <Typography variant="text-m_1">{user?.fullName}</Typography>
             <Typography as="span" className={s.text}>
               {!emoji && text}
               {emoji && <img src={emoji} alt="emoji" width={100} />}

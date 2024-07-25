@@ -82,7 +82,7 @@ export const Conversation: FC<ConversationProps> = ({
         )}
         <Stack align="center" gap="l" style={{ minWidth: 0 }}>
           <Avatar
-            name={chat?.user.name}
+            name={chat?.user.fullName}
             src={chat?.user.avatar?.url}
             online={chat?.user.online}
           >
@@ -90,7 +90,7 @@ export const Conversation: FC<ConversationProps> = ({
           </Avatar>
           <Stack direction="column" style={{ minWidth: 0 }}>
             <Typography variant="text-m_1" noWrap>
-              {chat?.user.name}
+              {chat?.user.fullName}
             </Typography>
             <Typography variant="text-s" color="tertiary" noWrap>
               {chat?.user.online ? 'В сети' : 'Был(а) в сети 1 час назад'}

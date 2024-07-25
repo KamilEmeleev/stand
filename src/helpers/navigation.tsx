@@ -11,6 +11,7 @@ import {
   FlameIcon,
   BrOzenIcon,
   CalendarIcon,
+  ParagraphIcon,
 } from '@ozen-ui/icons';
 import { type ContainerBaseProps } from '@ozen-ui/kit/Container';
 
@@ -26,16 +27,21 @@ import {
   IconsPage,
   GettingStartedPage,
   CalendarPage,
+  BlogPage,
 } from '../pages';
+import { BlogPostDetailsPage } from '../pages/BlogPostDetailsPage';
+
+import { articles } from './blog.ts';
 
 export interface App {
   icon?: FC;
-  title: string;
+  title?: string;
   link?: string;
   count?: number;
   containerProps?: Partial<ContainerBaseProps>;
   disableHeader?: boolean;
-  component?: (params: unknown) => ReactElement;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  component?: (params: any) => ReactElement | null | undefined;
 }
 
 const routes: { [key in string]: App } = {
@@ -48,6 +54,21 @@ const routes: { [key in string]: App } = {
     link: '/ozenbook/icons',
     containerProps: { maxWidth: 'm' },
     component: () => <IconsPage />,
+  },
+  blog: {
+    title: 'Блог',
+    link: '/blog',
+    icon: ParagraphIcon,
+    component: () => <BlogPage />,
+  },
+  'blog-post-details': {
+    title: 'Детальная информация',
+    link: '/blog/:id',
+    component: ({ id }) => {
+      const post = articles.find((article) => article.id === id);
+
+      return post && <BlogPostDetailsPage {...post} />;
+    },
   },
   'getting-started': {
     title: 'Начать работу',
@@ -106,7 +127,7 @@ const routes: { [key in string]: App } = {
     component: () => <HelpCenterPage />,
   },
   'help-center-details': {
-    title: 'Ответ',
+    title: 'Детальная информация',
     link: '/help-center/:id',
     component: () => {
       return <HelpCenterDetailsPage />;
@@ -132,6 +153,7 @@ export const navigation: Navigation = {
   apps: [
     'main',
     'profile',
+    'blog',
     'chat',
     'orders',
     'calendar',
