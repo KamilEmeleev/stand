@@ -17,9 +17,9 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@ozen-ui/fonts": "^0.58.0",
-    "@ozen-ui/icons": "^0.58.0",
-    "@ozen-ui/kit": "^0.58.0",
+    "@ozen-ui/fonts": "^0.58.1",
+    "@ozen-ui/icons": "^0.58.1",
+    "@ozen-ui/kit": "^0.58.1",
     "clsx": "^2.1.1",
     "lightningcss": "^1.25.1",
     "lodash.groupby": "^4.6.0",
