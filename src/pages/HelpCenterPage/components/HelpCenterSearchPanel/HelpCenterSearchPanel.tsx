@@ -4,9 +4,8 @@ import { SearchIcon } from '@ozen-ui/icons';
 import {
   Autocomplete,
   type AutocompleteProps,
-} from '@ozen-ui/kit/Autocomplete';
-import { DataListOption } from '@ozen-ui/kit/DataList';
-import { ListItemText } from '@ozen-ui/kit/List';
+} from '@ozen-ui/kit/AutocompleteNext';
+import { ListItem, ListItemText } from '@ozen-ui/kit/List';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Tag } from '@ozen-ui/kit/TagNext';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
@@ -59,11 +58,12 @@ export const HelpCenterSearchPanel = () => {
   };
 
   const renderOption: AutocompleteProps<(typeof hints)[0]>['renderOption'] = ({
+    props,
     option,
   }) => (
-    <DataListOption key={option.id} value={option.id}>
+    <ListItem {...props}>
       <ListItemText primary={option.label} secondary={option.category} />
-    </DataListOption>
+    </ListItem>
   );
 
   const searchFunction: AutocompleteProps<
