@@ -19,7 +19,8 @@ export const BlogPostDetailsPage: FC<(typeof articles)[0]> = ({
   author,
   minRead,
   creationDate,
-  description,
+  subtitle,
+  text,
   previewImg,
 }) => {
   return (
@@ -39,11 +40,9 @@ export const BlogPostDetailsPage: FC<(typeof articles)[0]> = ({
           gap="xl"
           fullWidth
         >
-          <img src={previewImg} alt={title} className={s.img} />
           <Tag label={stream} size="s" color="neutral" />
           <Typography variant="text-xl_1">{title}</Typography>
-          <Typography color="secondary">{description}</Typography>
-
+          <Typography color="secondary">{subtitle}</Typography>
           <Stack align="center" gap="m" fullWidth>
             <Avatar
               src={author?.avatar.url}
@@ -51,7 +50,7 @@ export const BlogPostDetailsPage: FC<(typeof articles)[0]> = ({
               size="xs"
             />
             <Stack
-              direction={{ xs: 'column', m: 'row' }}
+              direction={{ xs: 'column' }}
               justify="spaceBetween"
               gap="xs"
               fullWidth
@@ -68,6 +67,8 @@ export const BlogPostDetailsPage: FC<(typeof articles)[0]> = ({
               </div>
             </Stack>
           </Stack>
+          <img src={previewImg} alt={title} className={s.img} />
+          <Typography>{text}</Typography>
         </Card>
       </Stack>
     </Container>

@@ -20,7 +20,7 @@ export const BlogPopularPosts = () => {
         ({
           title,
           id,
-          description,
+          subtitle,
           previewImg,
           stream,
           author,
@@ -48,11 +48,11 @@ export const BlogPopularPosts = () => {
                     }}
                   />
                 </WouterLink>
-                <img alt={description} src={previewImg} className={s.img} />
+                <img alt={subtitle} src={previewImg} className={s.img} />
                 <div className={s.content}>
                   <Tag label={stream} size="s" color="neutral" />
                   <Typography variant="text-xl_1">{title}</Typography>
-                  <Typography color="secondary">{description}</Typography>
+                  <Typography color="secondary">{subtitle}</Typography>
                   <Stack align="center" gap="m" fullWidth>
                     <Avatar
                       src={author.avatar.url}
