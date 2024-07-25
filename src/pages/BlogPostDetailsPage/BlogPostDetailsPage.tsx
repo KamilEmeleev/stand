@@ -40,33 +40,37 @@ export const BlogPostDetailsPage: FC<(typeof articles)[0]> = ({
           gap="xl"
           fullWidth
         >
-          <Tag label={stream} size="s" color="neutral" />
-          <Typography variant="text-xl_1">{title}</Typography>
-          <Typography color="secondary">{subtitle}</Typography>
-          <Stack align="center" gap="m" fullWidth>
-            <Avatar
-              src={author?.avatar.url}
-              name={author?.fullName}
-              size="xs"
-            />
-            <Stack
-              direction={{ xs: 'column' }}
-              justify="spaceBetween"
-              gap="xs"
-              fullWidth
-            >
-              <Typography variant="text-m_1">
-                {author?.fullName} • {creationDate && formatDate(creationDate)}
-              </Typography>
-              <div className={s.minRead}>
-                <Typography color="secondary">{minRead} мин</Typography>
-                <ClockFilledIcon
-                  size="s"
-                  className={cnTypography({ color: 'secondary' })}
-                />
-              </div>
+          <Stack gap="m" direction="column" align="start" fullWidth>
+            <Tag label={stream} size="s" color="neutral" />
+            <Typography variant="text-xl_1">{title}</Typography>
+            <Typography color="secondary">{subtitle}</Typography>
+            <Stack align="center" gap="m" fullWidth>
+              <Avatar
+                src={author?.avatar.url}
+                name={author?.fullName}
+                size="xs"
+              />
+              <Stack
+                direction={{ xs: 'column' }}
+                justify="spaceBetween"
+                gap="xs"
+                fullWidth
+              >
+                <Typography variant="text-m_1">
+                  {author?.fullName} •{' '}
+                  {creationDate && formatDate(creationDate)}
+                </Typography>
+                <div className={s.minRead}>
+                  <Typography color="secondary">{minRead} мин</Typography>
+                  <ClockFilledIcon
+                    size="s"
+                    className={cnTypography({ color: 'secondary' })}
+                  />
+                </div>
+              </Stack>
             </Stack>
           </Stack>
+
           <img src={previewImg} alt={title} className={s.img} />
           <Typography>{text}</Typography>
         </Card>
