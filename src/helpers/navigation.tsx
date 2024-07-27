@@ -26,10 +26,11 @@ import {
   LiveCoding,
   IconsPage,
   GettingStartedPage,
+  BlogPostDetailsPage,
+  BlogWritePostPage,
   CalendarPage,
   BlogPage,
 } from '../pages';
-import { BlogPostDetailsPage } from '../pages/BlogPostDetailsPage';
 
 import { articles } from './blog.ts';
 
@@ -63,11 +64,18 @@ const routes: { [key in string]: App } = {
   },
   'blog-post-details': {
     title: 'Детальная информация',
-    link: '/blog/:id',
+    link: '/blog/post/:id',
     component: ({ id }) => {
       const post = articles.find((article) => article.id === id);
 
       return post && <BlogPostDetailsPage {...post} />;
+    },
+  },
+  'blog-write-post': {
+    title: 'Написать',
+    link: '/blog/write-post',
+    component: () => {
+      return <BlogWritePostPage />;
     },
   },
   'getting-started': {

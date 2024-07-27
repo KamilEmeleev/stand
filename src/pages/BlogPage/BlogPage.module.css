@@ -13,12 +13,6 @@
   padding: var(--spacing-l);
 }
 
-.writeArticle {
-  button {
-    flex-shrink: 0;
-  }
-}
-
 .minRead {
   display: flex;
   flex-shrink: 0;

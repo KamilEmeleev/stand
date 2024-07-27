@@ -39,7 +39,7 @@ export const BlogPopularPosts = () => {
                 interactive
                 fullWidth
               >
-                <WouterLink to={`/blog/${id}`} asChild>
+                <WouterLink to={`/blog/post/${id}`} asChild>
                   <Link
                     style={{
                       inset: 0,

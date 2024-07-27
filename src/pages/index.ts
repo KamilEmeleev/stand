@@ -12,3 +12,5 @@ export * from './IconsPage';
 export * from './GettingStartedPage';
 export * from './CalendarPage';
 export * from './BlogPage';
+export * from './BlogPostDetailsPage';
+export * from './BlogWritePostPage';

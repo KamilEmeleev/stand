@@ -1,0 +1,5 @@
+.writeArticle {
+  button {
+    flex-shrink: 0;
+  }
+}
