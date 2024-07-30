@@ -8,5 +8,5 @@ export const isSelectedItem = (
     return false;
   }
 
-  return parse(link).pattern.test(location);
+  return parse(link, link !== '/').pattern.test(location);
 };
