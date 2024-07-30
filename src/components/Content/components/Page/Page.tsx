@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
 
 import { BreadcrumbItem, Breadcrumbs } from '@ozen-ui/kit/Breadcrumbs';
 import { Container } from '@ozen-ui/kit/Container';
@@ -10,7 +10,8 @@ import { parse } from 'regexparam';
 import { Link, useLocation, useParams } from 'wouter';
 
 import { App, navigation } from '../../../../helpers';
-import s from '../Main/Main.module.css';
+
+import s from './Page.module.css';
 
 export const Page: FC<App> = ({ component: Component, containerProps }) => {
   const params = useParams<{ id: string }>();
@@ -19,20 +20,30 @@ export const Page: FC<App> = ({ component: Component, containerProps }) => {
   const { m } = useBreakpoints();
   const isMobile = !m;
 
-  const locations = location
-    .split('/')
-    .filter((item) => item)
-    .reduce((acc: string[], item) => {
-      return [...acc, `${acc.join('')}/${item}`];
+  const locations = useMemo(() => {
+    return location
+      .split('/')
+      .filter((item) => item)
+      .reduce((acc: string[], item, currentIndex) => {
+        const res = acc[currentIndex - 1]
+          ? `${acc[currentIndex - 1]}/${item}`
+          : `/${item}`;
+
+        return [...acc, res];
+      }, []);
+  }, [location]);
+
+  const breadcrumbs = useMemo(() => {
+    return locations.reduce((acc: App[] | [], location) => {
+      const route = Object.values(navigation.routes).find(
+        ({ link }) => link && parse(link).pattern.test(location)
+      );
+
+      return route ? [...acc, route] : acc;
     }, []);
+  }, [locations]);
 
-  const breadcrumbs = locations.reduce((acc: App[] | [], location) => {
-    const route = Object.values(navigation.routes).find(
-      ({ link }) => link && parse(link).pattern.test(location)
-    );
-
-    return route ? [...acc, route] : acc;
-  }, []);
+  console.log(locations, breadcrumbs);
 
   const root = breadcrumbs[0];
   const showBreadcrumbs = !isMobile && breadcrumbs.length > 1;
@@ -51,11 +62,8 @@ export const Page: FC<App> = ({ component: Component, containerProps }) => {
       {showBreadcrumbs && (
         <Breadcrumbs>
           {breadcrumbs.map(({ title, link }, index) => (
-            <Link to={link || ''} asChild>
-              <BreadcrumbItem
-                key={index}
-                disabled={breadcrumbs.length - 1 === index}
-              >
+            <Link to={link || ''} key={index} asChild>
+              <BreadcrumbItem disabled={breadcrumbs.length - 1 === index}>
                 {title}
               </BreadcrumbItem>
             </Link>
