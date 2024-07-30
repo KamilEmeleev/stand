@@ -92,7 +92,7 @@ export const HelpCenterSearchPanel = () => {
         onInputChange={handleOnInputChange}
         className={s.search}
         placeholder="Задайте свой вопрос"
-        dataListProps={{ style: { maxHeight: 308 } }}
+        popoverProps={{ style: { maxHeight: 308 } }}
         fullWidth
         allowCustomValue
         disableShowChevron
