@@ -18,14 +18,14 @@ export const BlogWritePostPage = () => {
   const [, setLocation] = useLocation();
 
   const [files, setFiles] = useState<File[]>([]);
-  const [img, setImg] = useState<string>();
+  const [img, setImg] = useState('');
 
   useEffect(() => {
     if (!files[0]) return;
     const fr = new FileReader();
 
     fr.onload = function () {
-      setImg(fr.result?.toString());
+      setImg(fr.result?.toString() || '');
     };
 
     fr.readAsDataURL(files[0]);
@@ -35,7 +35,10 @@ export const BlogWritePostPage = () => {
     setFiles(e.target.files ? Array.from(e.target.files) : []);
   };
 
-  const onClear = () => setFiles([]);
+  const onClear = () => {
+    setFiles([]);
+    setImg('');
+  };
 
   const renderActions = () => {
     return (
