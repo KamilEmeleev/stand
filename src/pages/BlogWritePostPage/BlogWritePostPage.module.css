@@ -1,7 +1,7 @@
 .img {
-  background-image: url(../../assets/abstract-green-blue-paper.jpeg);
+  background-image: url("../../assets/abstract-green-blue-paper.jpeg");
   border-radius: var(--border-radius-l);
   background-position: center center;
   object-fit: cover;
-  height: 230px;
+  block-size: 230px;
 }
