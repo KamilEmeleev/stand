@@ -60,11 +60,15 @@ export const HelpCenterSearchPanel = () => {
   const renderOption: AutocompleteProps<(typeof hints)[0]>['renderOption'] = ({
     props,
     option,
-  }) => (
-    <ListItem {...props}>
-      <ListItemText primary={option.label} secondary={option.category} />
-    </ListItem>
-  );
+  }) => {
+    const { key, ...optionsProps } = props;
+
+    return (
+      <ListItem {...optionsProps} key={key}>
+        <ListItemText primary={option.label} secondary={option.category} />
+      </ListItem>
+    );
+  };
 
   const searchFunction: AutocompleteProps<
     (typeof hints)[0]
