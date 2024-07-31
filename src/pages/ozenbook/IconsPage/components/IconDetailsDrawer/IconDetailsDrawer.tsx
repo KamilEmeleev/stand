@@ -25,7 +25,7 @@ import {
 import { Stack } from '@ozen-ui/kit/Stack';
 import { themeHelper } from '@ozen-ui/kit/ThemeProvider';
 
-import { Code, ShowCase } from '../../../../ozenbook';
+import { Code, ShowCase } from '../../../../../ozenbook';
 
 import { filterColor, code } from './utils.ts';
 

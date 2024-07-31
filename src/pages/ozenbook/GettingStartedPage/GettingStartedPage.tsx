@@ -3,7 +3,7 @@ import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';
 import { dedent } from 'ts-dedent';
 
-import { Code, InstallPackage } from '../../ozenbook';
+import { Code, InstallPackage } from '../../../ozenbook';
 
 const start = dedent`
   import { ThemeProvider, themeOzenDefault } from '@ozen-ui/kit/ThemeProvider';
