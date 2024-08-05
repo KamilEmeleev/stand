@@ -33,6 +33,7 @@ import {
   ContributingPage,
   IconsPage,
   GettingStartedPage,
+  ButtonPage,
 } from '../pages/ozenbook';
 
 import { articles } from './blog.ts';
@@ -84,15 +85,23 @@ const routes: { [key in string]: App } = {
   'getting-started': {
     title: 'Начать работу',
     link: '/ozenbook/getting-started',
-    containerProps: { maxWidth: 'm' },
+    disableHeader: true,
+    containerProps: { maxWidth: 'l' },
     component: () => <GettingStartedPage />,
   },
   contributing: {
     title: 'Внести вклад',
     link: '/ozenbook/contributing',
     disableHeader: true,
-    containerProps: { maxWidth: 'm' },
+    containerProps: { maxWidth: 'l' },
     component: () => <ContributingPage />,
+  },
+  button: {
+    title: 'Button',
+    link: '/ozenbook/button',
+    disableHeader: true,
+    containerProps: { maxWidth: 'l' },
+    component: () => <ButtonPage />,
   },
   main: {
     title: 'Главная',
@@ -178,7 +187,7 @@ export const navigation: Navigation = {
     'help-center',
     'live-coding',
     'sandbox',
-    ['ozenbook', 'getting-started', 'icons', 'contributing'],
+    ['ozenbook', 'getting-started', 'icons', 'contributing', 'button'],
     'logout',
   ],
 };

@@ -1,8 +1,24 @@
-.showCase {
-  --show-case-color: var(--color-background-primary);
-  border: var(--border-width-s) dashed var(--color-border-main-hover);
-  min-block-size: 120px;
+.story {
+  display: block;
+  inline-size: 100%;
+  margin: var(--spacing-l) 0;
+  border: 1px solid var(--color-border-secondary);
   border-radius: var(--border-radius-l);
+  box-sizing: border-box;
+}
+
+.storyHeader, .storyFooter {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: var(--spacing-xs) var(--spacing-s);
+
+}
+
+.storyBody {
+  --show-case-color: var(--color-background-primary);
+  overflow: auto;
+  padding: var(--spacing-l);
   background-image: linear-gradient(45deg, var(--show-case-color) 25%, transparent 25%),
   linear-gradient(135deg, var(--show-case-color)25%, transparent 25%),
   linear-gradient(45deg, transparent 75%, var(--show-case-color) 75%),
@@ -14,4 +30,8 @@
     10px 0,
     10px -10px,
     0 10px;
+
+  &.hasBg {
+    background-image: none;
+  }
 }

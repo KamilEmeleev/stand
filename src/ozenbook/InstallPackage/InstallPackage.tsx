@@ -33,7 +33,7 @@ export const InstallPackage: React.FC<InstallPackageProps> = ({
   };
 
   return (
-    <Stack direction="column" gap="0" fullWidth>
+    <div>
       {title && (
         <Typography className={spacing({ mb: 's' })}>{title}</Typography>
       )}
@@ -59,6 +59,6 @@ export const InstallPackage: React.FC<InstallPackageProps> = ({
           `}
         />
       </Stack>
-    </Stack>
+    </div>
   );
 };

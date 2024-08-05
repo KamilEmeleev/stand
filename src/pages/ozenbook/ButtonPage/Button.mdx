@@ -1,0 +1,102 @@
+import { Status, Story, SectionMessage, Intro, NavTabs } from '../../../../src/ozenbook';
+import storySize from './stories/Size';
+import storyLoading from './stories/Loading';
+import storyColor from './stories/Color';
+import storyVariant from './stories/Variant';
+import storyBase from './stories/Base';
+import storyDisabled from './stories/Disabled';
+import storyIcon from './stories/Icon';
+import storyLink from './stories/Link';
+import storyLongText from './stories/LongText';
+import storyFunctionButton from './stories/FunctionButton';
+
+# Button
+
+<Status variant="stable" />
+
+<NavTabs />
+
+<Intro label="Кнопка — это функциональный элемент. Она отвечает за выполнение определённой
+функции: добавить в корзину, купить, отправить, проголосовать и т.д." />
+
+<Story component={storyBase.component} code={storyBase.code} />
+
+## Когда использовать
+
+Используйте кнопки в вашем продукте для выполнения определенных действий или навигации.
+
+## Рекомендации по использованию
+
+- Текст кнопки должен начинаться с **заглавной буквы**, не используйте <kbd>Caps Lock</kbd>;
+- Текст кнопки должен полностью помещаться в контейнер кнопки;
+- Почти всегда для текста кнопки подходит глагол отвечающий на вопрос **«Что сделать?»**. Например: **Найти**, **Сохранить**, **Принять** и т.д.
+- Указывайте текст кнопки как можно точнее;
+- Указывайте текст кнопки как можно короче. Ограничьтесь максимальным количеством слов в **3** для текста кнопки;
+- Используйте состояние загрузки кнопки для исполнения длительных действий.
+
+## Вариант
+
+Кнопка представлена в четырёх вариантах.
+
+<Story component={storyVariant.component} code={storyVariant.code} />
+
+## Размер
+
+Для установки размера кнопки воспользуйтесь свойством `size`.
+
+<Story component={storySize.component} code={storySize.code} />
+
+## Цвет
+
+Для изменения цвета кнопки используйте свойство `color`.
+
+<Story component={storyColor.component} code={storyColor.code} />
+
+## Заблокированное состояние
+
+Свойство `disabled` блокирует кнопку — нажать её уже не возможно.
+Кроме того, такая кнопка не может получить фокус путём нажатия на клавишу <kbd>Tab</kbd>, мышью или другим способом.
+
+<Story component={storyDisabled.component} code={storyDisabled.code} />
+
+## Кнопка как ссылка
+
+В некоторых случаях необходимо представить кнопку как ссылку, для этого задайте свойство `as` со значением `a`.
+
+<Story component={storyLink.component} code={storyLink.code} />
+
+## Кнопка с иконкой
+
+Название кнопки можно дополнять иконкой.
+Она поможет быстрее найти нужную кнопку в ряду других и быстрее понять, что делает кнопка.
+
+За иконку отвечают свойства `leftIcon` (ставит иконку слева от текста в кнопке) или `rightIcon` (ставит иконку справа).
+Оба эти свойства ожидают компонент иконки из нашей [библиотеки иконок](?path=/docs/extensions-icons--docs).
+
+<Story component={storyIcon.component} code={storyIcon.code} />
+
+## Кнопка по размеру содержимого
+
+Чтобы использовать кнопку по размеру содержимого используйте свойство `variant` со значением `function`.
+
+<SectionMessage>
+  Если кнопка — часть типографики, используйте компонент
+  [Link](?path=/docs/components-link--docs) в варианте кнопки.
+</SectionMessage>
+
+<Story component={storyFunctionButton.component} code={storyFunctionButton.code} />
+
+## Загрузка
+
+На время выполнения длительного действия кнопку можно установить в состояние загрузки.
+Для индикатора загрузки кнопки используйте свойство `loading`. При этом кнопка блокируется.
+
+<Story component={storyLoading.component} code={storyLoading.code} />
+
+## Длинный текст
+
+Текст в кнопке всегда располагается в одну строку.
+
+Если кнопка не помещается в родительский контейнер по ширине, она сжимается, текст обрезается, в конце добавляется многоточие.
+
+<Story component={storyLongText.component} code={storyLongText.code} />

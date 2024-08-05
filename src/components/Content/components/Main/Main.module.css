@@ -4,4 +4,5 @@
   overflow-y: auto;
   position: relative;
   flex-direction: column;
+  scroll-behavior: smooth;
 }

@@ -1,0 +1,29 @@
+.SectionMessage.sb-unstyled {
+  p {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: underline;
+    font: var(--typography-text-m-font);
+    color: var(--color-content-action);
+    border-radius: var(--border-radius-xs);
+  }
+
+  a:hover {
+    color: var(--color-content-action-hover);
+  }
+
+  a:active {
+    color: var(--color-content-action-dark);
+  }
+
+  a:focus {
+    outline: 0;
+    box-shadow: var(--shadow-outline-focused);
+  }
+
+  a:focus:not(:focus-visible) {
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,4 @@
+.docNav {
+  position: sticky;
+  inset-block-start: 32px;
+}

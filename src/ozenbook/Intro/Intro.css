@@ -1,0 +1,25 @@
+.Intro {
+  a {
+    text-decoration: underline;
+    font: var(--typography-text-l-font);
+    color: var(--color-content-action);
+    border-radius: var(--border-radius-xs);
+
+    &:hover {
+      color: var(--color-content-action-hover);
+    }
+
+    &:active {
+      color: var(--color-content-action-dark);
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: var(--shadow-outline-focused);
+    }
+
+    &:focus:not(:focus-visible) {
+      box-shadow: none;
+    }
+  }
+}

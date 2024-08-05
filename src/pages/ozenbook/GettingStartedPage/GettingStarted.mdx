@@ -1,0 +1,27 @@
+import { InstallPackage, Intro } from '../../../ozenbook';
+
+# Начать работу
+
+<Intro label="Özen-UI — библиотека для реализации веб-интерфейсов разработанная согласно правилам и принципам дизайн-системы Bereke Bank Design. Наша основная задача — создать систему для наших продуктов, которая поможет поддержать их целостность пользовательского опыта и оптимизировать ресурсы дизайна и разработки." />
+
+## Установка
+
+<InstallPackage
+  name="@ozen-ui/kit"
+  title="Установите библиотеку компонентов с помощью одной из следующих команд:"
+/>
+
+## Применение
+
+```tsx
+import { ThemeProvider, themeOzenDefault } from '@ozen-ui/kit/ThemeProvider';
+import { Typography } from '@ozen-ui/kit/Typography';
+
+export default function App() {
+  return (
+    <ThemeProvider theme={themeOzenDefault}>
+      <Typography>Привет, Мир!</Typography>
+    </ThemeProvider>
+  );
+}
+```
