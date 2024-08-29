@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import type { ChangeEvent } from 'react';
 
 import {
   DarkIcon,
@@ -13,7 +14,12 @@ import { Segment, SegmentItem, type SegmentProps } from '@ozen-ui/kit/Segment';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { themeOzenDefault, ThemeProvider } from '@ozen-ui/kit/ThemeProvider';
 
-import { ThemeLocale, useApp } from '../../AppContext.tsx';
+import {
+  ThemeColorSchema,
+  ThemeLocale,
+  Themes,
+  useApp,
+} from '../../AppContext.tsx';
 
 export const Settings = () => {
   const { settings } = useApp();
@@ -29,24 +35,24 @@ export const Settings = () => {
     }, 0);
   }, [theme, themeColorSchema]);
 
-  const changeTheme = () => {
+  const changeTheme = (e: ChangeEvent<HTMLInputElement>) => {
     document.body.classList.add('disable-animation');
 
     set?.((prevState) => {
       return {
         ...prevState,
-        theme: theme === 'default' ? 'custom' : 'default',
+        theme: e.target.value as Themes,
       };
     });
   };
 
-  const changeColorSchema = () => {
+  const changeColorSchema = (e: ChangeEvent<HTMLInputElement>) => {
     document.body.classList.add('disable-animation');
 
     set?.((prevState) => {
       return {
         ...prevState,
-        themeColorSchema: themeColorSchema === 'light' ? 'dark' : 'light',
+        themeColorSchema: e.target.value as ThemeColorSchema,
       };
     });
   };
@@ -72,9 +78,9 @@ export const Settings = () => {
                   <Indicator />
                 </ThemeProvider>
               )}
-              value="default"
+              value="theme1"
             >
-              Базовая
+              Тема 1
             </SegmentItem>
             <SegmentItem
               icon={() => (
@@ -82,9 +88,20 @@ export const Settings = () => {
                   <Indicator variant="info" />
                 </ThemeProvider>
               )}
-              value="custom"
+              value="theme2"
             >
-              Кастомная
+              Тема 2
+            </SegmentItem>
+
+            <SegmentItem
+              icon={() => (
+                <ThemeProvider theme={themeOzenDefault}>
+                  <Indicator variant="warning" />
+                </ThemeProvider>
+              )}
+              value="theme3"
+            >
+              Тема 3
             </SegmentItem>
           </Segment>
         </Stack>

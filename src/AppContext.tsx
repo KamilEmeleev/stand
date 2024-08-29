@@ -17,6 +17,8 @@ import {
   themeOzenDefault,
   themeBBusinessDark,
   themeBBusinessDefault,
+  themeVipDark,
+  themeVipDefault,
   ThemeProvider,
   extendTheme,
 } from '@ozen-ui/kit/ThemeProvider';
@@ -32,7 +34,7 @@ import {
 import { LoginPage, LogoutPage } from './pages';
 
 export type ThemeColorSchema = 'light' | 'dark';
-export type Themes = 'default' | 'custom';
+export type Themes = 'theme1' | 'theme2' | 'theme3';
 export type ThemeLocale = 'en' | 'ru' | 'kz';
 
 const locales = {
@@ -48,7 +50,7 @@ export type AppSettings = {
 };
 
 const initialStateSettings: AppSettings = {
-  theme: 'default',
+  theme: 'theme1',
   themeColorSchema: 'light',
   locale: 'ru',
 };
@@ -82,13 +84,17 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [location] = useLocation();
 
   const themes: { [key in Themes]: { [key in ThemeColorSchema]: Theme } } = {
-    default: {
+    theme1: {
       light: themeOzenDefault,
       dark: themeOzenDark,
     },
-    custom: {
+    theme2: {
       light: themeBBusinessDefault,
       dark: themeBBusinessDark,
+    },
+    theme3: {
+      light: themeVipDefault,
+      dark: themeVipDark,
     },
   };
 
