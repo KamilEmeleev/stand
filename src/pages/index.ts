@@ -12,3 +12,4 @@ export * from './CalendarPage';
 export * from './BlogPage';
 export * from './BlogPostDetailsPage';
 export * from './BlogWritePostPage';
+export * from './MicrofrontendsPage';

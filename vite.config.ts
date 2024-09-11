@@ -1,4 +1,5 @@
 import mdx from '@mdx-js/rollup';
+import federation from '@originjs/vite-plugin-federation';
 import react from '@vitejs/plugin-react';
 // eslint-disable-next-line import/no-unresolved
 import { defineConfig } from 'vitest/config';
@@ -9,6 +10,14 @@ export default defineConfig({
     react(),
     mdx({
       providerImportSource: '@mdx-js/react',
+    }),
+    federation({
+      name: 'app',
+      remotes: {
+        remoteApp:
+          'https://verdant-jelly-22f11b.netlify.app/assets/remoteEntry.js',
+      },
+      shared: ['react', 'react-dom'],
     }),
   ],
   optimizeDeps: {

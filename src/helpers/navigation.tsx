@@ -12,6 +12,7 @@ import {
   BrOzenIcon,
   CalendarIcon,
   ParagraphIcon,
+  WidgetIcon,
 } from '@ozen-ui/icons';
 import { type ContainerBaseProps } from '@ozen-ui/kit/Container';
 
@@ -28,6 +29,7 @@ import {
   BlogWritePostPage,
   CalendarPage,
   BlogPage,
+  MicrofrontendsPage,
 } from '../pages';
 import {
   ContributingPage,
@@ -168,6 +170,14 @@ const routes: { [key in string]: App } = {
       return <LiveCoding />;
     },
   },
+  microfrontends: {
+    title: 'Microfrontends',
+    icon: WidgetIcon,
+    link: '/microfrontends',
+    component: () => {
+      return <MicrofrontendsPage />;
+    },
+  },
 };
 
 export type Navigation = {
@@ -186,6 +196,7 @@ export const navigation: Navigation = {
     'calendar',
     'help-center',
     'live-coding',
+    'microfrontends',
     'sandbox',
     ['ozenbook', 'getting-started', 'icons', 'contributing', 'button'],
     'logout',

@@ -37,6 +37,7 @@
     "wouter": "^3.2.0"
   },
   "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.3.5",
     "@testing-library/dom": "^10.1.0",
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^16.0.0",
@@ -62,7 +63,7 @@
     "stylelint-order": "^6.0.4",
     "stylelint-plugin-logical-css": "^1.2.1",
     "typescript": "^5.2.2",
-    "vite": "^5.2.13",
+    "vite": "^5.4.4",
     "vitest": "^1.6.0"
   }
 }
