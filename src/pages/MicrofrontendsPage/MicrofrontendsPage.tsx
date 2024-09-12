@@ -16,7 +16,7 @@ export const MicrofrontendsPage = () => {
   return (
     <Card borderWidth="none">
       <Stack gap="l" direction="column" align="start" fullWidth>
-        <Button>v0.61.0</Button>
+        <Button>v0.60.0</Button>
         <ErrorBoundary>
           <Suspense fallback={<div>Загрузка...</div>}>
             <RemoteApp theme={theme} />

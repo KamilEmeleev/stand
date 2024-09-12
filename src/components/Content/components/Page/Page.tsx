@@ -36,7 +36,7 @@ export const Page: FC<App> = ({ component: Component, containerProps }) => {
   const breadcrumbs = useMemo(() => {
     return locations.reduce((acc: App[] | [], location) => {
       const route = Object.values(navigation.routes).find(
-        ({ link }) => link && parse(link).pattern.test(location)
+        ({ path }) => path && parse(path).pattern.test(location)
       );
 
       return route ? [...acc, route] : acc;
@@ -44,7 +44,10 @@ export const Page: FC<App> = ({ component: Component, containerProps }) => {
   }, [locations]);
 
   const root = breadcrumbs[0];
-  const showBreadcrumbs = !isMobile && breadcrumbs.length > 1;
+
+  const showBreadcrumbs =
+    !root.disableBreadcrumbs && !isMobile && breadcrumbs.length > 1;
+
   const showHeader = !root?.disableHeader && root?.title;
 
   if (!Component) return null;

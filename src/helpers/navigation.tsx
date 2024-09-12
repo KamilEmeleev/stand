@@ -43,10 +43,12 @@ import { articles } from './blog.ts';
 export interface App {
   icon?: FC;
   title?: string;
+  path?: string;
   link?: string;
   count?: number;
   containerProps?: Partial<ContainerBaseProps>;
   disableHeader?: boolean;
+  disableBreadcrumbs?: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   component?: (params: any) => ReactElement | null | undefined;
 }
@@ -59,18 +61,20 @@ const routes: { [key in string]: App } = {
   icons: {
     title: 'Витрина иконок',
     link: '/ozenbook/icons',
+    path: '/ozenbook/icons',
     containerProps: { maxWidth: 'm' },
     component: () => <IconsPage />,
   },
   blog: {
     title: 'Блог',
     link: '/blog',
+    path: '/blog',
     icon: ParagraphIcon,
     component: () => <BlogPage />,
   },
   'blog-post-details': {
     title: 'Детальная информация',
-    link: '/blog/post/:id',
+    path: '/blog/post/:id',
     component: ({ id }) => {
       const post = articles.find((article) => article.id === id);
 
@@ -79,7 +83,7 @@ const routes: { [key in string]: App } = {
   },
   'blog-write-post': {
     title: 'Написать',
-    link: '/blog/write-post',
+    path: '/blog/write-post',
     component: () => {
       return <BlogWritePostPage />;
     },
@@ -87,6 +91,7 @@ const routes: { [key in string]: App } = {
   'getting-started': {
     title: 'Начать работу',
     link: '/ozenbook/getting-started',
+    path: '/ozenbook/getting-started',
     disableHeader: true,
     containerProps: { maxWidth: 'l' },
     component: () => <GettingStartedPage />,
@@ -94,6 +99,7 @@ const routes: { [key in string]: App } = {
   contributing: {
     title: 'Внести вклад',
     link: '/ozenbook/contributing',
+    path: '/ozenbook/contributing',
     disableHeader: true,
     containerProps: { maxWidth: 'l' },
     component: () => <ContributingPage />,
@@ -101,6 +107,7 @@ const routes: { [key in string]: App } = {
   button: {
     title: 'Button',
     link: '/ozenbook/button',
+    path: '/ozenbook/button',
     disableHeader: true,
     containerProps: { maxWidth: 'l' },
     component: () => <ButtonPage />,
@@ -108,18 +115,21 @@ const routes: { [key in string]: App } = {
   main: {
     title: 'Главная',
     link: '/',
+    path: '/',
     icon: DashboardIcon,
     component: () => <MainPage />,
   },
   profile: {
     title: 'Профиль',
     link: '/profile',
+    path: '/profile',
     icon: UserCircleOutlineIcon,
     component: () => <ProfilePage />,
   },
   chat: {
     title: 'Онлайн чат',
     link: '/chat',
+    path: '/chat',
     icon: ChatMenuIcon,
     component: () => <ChatPage />,
     count: 3,
@@ -127,29 +137,34 @@ const routes: { [key in string]: App } = {
   orders: {
     title: 'Заказы',
     link: '/orders',
+    path: '/orders',
     icon: CartHandIcon,
     component: () => <OrdersPage />,
   },
   calendar: {
     title: 'Календарь',
     link: '/calendar',
+    path: '/calendar',
     icon: CalendarIcon,
     component: () => <CalendarPage />,
   },
   sandbox: {
     title: 'Песочница',
     link: '/sandbox',
+    path: '/sandbox',
     icon: TemplatesIcon,
     component: () => <SandboxPage />,
   },
   logout: {
     title: 'Завершить сеанс',
     link: '/logout',
+    path: '/logout',
     icon: PowerOutlineIcon,
   },
   'help-center': {
     title: 'Центр помощи',
     link: '/help-center',
+    path: '/help-center',
     icon: QuestionCircleOutlineIcon,
     disableHeader: true,
     containerProps: { maxWidth: 'm' },
@@ -157,7 +172,7 @@ const routes: { [key in string]: App } = {
   },
   'help-center-details': {
     title: 'Детальная информация',
-    link: '/help-center/:id',
+    path: '/help-center/:id',
     component: () => {
       return <HelpCenterDetailsPage />;
     },
@@ -166,6 +181,7 @@ const routes: { [key in string]: App } = {
     title: 'Live coding',
     icon: FlameIcon,
     link: '/live-coding',
+    path: '/live-coding',
     component: () => {
       return <LiveCoding />;
     },
@@ -174,9 +190,9 @@ const routes: { [key in string]: App } = {
     title: 'Microfrontends',
     icon: WidgetIcon,
     link: '/microfrontends',
-    component: () => {
-      return <MicrofrontendsPage />;
-    },
+    path: '/microfrontends/*?',
+    component: MicrofrontendsPage,
+    disableBreadcrumbs: true,
   },
 };
 

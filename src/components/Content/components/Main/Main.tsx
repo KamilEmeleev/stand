@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { useBreakpoints } from '@ozen-ui/kit/useBreakpoints';
 import { Route } from 'wouter';
 
@@ -13,11 +15,15 @@ export const Main = () => {
   const { setScrollContainerEl } = useApp();
   const isMobile = !m;
 
+  const routes = useMemo(() => {
+    return Object.entries(navigation.routes);
+  }, []);
+
   return (
     <main ref={(el) => setScrollContainerEl?.(el)} className={s.main}>
-      {Object.entries(navigation.routes).map(([key, props]) => {
-        return props.link ? (
-          <Route path={props.link} key={key}>
+      {routes.map(([key, props]) => {
+        return props.path ? (
+          <Route path={props.path} key={key}>
             <Page {...props} />
           </Route>
         ) : null;

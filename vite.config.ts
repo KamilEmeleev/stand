@@ -17,7 +17,13 @@ export default defineConfig({
         remoteApp:
           'https://verdant-jelly-22f11b.netlify.app/assets/remoteEntry.js',
       },
-      shared: ['react', 'react-dom'],
+      shared: {
+        react: {},
+        'react-dom': {},
+        wouter: {
+          version: '3.3.5',
+        },
+      },
     }),
   ],
   optimizeDeps: {
