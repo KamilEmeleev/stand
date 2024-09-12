@@ -46,7 +46,7 @@ export const Page: FC<App> = ({ component: Component, containerProps }) => {
   const root = breadcrumbs[0];
 
   const showBreadcrumbs =
-    !root.disableBreadcrumbs && !isMobile && breadcrumbs.length > 1;
+    !root?.disableBreadcrumbs && !isMobile && breadcrumbs.length > 1;
 
   const showHeader = !root?.disableHeader && root?.title;
 
