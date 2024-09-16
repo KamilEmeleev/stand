@@ -1,6 +1,9 @@
 import { FC } from 'react';
 
-import { DatePicker, type DatePickerOnChange } from '@ozen-ui/kit/DatePicker';
+import {
+  DatePicker,
+  type DatePickerPropOnChange,
+} from '@ozen-ui/kit/DatePicker';
 import { Stack } from '@ozen-ui/kit/Stack';
 
 import { OrdersFilter } from '../../types.ts';
@@ -9,7 +12,7 @@ export const OrdersPageFilterByDate: FC<{
   value?: OrdersFilter['date'];
   setFilter?: (params: OrdersFilter) => void;
 }> = ({ value, setFilter }) => {
-  const handleChangeFrom: DatePickerOnChange = (from) => {
+  const handleChangeFrom: DatePickerPropOnChange<'date'> = (from) => {
     setFilter?.({
       date: {
         ...value,
@@ -18,7 +21,7 @@ export const OrdersPageFilterByDate: FC<{
     });
   };
 
-  const handleChangeTo: DatePickerOnChange = (to) => {
+  const handleChangeTo: DatePickerPropOnChange<'date'> = (to) => {
     setFilter?.({
       date: {
         ...value,

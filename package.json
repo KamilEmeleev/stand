@@ -20,9 +20,9 @@
   "dependencies": {
     "@mdx-js/react": "^3.0.1",
     "@mdx-js/rollup": "^3.0.1",
-    "@ozen-ui/fonts": "^0.60.0",
-    "@ozen-ui/icons": "^0.60.0",
-    "@ozen-ui/kit": "^0.60.0",
+    "@ozen-ui/fonts": "^0.62.1",
+    "@ozen-ui/icons": "^0.62.1",
+    "@ozen-ui/kit": "^0.62.1",
     "@types/mdx": "^2.0.13",
     "clsx": "^2.1.1",
     "lightningcss": "^1.25.1",
