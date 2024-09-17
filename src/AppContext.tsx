@@ -1,18 +1,9 @@
-import {
-  createContext,
-  Dispatch,
-  FC,
-  ReactNode,
-  SetStateAction,
-  useContext,
-  useState,
-  useLayoutEffect,
-} from 'react';
+import { createContext, useContext, useState, useMemo, useEffect } from 'react';
+import type { Dispatch, FC, ReactNode, SetStateAction } from 'react';
 
 import { enUS, kkKZ, ruRU } from '@ozen-ui/kit/locale';
 import { SnackbarProvider } from '@ozen-ui/kit/Snackbar';
 import {
-  type Theme,
   themeOzenDark,
   themeOzenDefault,
   themeBBusinessDark,
@@ -22,6 +13,8 @@ import {
   ThemeProvider,
   extendTheme,
 } from '@ozen-ui/kit/ThemeProvider';
+import { useAtom } from 'jotai';
+import { useResetAtom } from 'jotai/utils';
 import { useLocation } from 'wouter';
 
 import s from './App.module.css';
@@ -32,10 +25,7 @@ import {
   Cookies,
 } from './components';
 import { LoginPage, LogoutPage } from './pages';
-
-export type ThemeColorSchema = 'light' | 'dark';
-export type Themes = 'theme1' | 'theme2' | 'theme3';
-export type ThemeLocale = 'en' | 'ru' | 'kz';
+import { type AppSettings, loggedInAtom, settingsAtom } from './store.ts';
 
 const locales = {
   en: enUS,
@@ -43,81 +33,81 @@ const locales = {
   kz: kkKZ,
 };
 
-export type AppSettings = {
-  theme: Themes;
-  themeColorSchema: ThemeColorSchema;
-  locale: ThemeLocale;
-};
-
-const initialStateSettings: AppSettings = {
-  theme: 'theme1',
-  themeColorSchema: 'light',
-  locale: 'ru',
+const themes = {
+  theme1: {
+    light: themeOzenDefault,
+    dark: themeOzenDark,
+  },
+  theme2: {
+    light: themeBBusinessDefault,
+    dark: themeBBusinessDark,
+  },
+  theme3: {
+    light: themeVipDefault,
+    dark: themeVipDark,
+  },
 };
 
 export type App = {
-  settings: {
-    state: AppSettings;
-    set?: Dispatch<SetStateAction<AppSettings>>;
-    reset?: () => void;
-  };
   scrollContainerEl?: HTMLElement | null;
   setScrollContainerEl?: Dispatch<SetStateAction<HTMLElement | null>>;
   login?: () => void;
   logout?: () => void;
 };
 
-export const AppContext = createContext<App>({
-  settings: { state: initialStateSettings },
-});
+export const AppContext = createContext<App>({});
 
 export const useApp = () => {
   return useContext(AppContext);
 };
 
+export const useThemeSwitcher = (): [
+  AppSettings,
+  (params: Partial<AppSettings>) => void,
+  () => void,
+] => {
+  const [settings, setSettings] = useAtom(settingsAtom);
+  const resetSettings = useResetAtom(settingsAtom);
+
+  const switchTheme = (prop: Partial<AppSettings>) => {
+    document.body.classList.add('disable-animation');
+
+    setSettings((prev) => {
+      return { ...prev, ...prop };
+    });
+  };
+
+  const reset = () => {
+    document.body.classList.add('disable-animation');
+    resetSettings();
+  };
+
+  useEffect(() => {
+    setTimeout(() => document.body.classList.remove('disable-animation'));
+  }, [settings]);
+
+  return [settings, switchTheme, reset];
+};
+
 export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [loggedIn, setLoggedIn] = useAtom(loggedInAtom);
+  const [settings] = useThemeSwitcher();
 
   const [scrollContainerEl, setScrollContainerEl] =
     useState<HTMLElement | null>(null);
 
   const [location] = useLocation();
 
-  const themes: { [key in Themes]: { [key in ThemeColorSchema]: Theme } } = {
-    theme1: {
-      light: themeOzenDefault,
-      dark: themeOzenDark,
-    },
-    theme2: {
-      light: themeBBusinessDefault,
-      dark: themeBBusinessDark,
-    },
-    theme3: {
-      light: themeVipDefault,
-      dark: themeVipDark,
-    },
-  };
-
-  useLayoutEffect(() => {
-    const loggedIn = sessionStorage.getItem('loggedIn');
-
-    if (loggedIn) {
-      setIsLogin(true);
-    }
-  }, []);
-
   const login = () => {
-    sessionStorage.setItem('loggedIn', 'true');
-    setIsLogin(true);
+    setLoggedIn(true);
   };
 
   const logout = () => {
-    sessionStorage.setItem('loggedIn', '');
-    setIsLogin(false);
+    setLoggedIn(false);
   };
 
   const renderContent = () => {
-    if (!isLogin) {
+    if (!loggedIn) {
       return <LoginPage />;
     }
 
@@ -128,16 +118,14 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
     return children;
   };
 
-  const [settings, setSettings] = useState(initialStateSettings);
+  const customTheme = useMemo(() => {
+    const { theme, colorSchema, locale } = settings;
+
+    return extendTheme(themes[theme][colorSchema], locales[locale]);
+  }, [settings]);
 
   return (
-    <ThemeProvider
-      theme={extendTheme(
-        themes[settings.theme][settings.themeColorSchema],
-        locales[settings.locale]
-      )}
-      className={s.app}
-    >
+    <ThemeProvider theme={customTheme} className={s.app}>
       <SnackbarProvider
         lifetime={10000}
         anchorOrigin={{
@@ -149,11 +137,6 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
           value={{
             login,
             logout,
-            settings: {
-              state: settings,
-              set: setSettings,
-              reset: () => setSettings(initialStateSettings),
-            },
             scrollContainerEl,
             setScrollContainerEl,
           }}

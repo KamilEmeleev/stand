@@ -13,17 +13,14 @@ import { Tooltip } from '@ozen-ui/kit/Tooltip';
 import { Typography } from '@ozen-ui/kit/Typography';
 import { useBoolean } from '@ozen-ui/kit/useBoolean';
 
-import { useApp } from '../../../../AppContext.tsx';
+import { useThemeSwitcher } from '../../../../AppContext.tsx';
 import { Settings } from '../../../Settings';
 
 import s from './ActionSetting.module.css';
 
 export const ActionSettings = () => {
-  const {
-    settings: { reset },
-  } = useApp();
-
   const [open, { toggle, off }] = useBoolean(false);
+  const [, , reset] = useThemeSwitcher();
 
   return (
     <>
@@ -57,14 +54,7 @@ export const ActionSettings = () => {
           <DrawerTitle>
             <Stack gap="m" align="center" justify="spaceBetween" fullWidth>
               <Typography variant="text-xl_1">Настройки</Typography>
-              <IconButton
-                icon={RefreshIcon}
-                onClick={() => {
-                  document.body.classList.add('disable-animation');
-                  reset?.();
-                }}
-                compressed
-              />
+              <IconButton icon={RefreshIcon} onClick={reset} compressed />
             </Stack>
           </DrawerTitle>
         </DrawerHeader>

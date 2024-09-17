@@ -25,6 +25,7 @@
     "@ozen-ui/kit": "^0.63.0",
     "@types/mdx": "^2.0.13",
     "clsx": "^2.1.1",
+    "jotai": "^2.9.3",
     "lightningcss": "^1.25.1",
     "lodash.groupby": "^4.6.0",
     "lodash.sortby": "^4.7.0",

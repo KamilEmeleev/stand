@@ -26,6 +26,9 @@ dependencies:
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
+  jotai:
+    specifier: ^2.9.3
+    version: 2.9.3(@types/react@18.3.3)(react@18.3.1)
   lightningcss:
     specifier: ^1.25.1
     version: 1.25.1
@@ -3406,6 +3409,22 @@ packages:
       '@types/node': 20.14.2
       merge-stream: 2.0.0
       supports-color: 8.1.1
+    dev: false
+
+  /jotai@2.9.3(@types/react@18.3.3)(react@18.3.1):
+    resolution: {integrity: sha512-IqMWKoXuEzWSShjd9UhalNsRGbdju5G2FrqNLQJT+Ih6p41VNYe2sav5hnwQx4HJr25jq9wRqvGSWGviGG6Gjw==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=17.0.0'
+      react: '>=17.0.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      '@types/react': 18.3.3
+      react: 18.3.1
     dev: false
 
   /js-tokens@4.0.0:

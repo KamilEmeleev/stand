@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import type { ChangeEvent } from 'react';
 
 import {
@@ -14,56 +13,22 @@ import { Segment, SegmentItem, type SegmentProps } from '@ozen-ui/kit/Segment';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { themeOzenDefault, ThemeProvider } from '@ozen-ui/kit/ThemeProvider';
 
-import {
-  ThemeColorSchema,
-  ThemeLocale,
-  Themes,
-  useApp,
-} from '../../AppContext.tsx';
+import { useThemeSwitcher } from '../../AppContext.tsx';
+import type { ThemeColorSchema, ThemeLocale, Themes } from '../../store.ts';
 
 export const Settings = () => {
-  const { settings } = useApp();
-
-  const {
-    state: { theme, themeColorSchema, locale },
-    set,
-  } = settings;
-
-  useEffect(() => {
-    setTimeout(() => {
-      document.body.classList.remove('disable-animation');
-    }, 0);
-  }, [theme, themeColorSchema]);
+  const [settings, switchTheme] = useThemeSwitcher();
 
   const changeTheme = (e: ChangeEvent<HTMLInputElement>) => {
-    document.body.classList.add('disable-animation');
-
-    set?.((prevState) => {
-      return {
-        ...prevState,
-        theme: e.target.value as Themes,
-      };
-    });
+    switchTheme({ theme: e.target.value as Themes });
   };
 
   const changeColorSchema = (e: ChangeEvent<HTMLInputElement>) => {
-    document.body.classList.add('disable-animation');
-
-    set?.((prevState) => {
-      return {
-        ...prevState,
-        themeColorSchema: e.target.value as ThemeColorSchema,
-      };
-    });
+    switchTheme({ colorSchema: e.target.value as ThemeColorSchema });
   };
 
-  const changeLocale: SegmentProps['onChange'] = (event) => {
-    set?.((prevState) => {
-      return {
-        ...prevState,
-        locale: event.target.value as ThemeLocale,
-      };
-    });
+  const changeLocale: SegmentProps['onChange'] = (e) => {
+    switchTheme({ locale: e.target.value as ThemeLocale });
   };
 
   return (
@@ -71,7 +36,7 @@ export const Settings = () => {
       <Stack direction="column">
         <FormTitle>Тема</FormTitle>
         <Stack direction="column" gap="m">
-          <Segment value={theme} onChange={changeTheme} fullWidth>
+          <Segment value={settings.theme} onChange={changeTheme} fullWidth>
             <SegmentItem
               icon={() => (
                 <ThemeProvider theme={themeOzenDefault}>
@@ -110,7 +75,7 @@ export const Settings = () => {
         <FormTitle>Цветовая схема</FormTitle>
         <Stack direction="column" gap="m">
           <Segment
-            value={themeColorSchema}
+            value={settings.colorSchema}
             onChange={changeColorSchema}
             fullWidth
           >
@@ -126,7 +91,7 @@ export const Settings = () => {
       <Stack direction="column">
         <FormTitle>Локализация компонентов</FormTitle>
         <Stack direction="column" gap="m">
-          <Segment value={locale} onChange={changeLocale} fullWidth>
+          <Segment value={settings.locale} onChange={changeLocale} fullWidth>
             <SegmentItem icon={() => <FlagRuIcon width={24} />} value="ru">
               Рус
             </SegmentItem>
