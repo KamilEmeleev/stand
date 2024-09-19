@@ -10,3 +10,4 @@ export * from './Actions';
 export * from './BerekeID';
 export * from './Settings';
 export * from './ErrorBoundary';
+export * from './Image';

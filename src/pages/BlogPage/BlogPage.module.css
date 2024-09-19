@@ -1,7 +1,7 @@
 .img {
   border-start-start-radius: inherit;
   border-start-end-radius: inherit;
-  max-block-size: 30vh;
+  block-size: 30vh;
   object-fit: cover;
 }
 

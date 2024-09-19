@@ -9,6 +9,7 @@ import { Stack } from '@ozen-ui/kit/Stack';
 import { Tag } from '@ozen-ui/kit/TagNext';
 import { cnTypography, Typography } from '@ozen-ui/kit/Typography';
 
+import { Image } from '../../components';
 import { BlogArticle } from '../../helpers/blog.ts';
 import { MDX } from '../../ozenbook';
 import { formatDate } from '../BlogPage/utils';
@@ -75,7 +76,7 @@ export const BlogPostDetailsPage: FC<BlogArticle> = ({
             </Stack>
           </Stack>
 
-          <img src={previewImg} alt={title} className={s.img} />
+          <Image src={previewImg} alt={title} className={s.img} />
         </Stack>
         {Markdown && (
           <MDX>

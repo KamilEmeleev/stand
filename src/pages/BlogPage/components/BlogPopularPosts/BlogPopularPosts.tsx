@@ -9,6 +9,7 @@ import { Tag } from '@ozen-ui/kit/TagNext';
 import { cnTypography, Typography } from '@ozen-ui/kit/Typography';
 import { Link as WouterLink } from 'wouter';
 
+import { Image } from '../../../../components';
 import { blogs } from '../../../../helpers/blog.ts';
 import s from '../../BlogPage.module.css';
 import { formatDate } from '../../utils';
@@ -48,7 +49,7 @@ export const BlogPopularPosts = () => {
                     }}
                   />
                 </WouterLink>
-                <img alt={subtitle} src={previewImg} className={s.img} />
+                <Image alt={subtitle} src={previewImg} className={s.img} />
                 <div className={s.content}>
                   <Stack gap="s">
                     {stream.map((label, index) => (
