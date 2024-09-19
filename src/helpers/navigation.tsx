@@ -38,7 +38,7 @@ import {
   ButtonPage,
 } from '../pages/ozenbook';
 
-import { articles } from './blog.ts';
+import { blogs } from './blog.ts';
 
 export interface App {
   icon?: FC;
@@ -76,7 +76,7 @@ const routes: { [key in string]: App } = {
     title: 'Детальная информация',
     path: '/blog/post/:id',
     component: ({ id }) => {
-      const post = articles.find((article) => article.id === id);
+      const post = blogs.find((article) => article.id === id);
 
       return post && <BlogPostDetailsPage {...post} />;
     },

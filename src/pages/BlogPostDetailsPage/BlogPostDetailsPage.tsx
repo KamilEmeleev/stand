@@ -4,77 +4,85 @@ import { ClockFilledIcon } from '@ozen-ui/icons';
 import { Avatar } from '@ozen-ui/kit/Avatar';
 import { Card } from '@ozen-ui/kit/Card';
 import { Container } from '@ozen-ui/kit/Container';
+import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Tag } from '@ozen-ui/kit/TagNext';
 import { cnTypography, Typography } from '@ozen-ui/kit/Typography';
 
-import { articles } from '../../helpers/blog.ts';
+import { BlogArticle } from '../../helpers/blog.ts';
+import { MDX } from '../../ozenbook';
 import { formatDate } from '../BlogPage/utils';
 
 import s from './BlogPostDetailsPage.module.css';
 
-export const BlogPostDetailsPage: FC<(typeof articles)[0]> = ({
+export const BlogPostDetailsPage: FC<BlogArticle> = ({
   stream,
   title,
   author,
   minRead,
   creationDate,
-  subtitle,
-  text,
+  markdown: Markdown,
   previewImg,
 }) => {
   return (
     <Container maxWidth="m" position="center">
-      <Stack
-        align="center"
+      <Card
+        as={Stack}
+        size="l"
+        align="start"
         direction="column"
-        gap={{ xs: '2xl', s: '4xl' }}
+        borderWidth="none"
+        gap="xl"
         fullWidth
       >
-        <Card
-          as={Stack}
-          size="l"
-          align="start"
-          direction="column"
-          borderWidth="none"
-          gap="xl"
-          fullWidth
-        >
-          <Stack gap="m" direction="column" align="start" fullWidth>
-            <Tag label={stream} size="s" color="neutral" />
-            <Typography variant="text-xl_1">{title}</Typography>
-            <Typography color="secondary">{subtitle}</Typography>
-            <Stack align="center" gap="m" fullWidth>
-              <Avatar
-                src={author?.avatar.url}
-                name={author?.fullName}
-                size="xs"
-              />
-              <Stack
-                direction={{ xs: 'column' }}
-                justify="spaceBetween"
-                gap="xs"
-                fullWidth
-              >
-                <Typography variant="text-m_1">
-                  {author?.fullName} •{' '}
-                  {creationDate && formatDate(creationDate)}
-                </Typography>
-                <div className={s.minRead}>
-                  <Typography color="secondary">{minRead} мин</Typography>
-                  <ClockFilledIcon
-                    size="s"
-                    className={cnTypography({ color: 'secondary' })}
-                  />
-                </div>
-              </Stack>
+        <Stack gap="l" direction="column" align="start" fullWidth>
+          <Stack gap="s" wrap>
+            {stream.map((label) => (
+              <Tag label={label} key={label} size="s" color="neutral" />
+            ))}
+          </Stack>
+
+          <Typography
+            variant="heading-2xl"
+            as="h1"
+            className={spacing({ my: 'm' })}
+          >
+            {title}
+          </Typography>
+
+          <Stack align="center" gap="m" fullWidth>
+            <Avatar
+              src={author?.avatar?.url}
+              name={author?.fullName}
+              size="xs"
+            />
+            <Stack
+              direction={{ xs: 'column' }}
+              justify="spaceBetween"
+              gap="xs"
+              fullWidth
+            >
+              <Typography variant="text-m_1">
+                {author?.fullName} • {creationDate && formatDate(creationDate)}
+              </Typography>
+              <div className={s.minRead}>
+                <Typography color="secondary">{minRead} мин</Typography>
+                <ClockFilledIcon
+                  size="s"
+                  className={cnTypography({ color: 'secondary' })}
+                />
+              </div>
             </Stack>
           </Stack>
 
           <img src={previewImg} alt={title} className={s.img} />
-          <Typography>{text}</Typography>
-        </Card>
-      </Stack>
+        </Stack>
+        {Markdown && (
+          <MDX>
+            <Markdown />
+          </MDX>
+        )}
+      </Card>
     </Container>
   );
 };

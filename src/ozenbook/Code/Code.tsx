@@ -14,7 +14,12 @@ type CodeProps = {
 export const Code: FC<CodeProps> = ({ code, language = 'typescript' }) => {
   return (
     <ThemeProvider theme={themeOzenDark} className={clsx(s.code, 'unstyled')}>
-      <CodeBlock text={code} language={language} theme={vs2015} />
+      <CodeBlock
+        text={code}
+        language={language}
+        theme={vs2015}
+        showLineNumbers={false}
+      />
     </ThemeProvider>
   );
 };

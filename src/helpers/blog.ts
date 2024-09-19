@@ -1,20 +1,55 @@
+import { ReactElement } from 'react';
+
 import user from '../assets/avatar-girl-2.jpeg';
-import user_1 from '../assets/avatar-girl.avif';
-import previewImg from '../assets/mountains.jpg';
+import img1 from '../assets/cube.jpg';
+import kamil from '../assets/kamil.jpg';
+import img2 from '../assets/mountains.jpg';
+import Example from '../pages/BlogPostDetailsPage/Example.mdx';
+import MyPost from '../pages/BlogPostDetailsPage/MyPost.mdx';
 
-const text =
-  'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam architecto atque beatae consectetur, consequatur deleniti doloremque doloribus eaque explicabo hic inventore ipsa labore minima natus nihil odio quas rem sapiente tempora veritatis vero voluptates voluptatum! Accusantium adipisci, aliquid amet animi asperiores autem consectetur consequatur cum deleniti doloribus error exercitationem fugiat illo impedit inventore laboriosam maiores nihil non odio omnis porro quam quas quidem reiciendis saepe similique tempore tenetur totam veniam voluptatem! Corporis error expedita, magnam nisi officiis quo quos sapiente totam unde voluptatem! Aspernatur id obcaecati odit possimus. A accusantium blanditiis deserunt esse nihil qui, sed sit veritatis vitae?';
+import { User } from './user.ts';
 
-export const articles = [
+export type BlogArticle = {
+  id: string;
+  title: string;
+  minRead: number;
+  subtitle?: string;
+  stream: string[];
+  creationDate: string;
+  previewImg: string;
+  author: User;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  markdown?: (params: any) => ReactElement | null | undefined;
+};
+
+export type BlogArticles = BlogArticle[];
+
+export const blogs: BlogArticles = [
+  {
+    id: 'blog_article_0',
+    title: 'Как переопределить дефолтные стили компонента',
+    subtitle: 'Лайфхак для повышение специфичности СSS-селектора.',
+    stream: ['Программирование', 'ozen-ui', 'CSS'],
+    minRead: 2,
+    creationDate: '2024-09-19T09:11:53.887Z',
+    previewImg: img1,
+    author: {
+      fullName: 'Камил Емелеев',
+      name: 'Камил',
+      avatar: {
+        url: kamil,
+      },
+    },
+    markdown: MyPost,
+  },
   {
     id: 'blog_article_1',
-    title: 'Статья 1',
-    stream: 'Программирование',
+    title: 'Шаблон статьи',
+    stream: ['Программирование'],
     minRead: 6,
     creationDate: '2024-07-21T09:11:53.887Z',
-    previewImg,
-    subtitle:
-      'Контент — это содержание. Простое заимствование из английского content — содержимое.',
+    previewImg: img2,
+    subtitle: 'Короткое и интригующее описание статьи.',
     author: {
       fullName: 'Роза Миннулина',
       name: 'Роза',
@@ -22,61 +57,6 @@ export const articles = [
         url: user,
       },
     },
-    text,
-  },
-  {
-    id: 'blog_article_2',
-    title: 'Статья 2',
-    stream: 'Здоровье',
-    creationDate: '2024-07-22T09:11:53.887Z',
-    minRead: 2,
-    previewImg,
-    subtitle:
-      'Контент — это содержание. Простое заимствование из английского content — содержимое.',
-    author: {
-      fullName: 'Анастасия Петрова',
-      name: 'Анастасия',
-      online: true,
-      avatar: {
-        url: user_1,
-      },
-    },
-    text,
-  },
-  {
-    id: 'blog_article_3',
-    title: 'Статья 3',
-    stream: 'Дизайн',
-    creationDate: '2024-07-23T09:11:53.887Z',
-    minRead: 4,
-    previewImg,
-    subtitle:
-      'Контент — это содержание. Простое заимствование из английского content — содержимое.',
-    author: {
-      fullName: 'Роза Миннулина',
-      name: 'Роза',
-      avatar: {
-        url: user,
-      },
-    },
-    text,
-  },
-  {
-    id: 'blog_article_4',
-    title: 'Статья 4',
-    stream: 'Питомцы',
-    minRead: 4,
-    creationDate: '2024-07-24T09:11:53.887Z',
-    previewImg,
-    subtitle:
-      'Контент — это содержание. Простое заимствование из английского content — содержимое.',
-    author: {
-      fullName: 'Роза Миннулина',
-      name: 'Роза',
-      avatar: {
-        url: user,
-      },
-    },
-    text,
+    markdown: Example,
   },
 ];

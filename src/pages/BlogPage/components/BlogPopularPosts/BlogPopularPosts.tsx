@@ -9,14 +9,14 @@ import { Tag } from '@ozen-ui/kit/TagNext';
 import { cnTypography, Typography } from '@ozen-ui/kit/Typography';
 import { Link as WouterLink } from 'wouter';
 
-import { articles } from '../../../../helpers/blog.ts';
+import { blogs } from '../../../../helpers/blog.ts';
 import s from '../../BlogPage.module.css';
 import { formatDate } from '../../utils';
 
 export const BlogPopularPosts = () => {
   return (
     <Grid cols={2}>
-      {articles.map(
+      {blogs.map(
         ({
           title,
           id,
@@ -50,12 +50,17 @@ export const BlogPopularPosts = () => {
                 </WouterLink>
                 <img alt={subtitle} src={previewImg} className={s.img} />
                 <div className={s.content}>
-                  <Tag label={stream} size="s" color="neutral" />
+                  <Stack gap="s">
+                    {stream.map((label, index) => (
+                      <Tag label={label} size="s" color="neutral" key={index} />
+                    ))}
+                  </Stack>
+
                   <Typography variant="text-xl_1">{title}</Typography>
                   <Typography color="secondary">{subtitle}</Typography>
                   <Stack align="center" gap="m" fullWidth>
                     <Avatar
-                      src={author.avatar.url}
+                      src={author?.avatar?.url}
                       name={author.fullName}
                       size="xs"
                     />
