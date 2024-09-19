@@ -1,4 +1,4 @@
-import { Typography } from '@ozen-ui/kit/Typography';
+import { Stack } from '@ozen-ui/kit/Stack';
 
 import { user } from '../../helpers';
 
@@ -10,13 +10,10 @@ import {
 
 export const BlogPage = () => {
   return (
-    <>
+    <Stack gap="2xl" direction="column">
       <BlogHeader user={user} />
-      <Typography variant="heading-xl" as="h2">
-        Популярные статьи
-      </Typography>
       <BlogPopularPosts />
       <BlogPostsPagination />
-    </>
+    </Stack>
   );
 };

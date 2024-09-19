@@ -26,7 +26,7 @@ export type BlogArticles = BlogArticle[];
 
 export const blogs: BlogArticles = [
   {
-    id: 'blog_article_0',
+    id: 'life_hack_override_css_selector',
     title: 'Как переопределить дефолтные стили компонента',
     subtitle: 'Лайфхак для повышение специфичности СSS-селектора.',
     stream: ['Программирование', 'ozen-ui', 'CSS'],
@@ -43,7 +43,7 @@ export const blogs: BlogArticles = [
     markdown: MyPost,
   },
   {
-    id: 'blog_article_1',
+    id: 'example_article',
     title: 'Шаблон статьи',
     stream: ['Программирование'],
     minRead: 6,

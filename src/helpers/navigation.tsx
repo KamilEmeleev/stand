@@ -73,7 +73,7 @@ const routes: { [key in string]: App } = {
     component: () => <BlogPage />,
   },
   'blog-post-details': {
-    title: 'Детальная информация',
+    title: 'Статья',
     path: '/blog/post/:id',
     component: ({ id }) => {
       const post = blogs.find((article) => article.id === id);

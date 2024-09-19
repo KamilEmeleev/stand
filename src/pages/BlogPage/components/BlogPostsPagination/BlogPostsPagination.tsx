@@ -19,7 +19,12 @@ export const BlogPostsPagination = () => {
       >
         Туда
       </Button>
-      <Button variant="function" iconRight={ArrowRightIcon} color="secondary">
+      <Button
+        variant="function"
+        iconRight={ArrowRightIcon}
+        color="secondary"
+        disabled
+      >
         Сюда
       </Button>
     </Stack>

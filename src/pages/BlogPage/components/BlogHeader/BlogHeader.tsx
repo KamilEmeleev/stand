@@ -37,13 +37,10 @@ export const BlogHeader: FC<BlogHeaderProps> = ({
         gap="l"
         align="center"
         justify="spaceBetween"
-        direction={{ xs: 'column', m: 'row' }}
         className={s.writeArticle}
         fullWidth
       >
-        <Typography variant="text-xl_1" align="center">
-          🖋️ {user?.name}, есть что написать?
-        </Typography>
+        <Typography variant="text-xl_1">Привет, {user?.name}!</Typography>
         {renderActions()}
       </Stack>
     </Card>
