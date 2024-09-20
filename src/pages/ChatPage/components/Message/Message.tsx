@@ -1,14 +1,14 @@
-import { forwardRef, useState } from 'react';
+import { forwardRef } from 'react';
 
 import { Avatar } from '@ozen-ui/kit/Avatar';
 import { File } from '@ozen-ui/kit/File';
 import { spacing } from '@ozen-ui/kit/MixSpacing';
 import { Paper } from '@ozen-ui/kit/Paper';
-import { Skeleton } from '@ozen-ui/kit/Skeleton';
 import { Stack } from '@ozen-ui/kit/Stack';
 import { Typography } from '@ozen-ui/kit/Typography';
 import clsx from 'clsx';
 
+import { Image } from '../../../../components';
 import { ChatMessage, User } from '../../../../helpers';
 import { formatDate } from '../../utils';
 
@@ -16,7 +16,6 @@ import s from './Message.module.css';
 
 export const Message = forwardRef<HTMLDivElement, ChatMessage & { user: User }>(
   ({ user, text, type, assets, date, emoji }, ref) => {
-    const [imgState, setImgState] = useState<{ [key in string]: boolean }>({});
     const AvatarIcon = user?.avatar?.icon;
 
     return (
@@ -49,37 +48,16 @@ export const Message = forwardRef<HTMLDivElement, ChatMessage & { user: User }>(
             </Typography>
             {!!assets?.length &&
               assets.map(({ format, name, size, url }) => {
-                if (format === 'jpg' || format === 'png') {
-                  return !imgState[name as string] ? (
-                    <Skeleton
-                      variant="rectangular"
+                if (format === 'jpg' || format === 'png')
+                  return (
+                    <Image
                       className={s.img}
                       key={name}
-                    >
-                      <img
-                        alt={name}
-                        width="100%"
-                        src={url}
-                        onLoad={() => {
-                          setTimeout(() => {
-                            setImgState({
-                              ...imgState,
-                              ...{ [name as string]: true },
-                            });
-                          }, 2000);
-                        }}
-                      />
-                    </Skeleton>
-                  ) : (
-                    <img
                       alt={name}
                       width="100%"
                       src={url}
-                      className={s.img}
-                      key={name}
                     />
                   );
-                }
 
                 return (
                   <Stack gap="m" align="start" key={name}>
