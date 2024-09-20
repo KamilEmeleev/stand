@@ -96,6 +96,12 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [scrollContainerEl, setScrollContainerEl] =
     useState<HTMLElement | null>(null);
 
+  const [pathname] = useLocation();
+
+  useEffect(() => {
+    scrollContainerEl?.scrollTo({ top: 0, behavior: 'instant' });
+  }, [pathname, scrollContainerEl]);
+
   const [location] = useLocation();
 
   const login = () => {
