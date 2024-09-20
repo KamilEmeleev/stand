@@ -53,7 +53,7 @@ export interface App {
   component?: (params: any) => ReactElement | null | undefined;
 }
 
-const routes: { [key in string]: App } = {
+const routes: Record<string, App> = {
   ozenbook: {
     title: 'Özenbook',
     icon: BrOzenIcon,

@@ -4,7 +4,5 @@ export type CurrencyCodeType = (typeof currencyCodeType)[number];
 
 export interface ICurrency {
   date: string;
-  kzt: {
-    [key in CurrencyCodeType]: number;
-  };
+  kzt: Record<CurrencyCodeType, number>;
 }

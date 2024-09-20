@@ -4,7 +4,7 @@ import { Tag } from '@ozen-ui/kit/TagNext';
 
 import { type OrderStatus as OrderStatusType } from '../../../../helpers';
 
-export type OrdersStatuses = { [key in OrderStatusType]: ReactElement };
+export type OrdersStatuses = Record<OrderStatusType, ReactElement>;
 
 const statuses: OrdersStatuses = {
   payed: <Tag as="span" color="success" label="Оплачен" size="s" />,

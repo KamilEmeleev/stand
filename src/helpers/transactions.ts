@@ -12,9 +12,7 @@ export enum TransactionType {
   declined = 'declined',
 }
 
-export type TransactionTypes = {
-  [key in TransactionType]: ReactElement;
-};
+export type TransactionTypes = Record<TransactionType, ReactElement>;
 
 export enum PaymentMethodType {
   visa = 'visa',
